@@ -1,0 +1,88 @@
+Anesthesiologist
+Anesthesiology Fellow
+Certified Registered Nurse Anesthetist
+Registered Respiratory Therapist
+Anesthesiologist Assistant
+Cardiologist
+Cardiology Fellow
+Intensivist
+Neonatologist
+Critical Care Nurse Practitioner
+Critical Care Registered Nurse
+Critical Care Respiratory Therapist
+Dermatologist
+Emergency physician
+Emergency Nurse Practitioner
+Emergency Physician Assistant
+Flight Nurse
+Certified Emergency Registered Nurse
+Certified Emergency Registered Respiratory Therapist
+Emergency Medical Technician
+Endocrinologist
+Geriatrician
+Gerontological Nurse Practitioner
+Gastroenterologist
+Haematologist
+Medical Laboratory Technician
+Phlebotomist
+Nephrologist
+Dialysis Technician
+Neurologist
+Speech Language Pathologist
+Audiologist
+Oncologist
+Radiation Therapist
+Ophthamologist
+Optometrist
+Otolaryngologist
+Healthcare Chaplain
+Pulmonologist
+Pulmonology Fellow
+Registered Respiratory Therapist
+Certified Respiratory Therapist
+General practitioner
+Family Practice Physician
+Internist
+Family Nurse Practitioner
+Physician Assistant
+Pharmacist
+Neonatalologist
+Pediatrician
+Neonatal Nurse Practitioner
+Pediatric Physician Assistant
+Pediatric Nurse Practitioner
+Pediatric Nurse
+Pediatric Respiratory Therapist
+Podiatric Surgeon
+Doctor of Podiatric Medicine
+Podiatrist
+Assistant Podiatrist
+Psychiatrist
+Psychologist
+Psychiatric Nurse Practitioner
+Mental Health Nurse Practitioner
+Orthopedic Physician
+Sport Psychologist
+Physical Therapist
+Occupational Therapist
+Physical Therapy Assistant
+Occupational Therapy Assistant
+Orthopaedic Technologist or Prosthetist & Orthotist
+Chiropractor
+Biokineticist
+Athletic Trainer
+Radiotherapist
+Radiologist
+Radiographer
+Obstetrician
+Gynaecologist
+Women's Health Nurse Practitioner
+Nurse-Midwife
+General Doctor
+Bariatric Surgeon
+Cardiothoracic surgeon
+Cardiac Surgeon
+Hepatic Biliary Pancreatic Surgeon
+Neurosurgeon
+Podiatric Surgeon
+Urologist

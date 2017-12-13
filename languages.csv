@@ -1,0 +1,27 @@
+Language;Family;Pronominal Gender System;Supported
+Malay;Austronesian;No;Yes
+Tagalog;Austronesian;No;No
+Estonian;Finno-Ugric;No;Yes
+Finnish;Finno-Ugric;No;Yes
+Hungarian;Finno-Ugric;No;Yes
+Armenian;Indo-European;No;Yes
+Bengali;Indo-European;No;Yes
+English;Indo-European;Yes;Yes
+Persian;Indo-European;Yes;Yes
+Maithili;Indo-Aryan;No;No
+Nepali;Indo-Aryan;No;Yes
+Oriya;Indo-Aryan;No;No
+Japanese;Other Natural Languages;No;Yes
+Korean;Other Natural Languages;Optional;Yes
+Turkish;Other Natural Languages;No;Yes
+Yoruba;Other Natural Languages;No;Yes
+Basque;Other Natural Languages;No;Yes
+Swahili;Other Natural Languages;No;Yes
+Chinese;Other Natural Languages;Optional;Yes
+Cantonese;Other Natural Languages;No;No
+Pipil;Other Natural Languages;No;No
+Quechuan;Other Natural Languages;No;No
+Esperanto;Constructed Languages;Yes;Yes
+Ido;Constructed Languages;Optional;No
+Lingua Franca Nova;Constructed Languages;No;No
+Interlingua;Constructed Languages;No;No

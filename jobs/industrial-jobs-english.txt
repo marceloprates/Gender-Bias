@@ -1,0 +1,26 @@
+Auto mechanic
+Beader
+Filling station attendant
+Foreman
+Forewoman
+Maintenance engineering
+Mechanic
+Miller
+Moldmaker
+Panel beater
+Patternmaker
+Plant operator
+Plumber
+Sawfiler
+Shop foreman
+Shop forewoman
+Soaper
+Stationary engineer
+Wheelwright
+Woodworkers
+Bartender
+Waiter
+Waitress
+Construction worker
+Cashier
+Factory worker
