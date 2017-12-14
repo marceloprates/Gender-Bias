@@ -1,6 +1,10 @@
 
 \documentclass{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{float}
@@ -8,8 +12,10 @@
 \usepackage{dirtytalk}
 \usepackage{csquotes}
 \usepackage{amsmath}
-\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+%
+%
+%\usepackage{xltxtra}
 
 \title{Assessing Gender Bias in Machine Translation}
 \author{Marcelo Prates \and Luis Lamb}
@@ -54,8 +60,6 @@ With this in mind, we propose a quantitative analysis of the phenomenon of gende
 	\caption{Translating sentences from a gender neutral language such as Hungarian to English provides a glimpse into the phenomenon of gender bias in machine translation. This screenshot from Google Translate shows how occupations from traditionally male-dominated fields such as scholar, engineer and CEO are interpreted as male, while occupations such as nurse, baker and wedding organizer are interpreted as female.}
 \end{figure}
 
-
-
 \section{Motivation}
 
 \section{Methods}
@@ -66,7 +70,7 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	\centering
 	\begin{tabular}{|c|c|m{3cm}|c|}
 	\hline
-	Language Family & Language & Pronominal Gender System & Supported \\ \hline
+	Language Family & Language & Pronominal Gender System & Supported \\ \hline \hline
 	\multirow{2}{*}{Austronesian} & Malay & No & Yes \\
 	& Tagalog & No & \textbf{No} \\ \hline
 	\multirow{3}{*}{Finno-Ugric} & Estonian & No & Yes \\
@@ -101,7 +105,7 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	\centering
 	\begin{tabular}{|c|c|}
 	\hline
-	Category 		& \# Occupations 	\\ \hline
+	Category 		& \# Occupations 	\\ \hline \hline
 	Artistic 		& $102$ 			\\ \hline
 	Computer 		& $19$ 				\\ \hline
 	Corporate 		& $50$ 				\\ \hline
@@ -119,7 +123,62 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	\caption{Selected occupations obtained from the Wikipedia article \url{en.wikipedia.org/wiki/Lists_of_occupations}, grouped by category. We have selected a total of $453$ occupations from $11$ distinct groups (Artistic, Science, Service, etc.).}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+	\hline
+	Language 	& Sentence template \\ \hline \hline
+	Malay		& dia adalah $\langle occupation \rangle$ \\ \hline
+	Estonian	& ta on $\langle occupation \rangle$ \\ \hline
+	Finnish		& hän on $\langle occupation \rangle$ \\ \hline
+	Hungarian	& ő $\langle occupation \rangle$ \\ \hline
+	Armenian	& նա $\langle occupation \rangle$ է \\ \hline
+	Japanese	& は $\langle occupation \rangle$ です\\ \hline
+	Turkish		& o bir $\langle occupation \rangle$ \\ \hline
+	Yoruba		& o jẹ $\langle occupation \rangle$ \\ \hline
+	Basque		& $\langle occupation \rangle$ da \\ \hline
+	Swahili		& yeye ni $\langle occupation \rangle$ \\ \hline
+	Chinese		& ta $\langle occupation \rangle$ \\ \hline
+	\end{tabular}
+	\caption{Templates used to infer gender biases in the translation to the English language.}
+\end{table}
+
 \section{Results}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	Category & Female & Male & Neutral & Ratio & Total \\ \hline
+	\hline
+	Artistic        & 179    & 504  & 206     & 2.816 	& 918 \\ \hline
+	Computer        & 7      & 125  & 39      & 17.857 	& 171 \\ \hline
+	Corporate       & 36     & 340  & 74      & 9.444 	& 450 \\ \hline
+	Dance           & 31     & 33   & 17      & 1.064 	& 81  \\ \hline
+	Film-television & 54     & 125  & 55      & 2.315 	& 234 \\ \hline
+	Healthcare      & 174    & 475  & 130     & 2.730 	& 792 \\ \hline
+	Science         & 34     & 357  & 59      & 10.500 	& 450 \\ \hline
+	Service         & 5      & 63   & 22      & 12.600 	& 90  \\ \hline
+	Theatre         & 75     & 296  & 106     & 3.947 	& 477 \\ \hline
+	Writing         & 41     & 148  & 72      & 3.610 	& 261 \\ \hline
+	\end{tabular}
+	\label{tab:gender-by-category}
+	\caption{Number of female, male and neutral pronominal genders per occupation category in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to $\approx 18$ occurrences of male pronouns for each of a female one.}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{pictures/gender-by-category}
+	\label{fig:gender-by-category}
+	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $\approx 73\%$ in computer related jobs and $\approx 76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{pictures/gender-by-language}
+	\label{fig:gender-by-language}
+	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $\approx 73\%$ in computer related jobs and $\approx 76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+\end{figure}
 
 \section{Discussion}
 

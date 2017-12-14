@@ -1,7 +1,9 @@
 
 from googletrans import Translator
+from xpinyin import Pinyin
 
 translator = Translator()
+p = Pinyin()
 
 def get_gender(occupation,language):
 
@@ -21,8 +23,8 @@ def get_gender(occupation,language):
 	#	translation = translator.translate('dia adalah %s' % occupation,dest='en').text
 	#else if(language == 'Nepali'):
 	#	translation = translator.translate('dia adalah %s' % occupation,dest='en').text
-	#elif(language == 'Japanese'):
-	#	translation = translator.translate('あいつ %s' % occupation, src=language, dest='en').text
+	elif(language == 'Japanese'):
+		translation = translator.translate('は %s です' % occupation, src=language, dest='en').text
 	#elif(language == 'Korean'):
 	#	translation = translator.translate('그는 %s' % occupation, src=language, dest='en').text
 	elif(language == 'Turkish'):
@@ -33,23 +35,23 @@ def get_gender(occupation,language):
 		translation = translator.translate('%s da' % occupation, src=language, dest='en').text
 	elif(language == 'Swahili'):
 		translation = translator.translate('yeye ni %s' % occupation, src=language, dest='en').text
-	#elif(language == 'Chinese'):
-	#	translation = translator.translate('tā %s' % occupation, src='zh-cn', dest='en').text
+	elif(language == 'Chinese'):
+		translation = translator.translate('ta %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
 
 	translation = translation.lower()
 
-	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1):
+	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1):
 		return 'Female'
-	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1):
+	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1):
 		return 'Male'
 	else:
-		return '?'
+		return 'Neutral'
 
 with open('jobs.csv','r') as jobs:
-	with open('job-genders.csv','w') as output:
+	with open('job-genders-2.csv','w') as output:
 
 		languages = list(map(lambda x: x.rstrip(), jobs.readline().split(';')[2:]))
-		discarded_languages = ['Bengali','Nepali','Japanese','Korean','Chinese']
+		discarded_languages = ['Bengali','Nepali','Korean']
 
 		# Write header
 		output.write('category')
