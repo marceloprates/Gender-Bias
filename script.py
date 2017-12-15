@@ -13,9 +13,9 @@ with open('languages.csv', 'r') as f:
     		languages.append(language)
 
 # Initialize job categories list
-job_categories = ["artistic","computer","corporate","dance","film-television","healthcare","science","service","theatre","writing"]
+job_categories = ["artistic","computer","corporate","dance","film-television","healthcare","industrial","science","service","theatre","writing"]
 
-with open('jobs.csv', 'w') as output:
+with open('jobs-2.csv', 'w') as output:
 
 	output.write('category')
 	output.write(';english')

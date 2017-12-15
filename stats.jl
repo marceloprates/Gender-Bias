@@ -2,7 +2,7 @@
 using DataFrames, CSV, Gadfly
 
 # Read job-genders.csv into a Julia DataFrame
-dat = CSV.read("job-genders-2.csv",delim=';',nullable=false)
+dat = CSV.read("job-genders.csv",delim=';',nullable=false)
 
 # Compute results table (grouped by occupation, averaged among languages)
 results_by_occupation = DataFrame(Occupation=[],Category=[],Ratio=[],Neutral=[])

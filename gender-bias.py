@@ -48,7 +48,7 @@ def get_gender(occupation,language):
 		return 'Neutral'
 
 with open('jobs.csv','r') as jobs:
-	with open('job-genders-2.csv','w') as output:
+	with open('job-genders.csv','w') as output:
 
 		languages = list(map(lambda x: x.rstrip(), jobs.readline().split(';')[2:]))
 		discarded_languages = ['Bengali','Nepali','Korean']
@@ -64,16 +64,18 @@ with open('jobs.csv','r') as jobs:
 		# For each job, translate into each language and fetch the corresponding gender
 		for line in jobs:
 			category = line.split(';')[0]
-			english_name = line.split(';')[1]
+			occupation = line.split(';')[1]
 			foreign_names = list(map(lambda x: x.rstrip(), line.split(';')[2:]))
 
+			print(occupation)
+
 			output.write('%s' % category)
-			output.write(';%s' % english_name)
+			output.write(';%s' % occupation)
 	
-			for (language,occupation) in zip(languages,foreign_names):
+			for (language,foreign_name) in zip(languages,foreign_names):
 				if(language not in discarded_languages):
 					try:
-						gender = get_gender(occupation,language)
+						gender = get_gender(foreign_name,language)
 						output.write(';%s' % gender)
 					except ValueError:
 						output.write(';?')

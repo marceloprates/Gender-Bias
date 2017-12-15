@@ -288,11 +288,37 @@ healthcare;nurse-midwife;jururawat-bidan;õde-ämmaemand;sairaanhoitaja-kätilö
 healthcare;general doctor;doktor am;üldarst;yleinen lääkäri;általános orvos;ընդհանուր բժիշկ;সাধারণ ডাক্তার;सामान्य डाक्टर;一般医;일반 의사;genel doktor;dokita gbogboogbo;mediku orokorra;daktari mkuu;一般医生
 healthcare;bariatric surgeon;pakar bedah bariatric;bariatria kirurg;bariatric kirurgi;bariatric sebész;բարիոլոգիական վիրաբույժ;বারিয়াত্ত্রিক সার্জন;बायोट्राट्रिक सर्जन;肥満外科医;외과 의사;bariatrik cerrah;oṣuwọn ti o wa ni bariatric;bariatric zirujau;upasuaji wa bariatric;肥胖的外科医生
 healthcare;cardiothoracic surgeon;pakar bedah kardiotorasik;kardiotorakuline kirurg;kardiolääketieteellinen kirurgi;cardiothoracic sebész;սրտագեղձի վիրաբույժ;কার্ডিওথোরাসিক সার্জন;cardiothoracic सर्जन;胸腔鏡外科医;흉부 외과 의사;kardiyotorasik cerrah;oṣuwọn oníṣẹ ẹjẹ cardiothoracic;zirujau kardiobaskularra;upasuaji wa cardiothoracic;心胸外科医生
-healthcare;cardiac surgeon;pakar bedah jantung;südame kirurg;sydänkirurgi;szívsebész;սրտի վիրաբույժ;কার্ডিয়াক সার্জন;हृदय रोग सर्जन;心臓外科医;심장 외과 의사;kalp cerrahı;onise-aisan okan;bihotz zirujauak;upasuaji wa moyo;心脏外科医生
+healthcare;cardiac surgeon;pakar bedah jantung;südame kirurg;sydänkirurgi;szívsebész;սրտի վիրաբույժ;কার্ডিয়াক সার্জন;हृदय रोग सर्जन;心臓外科医;심장 외과 의사;kalp cerrahı;onise-aisan okan;bihotz zirujau;upasuaji wa moyo;心脏外科医生
 healthcare;hepatic biliary pancreatic surgeon;pakar bedah pankreas hepatik;maksa sapiteede pankrease kirurg;maksan sappitoireyhtymä;májgyulladásos hasnyálmirigy;բջջային ուղեղային պարանոցի վիրաբույժ;হিপ্যাটিক বিলিয়েরি প্যানক্রাসিক সার্জন;हेपिटिक बिलियन प्यान्रेreatreat सर्जन;肝胆道膵臓外科医;간 담즙 성 췌장 전문의;hepatik biliyer pankreas cerrahı;ọmọ-ẹlẹsẹ pancreatic ti biliary biliary;biriketako hanturazko pankreako zirujauak;hepatic upasuaji wa upasuaji wa biliary;肝胆胰外科医生
 healthcare;neurosurgeon;neurosurgeon;neurokirurg;neurokirurgi;idegsebész;նյարդավիրաբույժ;নিউরোসার্জন;neurosurgeon;神経外科医;신경 외과 의사;beyin cerrahı;neurosurgeon;neurozirujau;neurosurgeon;神经外科医生
 healthcare;podiatric surgeon;pakar bedah podiatrik;podiaatri kirurg;jalkaterapeutin kirurgi;pajzsmirigy sebész;podiatric վիրաբույժ;পোডট্রিক সার্জন;पोडियट्रिक सर्जन;足病院外科医;발 전문의;podiatrik cerrah;adẹtẹ alabọde;podiatrikako zirujau;upasuaji wa podiatria;足外科医生
 healthcare;urologist;urologi;uroloog;urologi;urológus;ուրոլոգը;ইউরোলজিস্ট;urologist;泌尿器科医;비뇨기과 의사;ürolog;urologist;urologist;urolojia;泌尿科医师
+industrial;auto mechanic;mekanik auto;auto mehaanik;automekaanikko;autószerelő;ավտոմեխանիկա;অটো মেকানিক;स्वतन्त्र मेकानिक;自動車整備士;자동 기계;araba tamircisi;alakikan moto;auto-mekanikaria;auto mechanic;汽车修理工
+industrial;beader;beader;beader;helmenmuodostimen;beader;բաճկոն;beader;बियर;ビーダー;비더;boncuklama yapanlar;beader;beader;beader;细粒造粒机
+industrial;filling station attendant;mengisi petugas stesen;täitmisjaama saatja;täyttöaseman hoitajalle;töltőállomás kísérője;բենզալցակայան սպասարկող;স্টেশন পরিচর্যা ভর্তি;भरने स्टेशन उपस्थित;フィリングステーションアテンダント;주유소 수행자;dolum istasyonu görevlisi;aṣoju ibudo itẹju;geltokia geltoki betez;kujaza mtumishi wa kituo;加油站服务员
+industrial;foreman;mandor;meister;työnjohtaja;művezető;բժիշկ;মোড়ল;फोरमैन;フォアマン;십장;ustabaşı;oniwaju;foreman;msimamizi;领班
+industrial;forewoman;pendahuluan;eestlane;työnjohtaja;művezetőnő;կանխամտածված;সর্দারনী;अगुवा;前妻;여자 십장;baş kalfa kadın;akọkọ;forewoman;mtangulizi;领班
+industrial;maintenance engineering;kejuruteraan penyenggaraan;hooldustehnoloogia;huoltotekniikka;karbantartási technika;սպասարկման տեխնիկա;রক্ষণাবেক্ষণ প্রকৌশল;रखरखाव ईञ्जिनियर;メンテナンス工学;유지 보수 공학;bakım mühendisliği;itọnisọna itọju;mantentze ingeniaritza;uhandisi wa matengenezo;维修工程
+industrial;mechanic;mekanik;mehaanik;mekaaninen;szerelő;մեխանիկ;মিস্ত্রি;मेकानिक;メカニック;정비공;mekanik;mekaniki;mekanikari;mashine;机械
+industrial;miller;pengilang;freespink;mylläri;molnár;մուլեր;মিলের শ্রমিক;मिलर;ミラー;밀러;değirmenci;miller;errotaria;miller;磨坊主
+industrial;moldmaker;pembentuk acuan;hallitussepp;muotintekijä;moldmaker;կաղապարիչ;moldmaker;moldmaker;金型メーカー;금형 제작자;kalıp yapımcısı;moldmaker;moldmaker;moldmaker;模具制造商
+industrial;panel beater;pemukul panel;paneelmaja;paneelimurtaja;sufnituningoló;վահանակ;প্যানেল আঘাতকারী;प्यानल बटर;パネルビーター;패널 비터;araç tamircisi;alakoso paner;panela irabiagailua;jopo la jopo;面板打浆机
+industrial;patternmaker;pembuat pola;mustritootja;mallimestarityön;mintázatkészítő;օրինաչափություն;প্যাটার্ন প্রস্তুতকারক;ढाँचामेकर;パターンメーカー;패턴 제작자;döküm kalıpçısı, modelci;alapata;patternmaker;patternmaker;patternmaker
+industrial;plant operator;pengendali loji;tehase operaator;laitosoperaattori;üzemvezető;բույսերի օպերատոր;উদ্ভিদ অপারেটর;संयंत्र परिचालक;プラントオペレータ;공장 운영자;tesis operatörü;oniṣẹ ẹrọ ọgbin;landare operadorea;mmea wa mmea;工厂操作员
+industrial;plumber;tukang paip;torulukksepp;putkimies;vízvezeték-szerelő;ջրմուղագործ;সীসক;प्लम्बर;配管;배관공;tesisatçı;plumber;algortako;plumber;水管工人
+industrial;sawfiler;sawfiler;saepurber;sawfiler;sawfiler;sawfiler;sawfiler;sawfiler;ソーファイラー;톱질 자;sawfiler;olufitiwo;sawfiler;sawfiler;sawfiler
+industrial;shop foreman;kedai mandian;pood meister;myymäläpäällikkö;boltvezető;խանութի բեմադրիչ;দোকান ফরম্যান;पसल फोरम;店長;상사;dükkan ustalığı;onisowo iṣowo;saltoki-saltzailea;msimamizi wa duka;店长
+industrial;shop forewoman;kedai perempuan;poe poissmees;shop forewoman;boltíves;խանութի համար;দোকান forewoman;पसल;ショップの女性;가게 앞 여자;dükkân forewoman;oniwoko abo;forewoman denda;mtangulizi wa duka;店女店员
+industrial;soaper;soaper;seep;soaper;ablakvizező;սուրճ;soaper;सस्ता;より柔らかい;더 부드럽게;soaper;soap;soaper;sabuni;皂洗机
+industrial;stationary engineer;jurutera pegun;statsionaarne insener;kiinteä insinööri;helyhez kötött mérnök;կայուն ինժեներ;স্থায়ী প্রকৌশলী;स्थिर ईन्जिनियर;固定エンジニア;고정 엔지니어;sabit mühendis;idena oju-iwe;ingeniari geldikaria;mhandisi wa stationary;固定工程师
+industrial;wheelwright;wheelwright;ratastraktor;wheelwright;bognár;անդրանիկ գրիչ;চাকা ও চাকাওয়ালা গাড়ির;व्हीलवाइट;ホイールライト;수레 목수;tekerlekçi;kẹkẹ;wheelwright;gurudumu;车匠
+industrial;woodworkers;tukang kayu;puidutöötlejad;puusepät;asztalosok;փայտամշակիչներ;ছুতোরদের;woodworkers;木工労働者;목공예가;marangozlar;awọn oṣiṣẹ igi;woodworkers;wazalishaji;木工
+industrial;bartender;bartender;baarimees;baarimikko;csapos;բարմեն;মদের দোকানের পরিবেষক;बार्टिनर;バーテンダー;바텐더;barmen;bartender;bartender;bartender;酒保
+industrial;waiter;pelayan;kelner;tarjoilija;pincér;մատուցողը;ওয়েটার;वेटर;ウェイター;웨이터;garson;oluduro;zerbitzari;mhudumu;服务员
+industrial;waitress;pelayan;ettekandja;tarjoilija;pincérnő;մատուցողուհի;ওয়েট্রেস;वेट्रेस;ウェイトレス;웨이트리스;bayan garson;waitress;zerbitzari;mhudumu;小姐
+industrial;construction worker;pekerja pembinaan;ehitustööline;rakennustyöläinen;építőipari munkás;շինարարական բանվոր;নির্মাণ শ্রমিক;निर्माण कार्यकर्ता;建設労働者;건설 노동자;inşaat işçisi;oṣiṣẹ igbimọ;eraikuntza langilea;mjenzi;建筑工人
+industrial;cashier;juruwang;kassapidaja;kassanhoitaja;pénztáros;գանձապահ;কোষাধ্যক্ষ;कैशियर;レジ;출납원;kasiyer;owo-owo;kutxazainak;cashier;出纳员
+industrial;factory worker;pekerja kilang;tehasetööline;tehdastyöntekijä;gyári munkás;գործարանի աշխատող;কারখানা শ্রমিক;औद्योगिक कामदार;工場労働者;공장 노동자;fabrika işçisi;osise ile ise;fabrikako langilea;mfanyakazi wa kiwanda;工厂员工
 science;educational technologist;ahli teknologi pendidikan;haridustehnoloog;koulutusteknikko;oktatási technológus;կրթական տեխնոլոգ;শিক্ষা প্রযুক্তিবিদ;शैक्षिक टेक्नोलोजी;教育技術者;교육 기술자;eğitim teknisyeni;olukọ imọ-ẹkọ ẹkọ;hezkuntza teknologoa;teknolojia ya elimu;教育技术人员
 science;engineer;jurutera;insener;insinööri;mérnök;ինժեներ;প্রকৌশলী;ईन्जिनियर;エンジニア;기사;mühendis;onise ẹrọ;ingeniaria;mhandisi;工程师
 science;engineering technician;juruteknik kejuruteraan;insenertehnik;tekninen teknikko;mérnöki szakember;ինժեներական տեխնիկ;প্রকৌশল টেকনিশিয়ান;ईन्जिनियरिङ् टेक्नीशियन;エンジニアリング技術者;공학 기술자;mühendislik teknisyeni;onise-ẹrọ imọ-ẹrọ;ingeniaritza teknikoa;teknolojia ya uhandisi;工程技术人员
@@ -401,7 +427,7 @@ theatre;literary manager;pengurus sastera;kirjandusjuht;kirjallisuudenhoitaja;ir
 theatre;company manager;pengurus syarikat;ettevõtte juht;yrityksen johtaja;cég menedzser;ընկերության ղեկավար;কোম্পানির ব্যবস্থাপক;कम्पनी प्रबन्धक;会社のマネージャー;회사 매니저;şirket yöneticisi;oluṣakoso ile-iṣẹ;enpresako zuzendaria;meneja wa kampuni;公司经理
 theatre;house manager;pengurus rumah;majajuht;päällikkö;házigazda;տնային կառավարիչ;হাউস ম্যানেজার;घर प्रबन्धक;ハウスマネージャー;주택 관리자;ev yöneticisi;oluṣakoso ile;etxea kudeatzailea;meneja wa nyumba;房子经理
 theatre;usher;usher;usher;vahtimestari;jegyszedő;երեխա;নকীব;उहा;案内人;수위;yer gösterici;usher;usher;tumia;招待员
-theatre;ticketing agent;ejen tiket;piletimüügiagent;lipputoimisto;ticketing ügynök;տոմսարկղի գործակալ;টিকিট এজেন্ট;टिकट एजेन्सी;発券代理店;발권 대리인;bilet ajan;tikẹti tiketi tikẹti;txartel-agentea;wakala wa tiketi;票务代理
+theatre;ticketing agent;ejen tiket;piletimüügiagent;lipunmyyntiedustaja;ticketing ügynök;տոմսարկղի գործակալ;টিকিট এজেন্ট;टिकट एजेन्सी;発券代理店;발권 대리인;bilet ajan;tikẹti tiketi tikẹti;txartel-agentea;wakala wa tiketi;票务代理
 theatre;janitor;janitor;majahoidja;talonmies;gondnok;պահակախումբ;তত্ত্বাবধায়ক;janitor;管理人;관리인;kapıcı;janitor;janitor;mtunzaji;门警
 theatre;stage crew;kru panggung;etapiviisiline meeskond;vaiheen miehistö;színpadi személyzet;բեմական անձնակազմը;নাট্য কর্মী;चरण चालक दल;ステージクルー;무대 승무원;sahne ekibi;ipele atokọ;etapa taldea;wafanyakazi wa ngazi;舞台剧组
 theatre;grips;genggaman;käepidemed;kahvat;markolatok;բռնակներ;বাণিজ্য;grips;グリップ;그립;kulplar;grips;kirtenak;huwa;交手

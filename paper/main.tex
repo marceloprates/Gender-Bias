@@ -64,7 +64,9 @@ With this in mind, we propose a quantitative analysis of the phenomenon of gende
 
 \section{Methods}
 
-We believe that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. Specifically, we can translate sentences such as the Hungarian \say{ő ápolónő}, where \say{ápolónő} translates to \say{nurse} and \say{ő} is a gender-neutral pronoun meaning either he, she or it, to English, yielding in this example the result \say{she's a nurse}. The same structure can be 
+We believe that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. Specifically, we can translate sentences such as the Hungarian \say{ő ápolónő}, where \say{ápolónő} translates to \say{nurse} and \say{ő} is a gender-neutral pronoun meaning either he, she or it, to English, yielding in this example the result \say{she's a nurse} in Google Translate. The same basic template can be ported to all other gender neutral languages, as Table \ref{tab:templates} shows. Given the success of Google Translate, which amounts to 200 million users daily, we have decided to exploit its API to obtain the desired thermometer of gender bias. Also, in order to solidify our results, we have decided to work with as many gender neutral languages as possible, obtaining a list of these from the Wikipedia article \url{https://en.wikipedia.org/wiki/Gender_neutrality_in_genderless_languages}. Table \ref{tab:gender-neutral-languages} compiles all languages from said article, with additional columns informing whether they 1) exhibit a pronominal gender system and 2) are supported by Google Translate. Because pronominal gender systems defy the purposes of our technique, such languages have been discarded.
+
+There is a prohibitively large class of nouns and adjectives that could in principle be substituted in the templates of Table \ref{tab:templates}. To simplify our dataset, we have decided to obtain a comprehensive list of professional occupations, which, we believe, are an interesting window into the nature of gender bias. Once again we resorted to a Wikipedia article (\url{https://en.wikipedia.org/wiki/Lists_of_occupations}) to collect this data, of which the statistics of occupations per category (Artistic, Corporate, Theatre, etc.) is shown in Table \ref{tab:occupations}. Finally, Table \ref{tab:occupations-examples} shows thirty examples of randomly selected occupations from our dataset.
 
 \begin{table}[H]
 	\centering
@@ -78,7 +80,7 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	& Hungarian & No & Yes \\ \hline
 	\multirow{4}{*}{Indo-European} & Armenian & No & Yes \\
 	& Bengali & No & Yes \\
-	& English & \textbf{Yes} & Yes \\
+	& English & \textbf{Yes} & Yes \\{}
 	& Persian & \textbf{Yes} & Yes \\ \hline
 	\multirow{3}{*}{Indo-Aryan} & Maithili & No & \textbf{No} \\
 	& Nepali & No & Yes \\
@@ -98,7 +100,8 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	& Lingua Franca Nova & No & \textbf{No} \\
 	& Interlingua & No & \textbf{No} \\ \hline
 	\end{tabular}
-	\caption{Selected gender neutral languages obtained from the Wikipedia article \url{en.wikipedia.org/wiki/Gender_neutrality_in_genderless_languages}. Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system. For the purposes of this work, we have decided to work only with languages lacking such a system, and as such Persian and Esperanto have been discarded. Because Tagalog, Maithili, Oriya, Cantonese, Pipil, Quechuan, Lingua Franca Nova and Interlingua lack support from Google Translate, these languages have also been ommitted from this work.}
+	\label{tab:gender-neutral-languages}
+	\caption{Selected gender neutral languages obtained from the Wikipedia article \url{https://en.wikipedia.org/wiki/Gender_neutrality_in_genderless_languages}. Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system. For the purposes of this work, we have decided to work only with languages lacking such a system, and as such Persian and Esperanto have been discarded. Because Tagalog, Maithili, Oriya, Cantonese, Pipil, Quechuan, Lingua Franca Nova and Interlingua lack support from Google Translate, these languages have also been ommitted from this work.}
 \end{table}
 
 \begin{table}[H]
@@ -118,9 +121,10 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	Theatre 		& $52$ 				\\ \hline
 	Writing 		& $29$ 				\\ \hline
 	\hline
-	Total			& $461$				\\ \hline
+	Total			& $436$				\\ \hline
 	\end{tabular}
-	\caption{Selected occupations obtained from the Wikipedia article \url{en.wikipedia.org/wiki/Lists_of_occupations}, grouped by category. We have selected a total of $453$ occupations from $11$ distinct groups (Artistic, Science, Service, etc.).}
+	\label{tab:occupations}
+	\caption{Selected occupations obtained from the Wikipedia article \url{https://en.wikipedia.org/wiki/Lists_of_occupations}, grouped by category. We have selected a total of $453$ occupations from $11$ distinct groups (Artistic, Science, Service, etc.).}
 \end{table}
 
 \begin{table}[H]
@@ -133,14 +137,34 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	Finnish		& hän on $\langle occupation \rangle$ \\ \hline
 	Hungarian	& ő $\langle occupation \rangle$ \\ \hline
 	Armenian	& նա $\langle occupation \rangle$ է \\ \hline
-	Japanese	& は $\langle occupation \rangle$ です\\ \hline
+	Japanese	& $\langle occupation \rangle$ です\\ \hline
 	Turkish		& o bir $\langle occupation \rangle$ \\ \hline
 	Yoruba		& o jẹ $\langle occupation \rangle$ \\ \hline
 	Basque		& $\langle occupation \rangle$ da \\ \hline
 	Swahili		& yeye ni $\langle occupation \rangle$ \\ \hline
 	Chinese		& ta $\langle occupation \rangle$ \\ \hline
 	\end{tabular}
+	\label{tab:templates}
 	\caption{Templates used to infer gender biases in the translation to the English language.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	stagehands & author & neurologist \\ \hline
+	screenwriter & animator & marketing director \\ \hline
+	biochemist & endocrinologist & freelancer \\ \hline
+	neurosurgeon & computer scientist & petrochemical engineer \\ \hline
+	food stylist & cardiothoracic surgeon & property master \\ \hline
+	literary editor & video editor & animation director \\ \hline
+	house manager & chief administrative officer & arts administration \\ \hline
+	actor & dialysis technician & family nurse practitioner \\ \hline
+	psychologist & chief creative officer & flash developer \\ \hline
+	scenic artist & producer & medical laboratory scientist \\ \hline
+	\end{tabular}
+	\label{tab:occupations-examples}
+	\caption{A randomly selected example subset of thirty occupations obtained from our dataset with a total of 436 different occupations.}
 \end{table}
 
 \section{Results}
