@@ -4,15 +4,28 @@ using DataFrames, CSV, Gadfly
 # Read job-genders.csv into a Julia DataFrame
 dat = CSV.read("job-genders-2.csv",delim=';',nullable=false)
 
-# Get list of occupation categories
-categories = unique(dat[:Category])
+# Compute results table (grouped by occupation, averaged among languages)
+results_by_occupation = DataFrame(Occupation=[],Category=[],Ratio=[],Neutral=[])
+for occupation in dat[:Occupation]
 
-# Initialize results table
-#results = DataFrame(Category=[],Female=[],Male=[],Neutral=[],Ratio=[],Total=[])
-#results = DataFrame(Category=[],Gender=[],Count=[])
+    aux = dat[ dat[:,:Occupation] .== occupation, : ]
+    
+    female_count    = sum([ count(x -> x=="Female",     aux[language]) for language in names(dat)[3:11] ])
+    male_count      = sum([ count(x -> x=="Male",       aux[language]) for language in names(dat)[3:11] ])
+    neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(dat)[3:11] ])
+    ratio           = male_count/female_count
+
+    push!(results_by_occupation, [occupation,ucfirst(aux[1,:Category]),ratio,100*neutral_count/(11-3+1)])
+end
+# Save scatter plot
+p = plot(results_by_occupation, x=:Ratio, y=:Neutral, color=:Category, Guide.xlabel("Sex Ratio"), Guide.ylabel("\% of Gender Neutral Pronouns"), Stat.x_jitter(range=2), Stat.y_jitter(range=2), Coord.Cartesian(xmin=0, xmax=10, ymin=0), Geom.point)
+draw(PDF("paper/pictures/scatterplot-languages.pdf", 5inch, 3.75inch),p)
 
 #=
-results = DataFrame(Category=[],Gender=[],Count=[])
+# Compute results table (grouped by category)
+# Get list of occupation categories
+categories = unique(dat[:Category])
+results_by_category = DataFrame(Category=[],Gender=[],Count=[])
 for category in categories
 
     aux = dat[dat[:,:Category] .== category, 3:11]
@@ -20,31 +33,31 @@ for category in categories
     female_count    = sum([ count(x -> x=="Female",     aux[language]) for language in names(aux) ])
     male_count      = sum([ count(x -> x=="Male",       aux[language]) for language in names(aux) ])
     neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(aux) ])
-    total           = sum([ count(x -> true,            aux[language]) for language in names(aux) ]
+    total           = sum([ count(x -> true,            aux[language]) for language in names(aux) ])
 
-    #push!(results,[ucfirst(category),female_count,male_count,neutral_count,male_count/female_count,total])
-    push!(results,[ucfirst(category),"Female",  100*female_count/total])
-    push!(results,[ucfirst(category),"Male",    100*male_count/total])
-    push!(results,[ucfirst(category),"Neutral", 100*neutral_count/total])
+    push!(results_by_category,[ucfirst(category),"Female",  100*female_count/total  ])
+    push!(results_by_category,[ucfirst(category),"Male",    100*male_count/total    ])
+    push!(results_by_category,[ucfirst(category),"Neutral", 100*neutral_count/total ])
 end
-=#
+# Save bar plot
+p = plot(results_by_category, x="Category", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
+draw(PDF("paper/pictures/gender-by-category.pdf", 5inch, 3.75inch),p)
 
-results = DataFrame(Language=[],Gender=[],Count=[])
-
+# Compute results table (grouped by languages)
+results_by_language = DataFrame(Language=[],Gender=[],Count=[])
 languages = names(dat)[3:end]
 for language in languages
-    female_count    = count(x -> x=="Female", dat[language])
-    male_count      = count(x -> x=="Male", dat[language])
-    neutral_count   = count(x -> x=="Neutral", dat[language])
-    total           = count(x -> true, dat[language])
-    push!(results,[language,"Female",   100*female_count/total    ])
-    push!(results,[language,"Male",     100*male_count/total      ])
-    push!(results,[language,"Neutral",  100*neutral_count/total   ])
+    
+    female_count    = count(x -> x=="Female",   dat[language])
+    male_count      = count(x -> x=="Male",     dat[language])
+    neutral_count   = count(x -> x=="Neutral",  dat[language])
+    total           = count(x -> true,          dat[language])
+    
+    push!(results_by_language,[language,"Female",   100*female_count/total    ])
+    push!(results_by_language,[language,"Male",     100*male_count/total      ])
+    push!(results_by_language,[language,"Neutral",  100*neutral_count/total   ])
 end
-
-println(results)
-#p = plot(results, x="Category", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
-#draw(PDF("paper/pictures/sex-ratio-hist.pdf", 5inch, 3.75inch),p)
-
-p = plot(results, x="Language", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
+# Save bar plot
+p = plot(results_by_language, x="Language", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
 draw(PDF("paper/pictures/gender-by-language.pdf", 5inch, 3.75inch),p)
+=#

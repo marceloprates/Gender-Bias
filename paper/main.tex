@@ -2,7 +2,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{fontspec}
+%\usepackage{fontspec}
 \usepackage{xeCJK}
 
 \usepackage{multirow}
@@ -161,6 +161,8 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	Service         & 5      & 63   & 22      & 12.600 	& 90  \\ \hline
 	Theatre         & 75     & 296  & 106     & 3.947 	& 477 \\ \hline
 	Writing         & 41     & 148  & 72      & 3.610 	& 261 \\ \hline
+	\hline
+	Total           & 636    & 2466 & 780     & 3.877   &    \\ \hline
 	\end{tabular}
 	\label{tab:gender-by-category}
 	\caption{Number of female, male and neutral pronominal genders per occupation category in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to $\approx 18$ occurrences of male pronouns for each of a female one.}
@@ -170,14 +172,45 @@ We believe that the phenomenon of gender bias in machine translation can be asse
 	\centering
 	\includegraphics[width=\linewidth]{pictures/gender-by-category}
 	\label{fig:gender-by-category}
-	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $\approx 73\%$ in computer related jobs and $\approx 76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $73\%$ in computer related jobs and $76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
 \end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	Language & Female & Male & Neutral & Ratio & Total \\ \hline
+	\hline
+	Malay     & 43     & 392  & 0       & 9.116 	& 436   \\ \hline
+	Estonian  & 121    & 309  & 0       & 2.554 	& 436   \\ \hline
+	Finnish   & 167    & 263  & 0       & 1.575 	& 436   \\ \hline
+	Hungarian & 174    & 255  & 2       & 1.465 	& 436   \\ \hline
+	Armenian  & 94     & 337  & 1       & 3.585 	& 436   \\ \hline
+	Japanese  & 2      & 207  & 222     & 103.500   & 436   \\ \hline
+	Turkish   & 19     & 368  & 44      & 19.368 	& 436   \\ \hline
+	Yoruba    & 11     & 290  & 131     & 26.364 	& 436   \\ \hline
+	Basque    & 5      & 45   & 380     & 9.000		& 436   \\ \hline
+	Swahili   & 68     & 363  & 0       & 5.338 	& 436   \\ \hline
+	Chinese   & 13     & 359  & 58      & 27.615 	& 436   \\ \hline
+	\hline
+	Total 	  & 717    & 3188 & 838     & 4.446     &   \\ \hline
+	\end{tabular}
+	\label{tab:gender-by-category}
+	\caption{Number of female, male and neutral pronominal genders per language in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in some languages such as Chinese, with almost 30 male pronouns for each female one.}
+\end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pictures/gender-by-language}
 	\label{fig:gender-by-language}
-	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $\approx 73\%$ in computer related jobs and $\approx 76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+	\caption{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.46\%$ and $2.98\%$ for Japanese and Chinese respectively. Some languages such as Japanese (and particularly Basque) were observed to yield a high number of neutral pronouns, but that is the exception rather than the rule among the tested idioms. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences.}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{pictures/scatterplot-languages}
+	\label{fig:scatterplot-languages}
+	\caption{Scatter plot of translated sentences' statistics. Each point (color coded according to its category) corresponds to a single occupation, of which the sex ratio and the percentage of gender neutral pronouns are averaged over all tested languages (Malay, Estonian, Finnish, Hungarian, Armenian, Japanese, Turkish, Yoruba, Basque, Swahili and Chinese).}
 \end{figure}
 
 \section{Discussion}

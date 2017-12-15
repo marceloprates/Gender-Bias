@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.23)  14 DEC 2017 17:01
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.9.2)  15 DEC 2017 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
-(/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.tex
+(/home/marcelo/Projects/Gender-Bias/paper/main.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -31,7 +31,7 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+) (/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2016/01/19 v6377 L3 programming layer (loader) 
 
@@ -145,25 +145,246 @@ L3 Module: l3luatex 2015/11/11 v6250 L3 Experimental LuaTeX-specific functions
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
 File: l3xdvidpfmx.def 2015/11/11 v6250 L3 Experimental driver: xdvipdfmx
 ))
+Package: xeCJK 2016/02/10 v3.3.4 Typesetting CJK scripts with XeLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2016/01/19 v6377 L3 Experimental prototype document function
+s
+\l__xtemplate_tmp_dim=\dimen134
+\l__xtemplate_tmp_int=\count109
+\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_skip=\skip49
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count109
-\l__xparse_m_args_int=\count110
-\l__xparse_mandatory_args_int=\count111
-\l__xparse_processor_int=\count112
-\l__xparse_v_nesting_int=\count113
+\l__xparse_current_arg_int=\count110
+\l__xparse_m_args_int=\count111
+\l__xparse_mandatory_args_int=\count112
+\l__xparse_processor_int=\count113
+\l__xparse_v_nesting_int=\count114
 )
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
+)
+\l__xeCJK_tmp_int=\count115
+\l__xeCJK_tmp_box=\box41
+\l__xeCJK_tmp_dim=\dimen135
+\l__xeCJK_tmp_skip=\skip50
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKShipoutHook with sig. '' on line 151.
+.................................................
+\g__xeCJK_spacefactor_int=\count116
+\l__xeCJK_begin_int=\count117
+\l__xeCJK_end_int=\count118
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKactive with sig. '' on line 380.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKinactive with sig. '' on line 381.
+.................................................
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareCharClass with sig. 's>{\TrimSpaces }mm' on
+. line 555.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_set_char_class_aux:Nnw with sig.
+. 'm>{\SplitArgument {1}{->}}m' on line 572.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \normalspacedchars with sig. 'm' on line 617.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetPunctClass with sig. '' on line 624.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetCharClass with sig. '' on line 632.
+.................................................
+\g__xeCJK_node_int=\count119
+\c__xeCJK_CJK_node_dim=\dimen136
+\c__xeCJK_CJK-space_node_dim=\dimen137
+\c__xeCJK_default_node_dim=\dimen138
+\c__xeCJK_default-space_node_dim=\dimen139
+\c__xeCJK_CJK-widow_node_dim=\dimen140
+\c__xeCJK_normalspace_node_dim=\dimen141
+\l__xeCJK_ccglue_skip=\skip51
+\l__xeCJK_ecglue_skip=\skip52
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreak with sig. '' on line 1409.
+.................................................
+\l__xeCJK_widow_penalty_int=\count120
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareSubCJKBlock with sig. 's>{\TrimSpaces
+. }m>{\TrimSpaces }m' on line 1605.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKCancelSubCJKBlock with sig. 'sm' on line 1616.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKRestoreSubCJKBlock with sig. 'sm' on line 1625.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetwidth with sig. 'smm' on line 1723.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetkern with sig. 'mmm' on line 1727.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'xeCJK/punctuation' taking \c_zero  argument(s) on
+. line 1828.
+.................................................
+\l__xeCJK_fixed_punct_width_dim=\dimen142
+\l__xeCJK_mixed_punct_width_dim=\dimen143
+\l__xeCJK_middle_punct_width_dim=\dimen144
+\l__xeCJK_fixed_margin_width_dim=\dimen145
+\l__xeCJK_mixed_margin_width_dim=\dimen146
+\l__xeCJK_middle_margin_width_dim=\dimen147
+\l__xeCJK_bound_punct_width_dim=\dimen148
+\l__xeCJK_bound_margin_width_dim=\dimen149
+\l__xeCJK_margin_minimum_dim=\dimen150
+\l__xeCJK_kerning_total_width_dim=\dimen151
+\l__xeCJK_same_align_margin_dim=\dimen152
+\l__xeCJK_different_align_margin_dim=\dimen153
+\l__xeCJK_kerning_margin_width_dim=\dimen154
+\l__xeCJK_kerning_margin_minimum_dim=\dimen155
+\l__xeCJK_bound_dim=\dimen156
+\l__xeCJK_reverse_bound_dim=\dimen157
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclarePunctStyle with sig. '>{\TrimSpaces }mm' on
+. line 2313.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKEditPunctStyle with sig. '>{\TrimSpaces }mm' on line
+. 2326.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfallbackfamilyfont with sig. 'mO{}m' on line 2414.
+.................................................
+\g__xeCJK_family_int=\count121
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfamily with sig. 't+t-m' on line 2838.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_gobble_CJKfamily:wn with sig. 't+t-m' on line
+. 2852.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmainfont with sig. 'O{}m' on line 2902.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKsansfont with sig. 'O{}m' on line 2908.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmonofont with sig. 'O{}m' on line 2913.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfamilyfont with sig. 'mO{}m' on line 2920.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newCJKfontfamily with sig. 'omO{}m' on line 2926.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfontspec with sig. 'O{}m' on line 2931.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultCJKfontfeatures with sig. 'm' on line 2954.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addCJKfontfeatures with sig. 'sO{}m' on line 2960.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmathfont with sig. 'O{}m' on line 3130.
+.................................................
+\l__xeCJK_verb_case_int=\count122
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKVerbAddon with sig. '' on line 3283.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKOffVerbAddon with sig. '' on line 3287.
+.................................................
+\l__xeCJK_verb_exspace_skip=\skip53
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
 X
-\l_fontspec_script_int=\count114
-\l_fontspec_language_int=\count115
-\l_fontspec_strnum_int=\count116
-\l__fontspec_tmpa_dim=\dimen134
-\l__fontspec_tmpb_dim=\dimen135
-\l__fontspec_tmpc_dim=\dimen136
+\l_fontspec_script_int=\count123
+\l_fontspec_language_int=\count124
+\l_fontspec_strnum_int=\count125
+\l__fontspec_tmpa_dim=\dimen158
+\l__fontspec_tmpb_dim=\dimen159
+\l__fontspec_tmpc_dim=\dimen160
 \g__file_internal_ior=\read1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -193,7 +414,7 @@ LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
 (/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmss.fd
 File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-\tipaTiiicode=\count117
+\tipaTiiicode=\count126
 \tipasavetokens=\toks16
 \tipachecktokens=\toks17
 
@@ -225,8 +446,8 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )))
-\Gin@req@height=\dimen137
-\Gin@req@width=\dimen138
+\Gin@req@height=\dimen161
+\Gin@req@width=\dimen162
 ))
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -333,15 +554,15 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 . 
 . Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
 .................................................
-\l__fontspec_tmp_int=\count118
+\l__fontspec_tmp_int=\count127
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)
 LaTeX Info: Redefining \itshape on input line 2705.
 LaTeX Info: Redefining \slshape on input line 2710.
 LaTeX Info: Redefining \scshape on input line 2715.
 LaTeX Info: Redefining \upshape on input line 2720.
-\l__fontspec_em_int=\count119
-\l__fontspec_emdef_int=\count120
+\l__fontspec_em_int=\count128
+\l__fontspec_emdef_int=\count129
 LaTeX Info: Redefining \em on input line 2736.
 LaTeX Info: Redefining \emph on input line 2742.
 LaTeX Info: Redefining \- on input line 2746.
@@ -356,227 +577,6 @@ LaTeX Info: Redefining \- on input line 2746.
 . Defining command \liningnums with sig. 'm' on line 2845.
 .................................................
 ))
-(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
-Package: xeCJK 2016/02/10 v3.3.4 Typesetting CJK scripts with XeLaTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
-Package: xtemplate 2016/01/19 v6377 L3 Experimental prototype document function
-s
-\l__xtemplate_tmp_dim=\dimen139
-\l__xtemplate_tmp_int=\count121
-\l__xtemplate_tmp_muskip=\muskip16
-\l__xtemplate_tmp_skip=\skip49
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
-)
-\l__xeCJK_tmp_int=\count122
-\l__xeCJK_tmp_box=\box41
-\l__xeCJK_tmp_dim=\dimen140
-\l__xeCJK_tmp_skip=\skip50
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKShipoutHook with sig. '' on line 151.
-.................................................
-\g__xeCJK_spacefactor_int=\count123
-\l__xeCJK_begin_int=\count124
-\l__xeCJK_end_int=\count125
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \makexeCJKactive with sig. '' on line 380.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \makexeCJKinactive with sig. '' on line 381.
-.................................................
-\c__xeCJK_CJK_class_int=\XeTeXcharclass1
-\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
-\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
-\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
-\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
-\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
-\c__xeCJK_CM_class_int=\XeTeXcharclass7
-\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKDeclareCharClass with sig. 's>{\TrimSpaces }mm' on
-. line 555.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \__xeCJK_set_char_class_aux:Nnw with sig.
-. 'm>{\SplitArgument {1}{->}}m' on line 572.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \normalspacedchars with sig. 'm' on line 617.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKResetPunctClass with sig. '' on line 624.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKResetCharClass with sig. '' on line 632.
-.................................................
-\g__xeCJK_node_int=\count126
-\c__xeCJK_CJK_node_dim=\dimen141
-\c__xeCJK_CJK-space_node_dim=\dimen142
-\c__xeCJK_default_node_dim=\dimen143
-\c__xeCJK_default-space_node_dim=\dimen144
-\c__xeCJK_CJK-widow_node_dim=\dimen145
-\c__xeCJK_normalspace_node_dim=\dimen146
-\l__xeCJK_ccglue_skip=\skip51
-\l__xeCJK_ecglue_skip=\skip52
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKnobreak with sig. '' on line 1409.
-.................................................
-\l__xeCJK_widow_penalty_int=\count127
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKDeclareSubCJKBlock with sig. 's>{\TrimSpaces
-. }m>{\TrimSpaces }m' on line 1605.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKCancelSubCJKBlock with sig. 'sm' on line 1616.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKRestoreSubCJKBlock with sig. 'sm' on line 1625.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKsetwidth with sig. 'smm' on line 1723.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKsetkern with sig. 'mmm' on line 1727.
-.................................................
-.................................................
-. xtemplate info: "declare-object-type"
-. 
-. Declaring object type 'xeCJK/punctuation' taking \c_zero  argument(s) on
-. line 1828.
-.................................................
-\l__xeCJK_fixed_punct_width_dim=\dimen147
-\l__xeCJK_mixed_punct_width_dim=\dimen148
-\l__xeCJK_middle_punct_width_dim=\dimen149
-\l__xeCJK_fixed_margin_width_dim=\dimen150
-\l__xeCJK_mixed_margin_width_dim=\dimen151
-\l__xeCJK_middle_margin_width_dim=\dimen152
-\l__xeCJK_bound_punct_width_dim=\dimen153
-\l__xeCJK_bound_margin_width_dim=\dimen154
-\l__xeCJK_margin_minimum_dim=\dimen155
-\l__xeCJK_kerning_total_width_dim=\dimen156
-\l__xeCJK_same_align_margin_dim=\dimen157
-\l__xeCJK_different_align_margin_dim=\dimen158
-\l__xeCJK_kerning_margin_width_dim=\dimen159
-\l__xeCJK_kerning_margin_minimum_dim=\dimen160
-\l__xeCJK_bound_dim=\dimen161
-\l__xeCJK_reverse_bound_dim=\dimen162
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKDeclarePunctStyle with sig. '>{\TrimSpaces }mm' on
-. line 2313.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKEditPunctStyle with sig. '>{\TrimSpaces }mm' on line
-. 2326.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKfallbackfamilyfont with sig. 'mO{}m' on line 2414.
-.................................................
-\g__xeCJK_family_int=\count128
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \CJKfamily with sig. 't+t-m' on line 2838.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \__xeCJK_gobble_CJKfamily:wn with sig. 't+t-m' on line
-. 2852.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKmainfont with sig. 'O{}m' on line 2902.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKsansfont with sig. 'O{}m' on line 2908.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKmonofont with sig. 'O{}m' on line 2913.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKfamilyfont with sig. 'mO{}m' on line 2920.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \newCJKfontfamily with sig. 'omO{}m' on line 2926.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \CJKfontspec with sig. 'O{}m' on line 2931.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \defaultCJKfontfeatures with sig. 'm' on line 2954.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \addCJKfontfeatures with sig. 'sO{}m' on line 2960.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \setCJKmathfont with sig. 'O{}m' on line 3130.
-.................................................
-\l__xeCJK_verb_case_int=\count129
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKVerbAddon with sig. '' on line 3283.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining command \xeCJKOffVerbAddon with sig. '' on line 3287.
-.................................................
-\l__xeCJK_verb_exspace_skip=\skip53
-
 (/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty
 Package: xunicode-addon 2016/02/10 v3.3.4 addon file for xunicode
 .................................................
@@ -1078,7 +1078,11 @@ ai-Regular}].
 . spec.: <->"[FandolKai-Regular.otf]/OT:"
 . - 'italic small caps'  (m/itsc) with NFSS spec.: 
 .................................................
-(/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.aux)
+(/home/marcelo/Projects/Gender-Bias/paper/main.aux
+
+LaTeX Warning: Label `tab:gender-by-category' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -1097,8 +1101,7 @@ LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 23.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 23.
-
-(/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -1181,8 +1184,8 @@ LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
 LaTeX Info: Redefining \nameref on input line 23.
 
-(/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.out)
-(/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.out)
+(/home/marcelo/Projects/Gender-Bias/paper/main.out)
+(/home/marcelo/Projects/Gender-Bias/paper/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -1235,11 +1238,14 @@ Missing character: There is no ա in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no է in font [lmroman10-regular]:mapping=tex-text!
  [6]
 File: pictures/gender-by-category.pdf Graphic file (type QTm)
- <use  "pictures/gender-by-category.pdf" > [7]
+ <use  "pictures/gender-by-category.pdf" > [7] [8]
 File: pictures/gender-by-language.pdf Graphic file (type QTm)
 
-<use  "pictures/gender-by-language.pdf" > [8]
-(/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.bbl [9]
+<use  "pictures/gender-by-language.pdf" > [9]
+File: pictures/scatterplot-languages.pdf Graphic file (type QTm)
+
+<use  "pictures/scatterplot-languages.pdf" > [10]
+(/home/marcelo/Projects/Gender-Bias/paper/main.bbl [11]
 Underfull \hbox (badness 2717) in paragraph at lines 65--71
 \EU1/lmr/m/n/10 chine bias: There’s software used across the country to predict
 
@@ -1258,22 +1264,26 @@ al-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
- (/home/marcelo/Desktop/Projects/Gender-Bias/paper/main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 188.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 188.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+ (/home/marcelo/Projects/Gender-Bias/paper/main.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 221.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
  ) 
 Here is how much of TeX's memory you used:
- 24880 strings out of 493638
- 458047 string characters out of 6146796
- 495100 words of memory out of 5000000
- 28089 multiletter control sequences out of 15000+600000
+ 24883 strings out of 493638
+ 458005 string characters out of 6146797
+ 495169 words of memory out of 5000000
+ 28091 multiletter control sequences out of 15000+600000
  8032 words of font info for 50 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 48i,10n,78p,10362b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,10n,78p,10411b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/marcelo/Desktop/Projects/Gender-Bias/paper/main.pdf (10
- pages).
+Output written on /home/marcelo/Projects/Gender-Bias/paper/main.pdf (12 pages).
+
