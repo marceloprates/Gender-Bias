@@ -3,6 +3,11 @@ using DataFrames, CSV, StatsBase
 
 dat = CSV.read("jobs.csv",delim=';',nullable=false)
 
+for category in unique(dat[:Category])
+    println("$category $( length(dat[ dat[:,:Category] .== category, :Occupation ]) )")
+end
+
+#=
 n,m = 10,3
 occupations = sample(dat[:Occupation],n*m,replace=false)
 
@@ -18,3 +23,4 @@ for i=1:n
     println(output,"\\\\ \\hline")
 end
 close(output)
+=#
