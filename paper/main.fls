@@ -192,6 +192,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/gender-by-category.pdf
 INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/gender-by-language.pdf
 INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/scatterplot-languages.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/histogram-female.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/histogram-male.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/histogram-neutral.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/pictures/barplot-adjectives.pdf
 INPUT /home/marcelo/Projects/Gender-Bias/paper/main.bbl
 INPUT /home/marcelo/Projects/Gender-Bias/paper/main.bbl
 INPUT /home/marcelo/Projects/Gender-Bias/paper/main.aux

@@ -19,14 +19,8 @@ def get_gender(occupation,language):
 		translation = translator.translate('ő %s' % occupation, src=language, dest='en').text
 	elif(language == 'Armenian'):
 		translation = translator.translate('նա %s է' % occupation, src=language, dest='en').text
-	#else if(language == 'Bengali'):
-	#	translation = translator.translate('dia adalah %s' % occupation,dest='en').text
-	#else if(language == 'Nepali'):
-	#	translation = translator.translate('dia adalah %s' % occupation,dest='en').text
 	elif(language == 'Japanese'):
 		translation = translator.translate('は %s です' % occupation, src=language, dest='en').text
-	#elif(language == 'Korean'):
-	#	translation = translator.translate('그는 %s' % occupation, src=language, dest='en').text
 	elif(language == 'Turkish'):
 		translation = translator.translate('o bir %s' % occupation, src=language, dest='en').text
 	elif(language == 'Yoruba'):
@@ -49,10 +43,10 @@ def get_gender(occupation,language):
 	else:
 		return '?'
 
-with open('jobs.csv','r') as jobs:
+with open('jobs.csv','r') as adjectives:
 	with open('job-genders.csv','w') as output:
 
-		languages = list(map(lambda x: x.rstrip(), jobs.readline().split(';')[2:]))
+		languages = list(map(lambda x: x.rstrip(), adjectives.readline().split(';')[1:]))
 		discarded_languages = ['Bengali','Nepali','Korean']
 
 		# Write header
@@ -64,15 +58,15 @@ with open('jobs.csv','r') as jobs:
 		output.write('\n')
 	
 		# For each job, translate into each language and fetch the corresponding gender
-		for line in jobs:
+		for line in adjectives:
 			category = line.split(';')[0]
 			occupation = line.split(';')[1]
-			foreign_names = list(map(lambda x: x.rstrip(), line.split(';')[2:]))
-
-			print(occupation)
+			foreign_names = list(map(lambda x: x.rstrip(), line.split(';')[1:]))
 
 			output.write('%s' % category)
 			output.write(';%s' % occupation)
+
+			output.write('%s' % english_name)
 	
 			for (language,foreign_name) in zip(languages,foreign_names):
 				if(language not in discarded_languages):

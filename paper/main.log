@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.9.1)  15 DEC 2017 17:12
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.9.2)  17 DEC 2017 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1232,17 +1232,21 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 ] [2]
 File: pictures/screenshot-gtranslate-hungarian.png Graphic file (type QTm)
  <use  "pictures/screenshot-gtranslate-hungarian.png" >
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 60--62
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 61--63
  [][] 
  []
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count165
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 69.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1257,42 +1261,59 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT:"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\EU1/lmr/m/n/10 Pronominal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 \EU1/lmr/m/n/10 Gender
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []|\EU1/lmr/m/n/10 Lingua
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 107--107
+Underfull \hbox (badness 1983) in paragraph at lines 112--112
 \EU1/lmr/m/n/10 cle []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][]
  [] [][][][] [] [][][][][][] [] [][][][][][][][][][] [] [][] [] [][][][][][][][
 ][][] []
  []
 
-[4] [5]
+[5] [6]
 Missing character: There is no ն in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no ա in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no է in font [lmroman10-regular]:mapping=tex-text!
- [6] [7]
+ [7] [8]
 File: pictures/gender-by-category.pdf Graphic file (type QTm)
- <use  "pictures/gender-by-category.pdf" > [8] [9]
+ <use  "pictures/gender-by-category.pdf" > [9] [10]
 File: pictures/gender-by-language.pdf Graphic file (type QTm)
 
-<use  "pictures/gender-by-language.pdf" > [10]
+<use  "pictures/gender-by-language.pdf" > [11]
 File: pictures/scatterplot-languages.pdf Graphic file (type QTm)
 
-<use  "pictures/scatterplot-languages.pdf" > [11]
-(/home/marcelo/Projects/Gender-Bias/paper/main.bbl [12]
+<use  "pictures/scatterplot-languages.pdf" > [12]
+File: pictures/histogram-female.pdf Graphic file (type QTm)
+
+<use  "pictures/histogram-female.pdf" > [13]
+File: pictures/histogram-male.pdf Graphic file (type QTm)
+
+<use  "pictures/histogram-male.pdf" > [14]
+File: pictures/histogram-neutral.pdf Graphic file (type QTm)
+
+<use  "pictures/histogram-neutral.pdf" > [15]
+Overfull \hbox (2.5618pt too wide) in paragraph at lines 297--298
+\EU1/lmr/m/n/10 male defaults, while statements concerning emotional states (“s
+ad”,“kind”,“shy”)
+ []
+
+[16]
+File: pictures/barplot-adjectives.pdf Graphic file (type QTm)
+ <use  "pictures/barplot-adjectives.pdf" > [17] [18] [19]
+(/home/marcelo/Projects/Gender-Bias/paper/main.bbl
 Underfull \hbox (badness 2717) in paragraph at lines 65--71
 \EU1/lmr/m/n/10 chine bias: There’s software used across the country to predict
 
@@ -1311,22 +1332,24 @@ al-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
+ [20
+
+] [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
  (/home/marcelo/Projects/Gender-Bias/paper/main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 258.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 258.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 258.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 345.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 345.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
  ) 
 Here is how much of TeX's memory you used:
- 25214 strings out of 493638
- 461972 string characters out of 6146797
- 505687 words of memory out of 5000000
- 28392 multiletter control sequences out of 15000+600000
- 11202 words of font info for 64 fonts, out of 8000000 for 9000
+ 25233 strings out of 493638
+ 462429 string characters out of 6146797
+ 507513 words of memory out of 5000000
+ 28405 multiletter control sequences out of 15000+600000
+ 11210 words of font info for 65 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 54i,12n,74p,10411b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,12n,74p,10411b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/marcelo/Projects/Gender-Bias/paper/main.pdf (13 pages).
+Output written on /home/marcelo/Projects/Gender-Bias/paper/main.pdf (21 pages).
 
