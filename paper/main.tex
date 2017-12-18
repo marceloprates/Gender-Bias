@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 %\usepackage{fontspec}
 \usepackage{xeCJK}
+%\usepackage{armtex}
 
 \usepackage{multirow}
 \usepackage{hyperref}
@@ -145,7 +146,7 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	Estonian	& ta on $\langle occupation \rangle$ \\ \hline
 	Finnish		& hän on $\langle occupation \rangle$ \\ \hline
 	Hungarian	& ő $\langle occupation \rangle$ \\ \hline
-	Armenian	& նա $\langle occupation \rangle$ է \\ \hline
+	Armenian	& na $\langle occupation \rangle$ e \\ \hline
 	Japanese	& $\langle occupation \rangle$ です\\ \hline
 	Turkish		& o bir $\langle occupation \rangle$ \\ \hline
 	Yoruba		& o jẹ $\langle occupation \rangle$ \\ \hline
@@ -258,8 +259,8 @@ While grouping translations by category helps shed light on the stereotypical ge
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pictures/gender-by-language}
-	\label{fig:gender-by-language}
 	\caption{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.46\%$ and $2.98\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns.}
+	\label{fig:gender-by-language}
 \end{figure}
 
 Instead of grouping sentences either by category or language, we can also visualize each of them individually on a scatter plot. Figure \ref{fig:scatterplot-languages} shows each occupation as a point on a bi-dimensional lattice, arranged horizontally by their sex ratio and vertically by the proportion of gender neutral pronouns, both averaged over translations from all tested languages. Each point is also color coded according to that occupation's respective category (Artistic, Writing, Science, etc.).
@@ -267,8 +268,8 @@ Instead of grouping sentences either by category or language, we can also visual
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pictures/scatterplot-languages}
-	\label{fig:scatterplot-languages}
 	\caption{Scatter plot of translated sentences' statistics. Each point (color coded according to its category) corresponds to a single occupation, of which the sex ratio and the percentage of gender neutral pronouns are averaged over all tested languages (Malay, Estonian, Finnish, Hungarian, Armenian, Japanese, Turkish, Yoruba, Basque, Swahili and Chinese).}
+	\label{fig:scatterplot-languages}
 \end{figure}
 
 Figures \ref{fig:histogram-female}, \ref{fig:histogram-female} and \ref{fig:histogram-neutral} shed further light on the asymmetry between the distribution male and female pronouns. While the number of occurences of male pronouns tends towards a normal distribution, the figure is changes drastically for the opposite gender, whose pronoun distribution is apparently governed by an inverse correlation. The behavior repeats itself for the gender neutral pronouns in Figure \ref{fig:histogram-neutral}.
