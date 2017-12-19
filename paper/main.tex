@@ -20,6 +20,9 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{53}}%
 
+\usepackage[numbers]{natbib}
+\bibliographystyle{plainnat}
+
 \title{Is Google Translate Sexist? -- Assessing Gender Bias in Machine Translation}
 \author{Marcelo Prates \and Luis Lamb}
 
@@ -33,7 +36,7 @@ In recent times there has been a growing concern both inside and outside academi
 
 \section{Introduction}
 
-Although the idea of automated translation can in principle be traced back to as long as the 17th century with René Descartes proposal of an \say{universal language} \cite{dascal1982universal}, machine translation has only existed as a technological field since the 1950s, with a pioneering memorandum by Warren Weaver \cite{weaver1955translation} discussing the possibility of employing digital computers to perform automated translation. The now famous Georgetown-IBM experiment followed not long after, providing the first experimental demonstration of the prospects of automating translation by the means of successfully converting more than sixty Russian sentences into English \cite{gordin2015scientific}. Early systems improved upon the results of the Georgetown-IBM experiment by exploiting Chomsky's theory of generative linguistics, and the field experienced a sense of optimism about the prospects of fully automating natural language translation. As is customary with artificial intelligence, the initial optimistic stage was followed by an extended period of strong disillusionment with the field, of which the catalyst was the influential ALPAC report \cite{hutchins1986machine}. Research was almost completely abandoned in the United States, making a shy re-entrance in the 1970s before the 1980s surge in statistical methods for machine translation \cite{koehn2009statistical}. Statistical and example-based machine translation have been on the rise ever since \cite{carl2003recent}, with highly successful applications such as Google Translate (recently ported to a neural translation technology \cite{wu2016google,gtranslateneuralnet2017}) amounting to over $200$ million users daily \cite{gtranslateneuralnet2017,gtranslatezeroshot2017}.
+Although the idea of automated translation can in principle be traced back to as long as the 17th century with René Descartes proposal of an \say{universal language} \cite{dascal1982universal}, machine translation has only existed as a technological field since the 1950s, with a pioneering memorandum by Warren Weaver \cite{locke1955machine} discussing the possibility of employing digital computers to perform automated translation. The now famous Georgetown-IBM experiment followed not long after, providing the first experimental demonstration of the prospects of automating translation by the means of successfully converting more than sixty Russian sentences into English \cite{gordin2015scientific}. Early systems improved upon the results of the Georgetown-IBM experiment by exploiting Chomsky's theory of generative linguistics, and the field experienced a sense of optimism about the prospects of fully automating natural language translation. As is customary with artificial intelligence, the initial optimistic stage was followed by an extended period of strong disillusionment with the field, of which the catalyst was the influential ALPAC report \cite{hutchins1986machine}. Research was almost completely abandoned in the United States, making a shy re-entrance in the 1970s before the 1980s surge in statistical methods for machine translation \cite{koehn2009statistical}. Statistical and example-based machine translation have been on the rise ever since \cite{carl2003recent}, with highly successful applications such as Google Translate (recently ported to a neural translation technology \cite{wu2016google,gtranslateneuralnet2017}) amounting to over $200$ million users daily \cite{gtranslateneuralnet2017,gtranslatezeroshot2017}.
 
 In spite of the recent commercial success of automated translation tools (or perhaps stemming directly from it), machine translation has amounted a significant deal of criticism. Noted philosopher and founding father of generative linguistics Noam Chomsky has argued that the achievements of machine translation, while successes in a particular sense, are \emph{not successes in the sense that science has ever been interested in}: they merely provide effective ways, according to Chomsky, of approximating unanalyzed data. Chomsky argues that the faith of the MT community in statistical methods is absurd by analogy with a standard scientific field such as physics:
 
@@ -340,7 +343,9 @@ In this paper, we have provided evidence that statistical translation tools such
 We think this work can shed further light on some of the technical and ethical difficulties that arise from statistical machine translation, and hope that it arouses discussions about the role of AI engineers on minimizing the harmful effects of the pressing modern concern of machine bias.
 
 \clearpage
-\bibliographystyle{alphadin}
+
+%\bibliographystyle{di}
 \bibliography{main}
+
 
 \end{document}
