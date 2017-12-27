@@ -76,8 +76,8 @@ With this in mind, we propose a quantitative analysis of the phenomenon of gende
 \begin{figure}[h]
 	\centering
 	\fbox{\includegraphics[width=\linewidth]{pictures/screenshot-gtranslate-hungarian}}
-	\label{fig:screenshot-gtranslate-hungarian}
 	\caption{Translating sentences from a gender neutral language such as Hungarian to English provides a glimpse into the phenomenon of gender bias in machine translation. This screenshot from Google Translate shows how occupations from traditionally male-dominated fields such as scholar, engineer and CEO are interpreted as male, while occupations such as nurse, baker and wedding organizer are interpreted as female.}
+	\label{fig:screenshot-gtranslate-hungarian}
 \end{figure}
 
 \section{Motivation}
@@ -237,15 +237,15 @@ One can see either in Table \ref{tab:gender-by-category} or Figure \ref{fig:gend
 	\hline
 	Total           & 687 & 2623 & 329 & 3.818 & 4158 \\ \hline
 	\end{tabular}
-	\label{tab:gender-by-category}
 	\caption{Number of female, male and neutral pronominal genders per occupation category in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to $\approx 18$ occurrences of male pronouns for each of a female one.}
+	\label{tab:gender-by-category}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pictures/gender-by-category}
-	\label{fig:gender-by-category}
 	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $73\%$ in computer related jobs and $76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+	\label{fig:gender-by-category}
 \end{figure}
 
 While grouping translations by category helps shed light on the stereotypical gender roles among different professions, grouping translations by language can help us understand the effect each culture possibly has on this issue. Table \ref{tab:gender-by-language} shows some sex ratios even larger than the previous ones, particularly when translating from Yoruba ($25.333$), Chinese ($27.5$) and Japanese, the last one peaking at an impressive ratio of $107.5$ male per female pronouns. Figure \ref{fig:gender-by-language} shows that, when grouping by language, gender neutral pronouns can be more prominent than male pronouns at least in one case: translating sentences from Basque yields 153 neutral vs 50 male and 5 female pronouns. Unfortunately this is the exception rather than the rule, with Yoruba following after with 131 neutral vs 304 male and 12 female pronouns. In total, female pronouns add up to $18.687\%$ among all categories, while male pronouns add up to $81.626\%$ and gender neutral pronouns to $8.466\%$, yielding an average sex ratio of $4.368$ ($14.405\%$ larger than what we get from grouping among categories). It should be noted however that Japanese and Basque, the two languages which stood out from the behavior observed in Figure \ref{fig:gender-by-category}, are precisely the two that Google Translate found hardest to translate. These findings should, as a result, be taken with a grain of salt.
