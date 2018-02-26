@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plain Cover Letter
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{letter} % Default font size of the document, change to 10pt to fit more text
+\newcommand{\degree}{\ensuremath{^\circ}}
+\usepackage{color}
+
+\usepackage{fancyhdr,lastpage}
+\usepackage{graphicx}
+\usepackage{newcent} % Default font is the New Century Schoolbook PostScript font 
+%\usepackage{helvet} % Uncomment this (while commenting the above line) to use the Helvetica font
+
+% Margins
+\topmargin=-1.8in % Moves the top of the document 1 inch above the default
+\textheight=11.5in % Total height of the text on the page before text goes on to the next page, this can be increased in a longer letter
+\oddsidemargin=-10pt % Position of the left margin, can be negative or positive if you want more or less room
+\textwidth=6.5in % Total width of the text, increase this if the left margin was decreased and vice-versa
+
+%\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
+
+
+\begin{document}
+
+
+%\pagestyle{fancy}
+
+% Cabealho
+% ~~~~~~~~~
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{To Palgrave Communications Office\\
+SpringerNature\\
+London, UK
+ } 
+
+\includegraphics[scale=0.48]{logo.png}\\ \ \\ \ \\
+
+
+%\includegraphics[scale=0.45]{logo.png}
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME & ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\opening{Re New submission to Palgrave Communications\\
+\\ \ \\}
+
+ Dear Editors of Palgrave Communications: 
+
+We hereby submit the manuscript titled \emph{Assessing Gender Bias in Machine Translation -- A Case Study with Google Translate}, by Marcelo Prates and Luis C. Lamb to \emph{Scientific Reports}. \\
+\\
+In a nutshell, considering the recent and growing concerns in both industrial research labs,
+academia and mainstream media on the impact of Artificial Intelligence in society, the analysis of  machine bias is relevant to a large number of AI systems and applications.  
+Although a systematic study of such biases is indeed difficult, we believe that automated translation tools can be exploited through gender neutral languages to yield a window into the phenomenon of 
+gender bias in AI.  
+In our paper we investigate gender bias in machine translation. Specifically, we present several case studies and experiments with the Google Translate API. We collect statistics about the frequency of male defaults and evaluate which factors can influence the gender Google Translate API computes for each sentence. 
+
+We show that not only there is a tendency towards translating pronouns to masculine, but also that this tendency is exaggerated for sentences about male dominated fields such as Computer Science. On the other hand, sentences about artistic fields are less likely to yield male defaults. This contributes to investigate how our society sees stereotypical gender roles, and suggests points to the improvement of   statistical machine translation systems. 
+
+Suggested names of Referees: \\
+Prof. Pascal Hizler, Wright State University, Dayton, OH -  pascal.hitzler@wright.edu \\
+Prof. Moshe Vardi, Rice University, Houston, TX - vardi@cs.rice.edu\\
+Prof. Artur Garcez, City, University of London - aag@soi.city.ac.uk
+
+Data disclosure: All data used in this research will be freely available.\\
+M.P. and L.C.L. created the models and analyzed the results. M.P. wrote the code
+of the experiments.
+M.P. and L.C.L. wrote the manuscript. All authors gave final approval for submission.
+
+We look forward to hearing from you.\\ \ \\ \ \\ \ \\
+
+
+Yours sincerely,\\
+
+
+
+\begin{flushleft}
+Marcelo Prates and Luis C. Lamb
+ \end{flushleft}
+
+
+\let\thefootnote\relax\footnote{Authors' Contact:\\
+Institute of Informatics \\
+Federal University of Rio Grande do Sul\\ 
+91501-970 Porto Alegre, RS, Brazil \\
+http://www.inf.ufrgs.br/  \\
+\textbf{morprates@inf.ufrgs.br}\\
+\textbf{lamb@inf.ufrgs.br}\\
+Tel +55 (51) 3308 9464 \\
+Fax +55 (51) 3308 7308}
+
+
+
+\end{letter}
+
+
+\end{document}

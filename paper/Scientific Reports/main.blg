@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: naturemag-doi.bst
+Illegal, another \bibstyle command---line 19 of file main.aux
+ : \bibstyle
+ :          {plainnat}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 100 of file main.aux
+ : \bibstyle
+ :          {named}
+I'm skipping whatever remains of this command
+Database file #1: main.bib
+You've used 19 entries,
+            2382 wiz_defined-function locations,
+            1102 strings with 12942 characters,
+and the built_in function-call counts, 6290 in all, are:
+= -- 425
+> -- 140
+< -- 2
++ -- 69
+- -- 35
+* -- 693
+:= -- 681
+add.period$ -- 64
+call.type$ -- 19
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 565
+empty$ -- 670
+format.name$ -- 44
+if$ -- 1316
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 135
+newline$ -- 111
+num.names$ -- 21
+pop$ -- 184
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 136
+swap$ -- 513
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 32
+width$ -- 21
+write$ -- 221
+(There were 2 error messages)

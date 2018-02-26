@@ -1,0 +1,272 @@
+PWD /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/xetex/xelatex.fmt
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.tex
+OUTPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.log
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/wlscirep.cls
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/wlscirep.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/xebabel.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fleqn.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fleqn.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/ttlkeys.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/ttlkeys.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv.sty
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv.sty
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv-ltwa-all.ldf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv-ltwa-all.ldf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv-ltwa-en.ldf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/jabbrv-ltwa-en.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-xetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-xetex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.aux
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.aux
+OUTPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.aux
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.out
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.out
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.out
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.out
+OUTPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.out
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/screenshot-gtranslate-hungarian.png
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/gender-by-category.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/gender-by-language.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/scatterplot-languages.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/histogram-female.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/histogram-male.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/histogram-neutral.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/pictures/barplot-adjectives.pdf
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.bbl
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.bbl
+INPUT /home/marcelo/Projects/Gender-Bias/paper/Scientific Reports/main.aux

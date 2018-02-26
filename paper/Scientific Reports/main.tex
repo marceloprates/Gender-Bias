@@ -1,10 +1,4 @@
-\documentclass{article}
-%\usepackage{jair, theapa, rawfonts}
-
-%\usepackage[utf8]{inputenc}
-%\usepackage{fontspec}
-\usepackage{xeCJK}
-%\usepackage{armtex}
+\documentclass[fleqn,10pt]{wlscirep}
 
 \usepackage{multirow}
 \usepackage{hyperref}
@@ -20,22 +14,19 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{53}}%
 
-\usepackage[numbers]{natbib}
-\bibliographystyle{plainnat}
-
-%\title{Is Google Translate Sexist? -- Assessing Gender Bias in Machine Translation}
-%\author{\name Marcelo Prates \email morprates@inf.ufrgs.br \\
-%\name Luis Lamb \email lamb@inf.ufrgs.br \\
-%\addr Institute of Informatics \\
-%Federal University of Rio Grande do Sul \\
-%Porto Alegre, 91501-970 Brazil}
+%\usepackage[numbers]{natbib}
+%\bibliographystyle{plainnat}
 
 \title{Assessing Gender Bias in Machine Translation -- A Case Study with Google Translate}
-\author{Marcelo Prates \and Luis Lamb}
 
-\begin{document}
+\author[1,*]{Marcelo Prates}
+\author[1,+]{Luis Lamb}
+\affil[1]{Federal University of Rio Grande do Sul, Institute of Informatics, Porto Alegre, 91501-970, Brazil}
 
-\maketitle
+\affil[*]{morprates@inf.ufrgs.br}
+\affil[+]{lamb@inf.ufrgs.br}
+
+%\keywords{Keyword1, Keyword2, Keyword3}
 
 \begin{abstract}
 Recently, there has been a growing concern in academia, industrial research labs and the mainstream commercial media about the phenomenon of machine bias, where trained statistical models unbeknownst to their creators become vessels of bias and prejudices. A large number of Artificial Intelligence tools have recently been suggested to be harmfully biased towards some minority, with reports of racist criminal behavior predictors, Apple's Iphone X failing to differentiate between two Asian people and the infamous case of Google photos' classifying black people as gorillas. Although a systematic study of such biases can be difficult, we believe that automated translation tools can be exploited through gender neutral languages to yield a window into the phenomenon of \emph{gender} bias in AI. 
@@ -45,6 +36,15 @@ The resulting English sentences are constructed either with male, female or neut
 API computes for each sentence. We show that not only there is a tendency towards translating pronouns to
 masculine, but also that this tendency is exaggerated for sentences about male dominated fields such as Computer Science. On the other hand, sentences about artistic fields are less likely to yield male defaults. This possibly reflects the implicit assumptions our society has about stereotypical gender roles, which suggests that without proper care statistical machine translation can become hostage to the prejudices of the people behind their training datasets -- ourselves.
 \end{abstract}
+\begin{document}
+
+\flushbottom
+\maketitle
+% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
+%
+%  Click the title above to edit the author information and abstract
+%
+\thispagestyle{empty}
 
 \section{Introduction}
 
@@ -75,13 +75,10 @@ With this in mind, we propose a quantitative analysis of the phenomenon of gende
 
 \begin{figure}[h]
 	\centering
-	\fbox{\includegraphics[width=\linewidth]{pictures/screenshot-gtranslate-hungarian}}
-	\label{fig:screenshot-gtranslate-hungarian}
+	\fbox{\includegraphics[width=14cm]{pictures/screenshot-gtranslate-hungarian}}
 	\caption{Translating sentences from a gender neutral language such as Hungarian to English provides a glimpse into the phenomenon of gender bias in machine translation. This screenshot from Google Translate shows how occupations from traditionally male-dominated fields such as scholar, engineer and CEO are interpreted as male, while occupations such as nurse, baker and wedding organizer are interpreted as female.}
+	\label{fig:screenshot-gtranslate-hungarian}
 \end{figure}
-
-\section{Motivation}
-
 If automatic translation tools are indeed gender biased as Figure \ref{fig:screenshot-gtranslate-hungarian} seems to suggest, then possibly this phenomenon can be probed to yield many valuable insights. One could in principle group different professional occupations according to their broad category (artistic, scientific, industrial, etc.) and evaluate whether the proportion of male pronouns is more pronounced in some fields compared to others. We expect, for example, that most sentences about computer-related jobs will be translated with male pronouns, as a reflection of the gender asymmetry of this job market. We can also collect translation statistics among varied gender neutral languages to see whether different cultures make different assumptions about the gender of a subject.
 
 If conclusive, in our view such an analysis would suggest that automatic translation tools should be designed in such a way as to avoid becoming hostages to their own underlying statistical models. Because these tools are trained with real world data they implicitly absorb the biases and stereotypes of our society, which must then be painstakingly removed. This poses 
@@ -95,6 +92,7 @@ We shall assume and then show that the phenomenon of gender bias in machine tran
 There is a prohibitively large class of nouns and adjectives that could in principle be substituted in the templates of Table \ref{tab:templates}. To simplify our dataset, we have decided to obtain a comprehensive list of professional occupations, which, we believe, are an interesting window into the nature of gender bias. Once again we resorted to a Wikipedia article (\url{https://en.wikipedia.org/wiki/Lists_of_occupations}) to collect this data, of which the statistics of occupations per category (Artistic, Corporate, Theatre, etc.) are shown in Table \ref{tab:occupations}. Finally, Table \ref{tab:occupations-examples} shows thirty examples of randomly selected occupations from our dataset. Finally, we have selected a small list of 21 adjectives, presented in Table \ref{tab:adjectives}.
 
 \begin{table}[H]
+\begin{small}
 	\centering
 	\begin{tabular}{|c|m{2cm}|m{2cm}|c|c|}
 	\hline
@@ -130,9 +128,11 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	\end{tabular}
 	\caption{Selected gender neutral languages obtained from the Wikipedia article \url{https://en.wikipedia.org/wiki/Gender_neutrality_in_genderless_languages}. Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system (\checkmark: yes, \xmark:~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such a system and, as such, Persian and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded.}
 	\label{tab:gender-neutral-languages}
+	\end{small}
 \end{table}
 
 \begin{table}[H]
+\begin{small}
 	\centering
 	\begin{tabular}{|c|c|}
 	\hline
@@ -153,9 +153,11 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	\end{tabular}
 	\caption{Selected occupations obtained from the Wikipedia article \url{https://en.wikipedia.org/wiki/Lists_of_occupations}, grouped by category. We have selected a total of 462 occupations from $11$ distinct groups (Artistic, Science, Service, etc.).}
 	\label{tab:occupations}
+	\end{small}
 \end{table}
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|}
 	\hline
@@ -174,9 +176,11 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	\end{tabular}
 	\caption{Templates used to infer gender biases in the translation to the English language.}
 	\label{tab:templates}
+	}
 \end{table}
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
 	\hline
@@ -193,9 +197,11 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	\end{tabular}
 	\caption{A randomly selected example subset of thirty occupations obtained from our dataset with a total of 462 different occupations.}
 	\label{tab:occupations-examples}
+	}
 \end{table}
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|c|}
 	\hline
@@ -209,6 +215,7 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 	\end{tabular}
 	\caption{Adjectives}
 	\label{tab:adjectives}
+	}
 \end{table}
 
 \section{Results}
@@ -218,6 +225,7 @@ For each one of the tested 462 occupations (see Tables \ref{tab:occupations}, \r
 One can see either in Table \ref{tab:gender-by-category} or Figure \ref{fig:gender-by-category} that not only does Google Translate exhibit a tendency towards male defaults, but also that this tendency is further enhanced for typically male dominated fields such as computer science (with a ratio of $17.857$ male pronouns per female pronoun). Sentences about occupations from the \emph{Corporate} and \emph{Science} category are also disproportionately translated with male pronouns (sex ratios $9.444$ and $10.5$ respectively), while those containing occupations from the \emph{Dance} category achieve a sex ratio of almost one ($1.064$). Not one category has achieved a balanced sex ratio, neither does any category exhibit more gender neutral than male pronouns. In total, female pronouns add up to $16.522\%$ among all categories, while male pronouns add up to $63.083\%$ and gender neutral pronouns to just $7.912\%$, yielding an average sex ratio of $3.818$.
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
@@ -237,20 +245,22 @@ One can see either in Table \ref{tab:gender-by-category} or Figure \ref{fig:gend
 	\hline
 	Total           & 687 & 2623 & 329 & 3.818 & 4158 \\ \hline
 	\end{tabular}
-	\label{tab:gender-by-category}
 	\caption{Number of female, male and neutral pronominal genders per occupation category in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to $\approx 18$ occurrences of male pronouns for each of a female one.}
+	\label{tab:gender-by-category}
+	}
 \end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/gender-by-category}
-	\label{fig:gender-by-category}
+	\includegraphics[width=10cm]{pictures/gender-by-category}
 	\caption{The distribution of pronominal genders in the translated sentences not only suggests a tendency towards male defaults but also reflects the structure of male dominated fields, with the proportion of male pronouns amounting to $73\%$ in computer related jobs and $76\%$ in corporate jobs respectively. Because Google Translate occasionally fails to translate a sentence, the bars for some categories fail to add up to $100\%$.}
+	\label{fig:gender-by-category}
 \end{figure}
 
 While grouping translations by category helps shed light on the stereotypical gender roles among different professions, grouping translations by language can help us understand the effect each culture possibly has on this issue. Table \ref{tab:gender-by-language} shows some sex ratios even larger than the previous ones, particularly when translating from Yoruba ($25.333$), Chinese ($27.5$) and Japanese, the last one peaking at an impressive ratio of $107.5$ male per female pronouns. Figure \ref{fig:gender-by-language} shows that, when grouping by language, gender neutral pronouns can be more prominent than male pronouns at least in one case: translating sentences from Basque yields 153 neutral vs 50 male and 5 female pronouns. Unfortunately this is the exception rather than the rule, with Yoruba following after with 131 neutral vs 304 male and 12 female pronouns. In total, female pronouns add up to $18.687\%$ among all categories, while male pronouns add up to $81.626\%$ and gender neutral pronouns to $8.466\%$, yielding an average sex ratio of $4.368$ ($14.405\%$ larger than what we get from grouping among categories). It should be noted however that Japanese and Basque, the two languages which stood out from the behavior observed in Figure \ref{fig:gender-by-category}, are precisely the two that Google Translate found hardest to translate. These findings should, as a result, be taken with a grain of salt.
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
@@ -272,11 +282,12 @@ While grouping translations by category helps shed light on the stereotypical ge
 	\end{tabular}
 	\caption{Number of female, male and neutral pronominal genders per language in the translated sentences. The corresponding sex ratios (\# Male / \# Female) show just how much male defaults are prominent in some languages such as Chinese, with almost 30 male pronouns for each female one.}
 	\label{tab:gender-by-language}
+	}
 \end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/gender-by-language}
+	\includegraphics[width=10cm]{pictures/gender-by-language}
 	\caption{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.46\%$ and $2.98\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns.}
 	\label{fig:gender-by-language}
 \end{figure}
@@ -285,7 +296,7 @@ Instead of grouping sentences either by category or language, we can also visual
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/scatterplot-languages}
+	\includegraphics[width=10cm]{pictures/scatterplot-languages}
 	\caption{Scatter plot of the translated sentences' statistics. Each point, corresponding to a single occupation, is positioned in the horizontal axis according to its sex ratio and in the vertical axis according to the frequency with which it is translated using gender neutral pronouns. Both quantities are averaged over all tested languages.}
 	\label{fig:scatterplot-languages}
 \end{figure}
@@ -294,21 +305,21 @@ Figures \ref{fig:histogram-female}, \ref{fig:histogram-male} and \ref{fig:histog
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/histogram-female}
+	\includegraphics[width=10cm]{pictures/histogram-female}
 	\caption{Histogram of the distribution of female pronouns among different occupation categories, with a distinctive peak at 0. The corresponding histogram for male pronouns (see Figure \ref{fig:histogram-male}), by constrast, peaks at 9.}
 	\label{fig:histogram-female}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/histogram-male}
+	\includegraphics[width=10cm]{pictures/histogram-male}
 	\caption{Histogram of the distribution of male pronouns among different occupation categories, with a distinctive peak at 9. In contrast with the corresponding histograms for female and gender neutral pronouns (see Figures \ref{fig:histogram-female} and \ref{fig:histogram-neutral} respectively) which exhibit inverse correlations, here one can see a tendency towards normally-distributed pronoun counts.}
 	\label{fig:histogram-male}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/histogram-neutral}
+	\includegraphics[width=10cm]{pictures/histogram-neutral}
 	\caption{Following the behavior observed for female pronouns, the histogram for the distribution of gender neutral pronouns among different categories shows a tendency towards an inverse correlation, with a distinctive peak at 0.}
 	\label{fig:histogram-neutral}
 \end{figure}
@@ -316,6 +327,7 @@ Figures \ref{fig:histogram-female}, \ref{fig:histogram-male} and \ref{fig:histog
 Finally, Figure \ref{fig:barplot-adjectives} and Table \ref{tab:gender-by-adjective} show how stereotypical gender roles possibly play a part when simple adjectives are translated. We observed that objective statements such as \say{he/she is wrong/right/guilty/innocent} are biased towards male defaults, while statements concerning emotional states (\say{sad},\say{kind},\say{shy}) amass at the opposite extreme of the sex ratio spectrum. Unsurprisingly, the statement \say{he/she is attractive} is translated predominately with female pronouns.
 
 \begin{table}[H]
+\small{
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
@@ -342,11 +354,12 @@ Finally, Figure \ref{fig:barplot-adjectives} and Table \ref{tab:gender-by-adject
 	\end{tabular}
 	\caption{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective.}
 	\label{tab:gender-by-adjective}
+	}
 \end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pictures/barplot-adjectives}
+	\includegraphics[width=10cm]{pictures/barplot-adjectives}
 	\caption{The distribution of pronominal genders for each word in Table \ref{tab:adjectives} shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph{shy} and \emph{attractive} are predominantly translated with female pronouns, while words like \emph{guilty}, \emph{innocent}, \emph{wrong}, \emph{right}, \emph{arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph{shy}, \emph{happy}, \emph{kind}, \emph{ashamed}) amass at the other extreme of the sex ratio spectrum.}
 	\label{fig:barplot-adjectives}
 \end{figure}
@@ -356,8 +369,169 @@ In this paper, we have provided evidence that statistical translation tools such
 
 We think this work can shed further light on some of the technical and ethical difficulties that arise from statistical machine translation, and hope that it will lead to discussions about the role of AI engineers on minimizing potentially harmful effects of the pressing modern concerns of machine bias.
 
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname doiprefix\endcsname\relax\def\doiprefix{DOI }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
 
-\bibliography{main}
-\bibliographystyle{named}
+\bibitem{dascal1982universal}
+\bibinfo{author}{Dascal, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Universal language schemes in
+  {E}ngland and {F}rance, 1600-1800 comments on {J}ames {K}nowlson}}.
+\newblock {\emph{\JournalTitle{Studia leibnitiana}}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{98--109}
+  (\bibinfo{year}{1982}).
+
+\bibitem{locke1955machine}
+\bibinfo{author}{Locke, W.~N.} \& \bibinfo{author}{Booth, A.~D.}
+\newblock \emph{\bibinfo{title}{Machine translation of languages: fourteen
+  essays}} (\bibinfo{publisher}{Published jointly by Technology Press of the
+  Massachusetts Institute of Technology and Wiley, New York},
+  \bibinfo{year}{1955}).
+
+\bibitem{weaver1955translation}
+\bibinfo{author}{Weaver, W.}
+\newblock \bibinfo{title}{Translation}.
+\newblock In \bibinfo{editor}{Locke, W.~N.} \& \bibinfo{editor}{Booth, A.~D.}
+  (eds.) \emph{\bibinfo{booktitle}{Machine translation of languages}},
+  vol.~\bibinfo{volume}{14}, \bibinfo{pages}{15--23}
+  (\bibinfo{publisher}{Cambridge: Technology Press, MIT},
+  \bibinfo{year}{1955}).
+\newblock \urlprefix\url{http://www.mt-archive.info/Weaver-1949.pdf}.
+\newblock \bibinfo{note}{Last visited 2017-12-17}.
+
+\bibitem{gordin2015scientific}
+\bibinfo{author}{Gordin, M.~D.}
+\newblock \emph{\bibinfo{title}{Scientific Babel: How science was done before
+  and after global English}} (\bibinfo{publisher}{University of Chicago Press},
+  \bibinfo{year}{2015}).
+
+\bibitem{hutchins1986machine}
+\bibinfo{author}{Hutchins, W.~J.}
+\newblock \emph{\bibinfo{title}{Machine translation: past, present, future}}
+  (\bibinfo{publisher}{Ellis Horwood Chichester}, \bibinfo{year}{1986}).
+
+\bibitem{koehn2009statistical}
+\bibinfo{author}{Koehn, P.}
+\newblock \emph{\bibinfo{title}{Statistical machine translation}}
+  (\bibinfo{publisher}{Cambridge University Press}, \bibinfo{year}{2009}).
+
+\bibitem{Moses2007}
+\bibinfo{author}{Koehn, P.} \emph{et~al.}
+\newblock \bibinfo{title}{Moses: Open source toolkit for statistical machine
+  translation}.
+\newblock In \emph{\bibinfo{booktitle}{{ACL} 2007, Proceedings of the 45th
+  Annual Meeting of the Association for Computational Linguistics, June 23-30,
+  2007, Prague, Czech Republic}} (\bibinfo{year}{2007}).
+\newblock \urlprefix\url{http://aclweb.org/anthology/P07-2045}.
+
+\bibitem{Bahdanau2014}
+\bibinfo{author}{Bahdanau, D.}, \bibinfo{author}{Cho, K.} \&
+  \bibinfo{author}{Bengio, Y.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Neural machine translation by
+  jointly learning to align and translate}}.
+\newblock {\emph{\JournalTitle{CoRR}}} \textbf{\bibinfo{volume}{abs/1409.0473}}
+  (\bibinfo{year}{2014}).
+\newblock \urlprefix\url{http://arxiv.org/abs/1409.0473}.
+\newblock \eprint{1409.0473}.
+
+\bibitem{carl2003recent}
+\bibinfo{author}{Carl, M.} \& \bibinfo{author}{Way, A.}
+\newblock \emph{\bibinfo{title}{Recent advances in example-based machine
+  translation}}, vol.~\bibinfo{volume}{21} (\bibinfo{publisher}{Springer
+  Science \& Business Media}, \bibinfo{year}{2003}).
+
+\bibitem{Firat2017}
+\bibinfo{author}{Firat, O.}, \bibinfo{author}{Cho, K.},
+  \bibinfo{author}{Sankaran, B.}, \bibinfo{author}{Yarman{-}Vural, F.~T.} \&
+  \bibinfo{author}{Bengio, Y.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Multi-way, multilingual neural
+  machine translation}}.
+\newblock {\emph{\JournalTitle{Computer Speech {\&} Language}}}
+  \textbf{\bibinfo{volume}{45}}, \bibinfo{pages}{236--252}
+  (\bibinfo{year}{2017}).
+\newblock \urlprefix\url{https://doi.org/10.1016/j.csl.2016.10.006}.
+\newblock \doiprefix 10.1016/j.csl.2016.10.006.
+
+\bibitem{wu2016google}
+\bibinfo{author}{Johnson, M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Google's multilingual neural
+  machine translation system: Enabling zero-shot translation}}.
+\newblock {\emph{\JournalTitle{{TACL}}}} \textbf{\bibinfo{volume}{5}},
+  \bibinfo{pages}{339--351} (\bibinfo{year}{2017}).
+\newblock
+  \urlprefix\url{https://transacl.org/ojs/index.php/tacl/article/view/1081}.
+
+\bibitem{Chomsky2011}
+\bibinfo{author}{Chomsky, N.}
+\newblock \bibinfo{title}{The golden age: A look at the original roots of
+  artificial intelligence, cognitive science, and neuroscience (partial
+  transcript of an interview with {N}. {C}homsky at {MIT150} {S}ymposia:
+  Brains, minds and machines symposium} (\bibinfo{year}{2011}).
+\newblock \urlprefix\url{https://chomsky.info/20110616/}.
+\newblock \bibinfo{note}{Last visited 2017-12-26}.
+
+\bibitem{norvig2017chomsky}
+\bibinfo{author}{Norvig, P.}
+\newblock \bibinfo{title}{On {C}homsky and the two cultures of statistical
+  learning} (\bibinfo{year}{2017}).
+\newblock \urlprefix\url{http://norvig.com/chomsky.html}.
+\newblock \bibinfo{note}{Last visited 2017-12-17}.
+
+\bibitem{schiebinger2014scientific}
+\bibinfo{author}{Schiebinger, L.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Scientific research must take
+  gender into account}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{507}},
+  \bibinfo{pages}{9} (\bibinfo{year}{2014}).
+
+\bibitem{garcia2016racist}
+\bibinfo{author}{Garcia, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Racist in the machine: The
+  disturbing implications of algorithmic bias}}.
+\newblock {\emph{\JournalTitle{World Policy Journal}}}
+  \textbf{\bibinfo{volume}{33}}, \bibinfo{pages}{111--117}
+  (\bibinfo{year}{2016}).
+
+\bibitem{angwin2016machine}
+\bibinfo{author}{Angwin, J.}, \bibinfo{author}{Larson, J.},
+  \bibinfo{author}{Mattu, S.} \& \bibinfo{author}{Kirchner, L.}
+\newblock \bibinfo{title}{Machine bias: {T}here's software used across the
+  country to predict future criminals and it's biased against blacks}
+  (\bibinfo{year}{2016}).
+\newblock \urlprefix\url{https://www.
+  propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing}.
+\newblock \bibinfo{note}{Last visited 2017-12-17}.
+
+\bibitem{wang2017deep}
+\bibinfo{author}{Wang, Y.} \& \bibinfo{author}{Kosinski, M.}
+\newblock \bibinfo{title}{Deep neural networks are more accurate than humans at
+  detecting sexual orientation from facial images} (\bibinfo{year}{2017}).
+
+\bibitem{womanunlockphone2017}
+\bibinfo{author}{Papenfuss, M.}
+\newblock \bibinfo{title}{Woman in {C}hina says colleague's face was able to
+  unlock her i{P}hone {X}} (\bibinfo{year}{2017}).
+\newblock
+  \urlprefix\url{http://www.huffpostbrasil.com/entry/iphone-face-recognition-double_us_5a332cbce4b0ff955ad17d50}.
+\newblock \bibinfo{note}{Last visited 2017-12-17}.
+
+\bibitem{racistsoapdispenser2017}
+\bibinfo{author}{Mills, K.-A.}
+\newblock \bibinfo{title}{'{R}acist' soap dispenser refuses to help
+  dark-skinned man wash his hands - but {T}witter blames 'technology'}
+  (\bibinfo{year}{2017}).
+\newblock
+  \urlprefix\url{http://www.mirror.co.uk/news/world-news/racist-soap-dispenser-refuses-help-11004385}.
+\newblock \bibinfo{note}{Last visited 2017-12-17}.
+
+\end{thebibliography}
+
+
+%\bibliography{main}
+%\bibliographystyle{named}
 
 \end{document}
