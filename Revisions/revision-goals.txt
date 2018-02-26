@@ -1,0 +1,18 @@
+
+1. Add literature survey.
+	1.1. Introduce what kinds of previous efforts are paid to understand machine bias and to further correct them
+	1.2. Cover existing works on machine bias or algorithmic bias more extensively
+	1.3. Cite these studies:
+		- Hajian, Sara, Francesco Bonchi, and Carlos Castillo. "Algorithmic bias: From discrimination discovery to fairness-aware data mining." Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining. ACM, 2016.
+		- Kirkpatrick, Keith. "Battling algorithmic bias: how do we ensure algorithms treat us fairly?." Communications of the ACM 59.10 (2016): 16-17.
+2. Re-edit all sections (apart from abstract and introduction) to be more clear and concise, and also to remove overclaims
+3. Suggested as overclaims:
+	p3. perhaps even partially confirmed some of Chomsky's fears. --- I cannot see in what sense the results confirmed Chomsky's fears. Please describe it more specifically.
+	p4. Because these tools are trained with real world data they implicitly absorb the biases and stereotypes of our society, which must then be painstakingly removed. --- Overclaiming. Can we really say there exist stereotypes in our society by investigating results from a black-box algorithm run by a company? We do not know what kind of data is used for Google MT.
+	p12. our findings probably generalize to most translations from gender neutral idioms --- Overclaiming. This study focuses on a specific case of gender bias on translating occupations, and hence cannot generalize machine biases on gender that can be observed in other MT tasks.
+4. Suggested as technical mistakes:
+	p4. We shall assume and then show that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. --- I don't see why authors focus on such specific cases - translations on occupation. What kinds of other biases could be observed in MT and why does the specific problem (on occupation) matter?
+	p5. Also, in order to solidify our results, we have decided to work with as many gender-neutral languages as possible, obtaining a list of these from the Wikipedia article on the URL. --- Citing a Wikipedia article is not a good practice for science. I also believe many of Wikipedia articles are trustworthy, yet there could be incorrect or debatable information in some cases. In addition, its content also varies across time. Citing more formal sources is strongly recommended.
+	p9. (Table 4) The corresponding sex ratios (# Male / # Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to ≈ 18 occurrences of male pronouns for each of a female one. --- Measuring ratio with ignoring neutral cases cannot fully represent the truth. Alternatively, the fraction of male (or female) pronominal cases could be presented. In addition, how do you say one field is dominated by male or female in our society? Is there external statistics for reference?
+	p13. We think this work can shed further light on some of the technical and ethical difficulties that arise from statistical machine translation, and hope that it will lead to discussions about the role of AI engineers on minimizing potentially harmful effects of the pressing modern concerns of machine bias. --- The authors did not describe "technical and ethical difficulties that arise from statistical machine translation" in the manuscript. Please describe contributions of this work more specifically.
+5. The paper should be rewritten to clarify what is the null hypothesis (i.e. that GT should produce 50:50 sex ratios) and justify it.

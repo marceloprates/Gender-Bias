@@ -1,0 +1,133 @@
+Manuscript Number: PALCOMMS-01072-T
+
+
+
+Title: Assessing Gender Bias in Machine Translation – A Case Study with Google Translate
+
+
+
+Authors: Luis Lamb and Marcelo Prates
+
+
+
+
+
+Dear Prof Lamb,
+
+
+Thank you for submitting the above paper to /Palgrave Communications/.
+
+We have now completed review of your paper – this was overseen by an Associate Editor and independent reviewers.
+
+The reviewers have recommended major revisions, the details of which are outlined at the bottom of this letter.
+
+We invite you to evaluate the comments carefully and if you feel you can address the issues, we would be happy to consider a revision. A revision would be sent out again for review, but I cannot guarantee it will be accepted for publication. A judgement on suitability for publication would be based on whether the associate editor and reviewers feel their initial comments have been addressed, and the degree to which it is felt your paper satisfies the journal’s criteria for acceptance (http://www.nature.com/palcomms/for-referees#criteria).
+
+Once you have considered the reviewers’ comments, please could you let us know whether you wish to revise and resubmit?
+
+We have set a resubmission deadline for your paper of *22nd Mar 18*. If you require longer, particularly given the extensive nature of the requested revisions, however, please let us know.
+
+
+When submitting your revised manuscript online, please include the following:
+
+
+
+# A rebuttal letter with a point-by-point response to each of the reviewer and associate editor comments and a description of changes made.
+
+
+
+
+# A marked-up version of the manuscript with the changes highlighted in yellow. Please do not include track changes or comments.
+
+
+
+
+# A clean version of the manuscript in Word with line numbers.
+
+
+
+
+Please note that if your revised manuscript is not received by *22nd Mar 18*, the submission system will assume that you do not wish to revise it, the file will be closed, and any subsequent revision will be treated as a new manuscript.
+
+
+
+Please click on the link below to submit the revision online:
+
+
+
+<http://mts-palcomms.nature.com/cgi-bin/main.plex?el=A3Cd6XP6A1CJR7I6A9ftdIlsVvJMQhLAufhT8lgZ>http://mts-palcomms.nature.com/cgi-bin/main.plex?el=A3Cd6XP6A1CJR7I6A9ftdIlsVvJMQhLAufhT8lgZ 
+
+
+
+
+Thank you for submitting this paper to /Palgrave Communications/.
+
+
+
+Yours sincerely,
+
+
+
+Gino D'Oca
+
+Managing Editor
+Palgrave Communications
+www.nature.com/palcomms
+
+*Important*: Please check your email set up to ensure that the journal email address (palcomms@palgrave.com) is not later blacklisted or rejected as 'spam'. Failure to do this may result in you not receiving important emails from the editorial team on the status of your paper.
+
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+Associate Editor (Remarks to Author):
+
+We have now received reports from two reviewers. In light of the reviews, the manuscript as it stands requires extensive modification. If the authors decide to undertake it, we ask them to address all points raised in the reviews.
+
+
+Reviewer #1 (Comments to the Author):
+
+Firstly, I thank for authors to submit their work. This paper presents a quantitative analysis on Google Translation to discover whether gender bias exists when occupation words in other language is translated into English. What they found is interesting. Even though original language is gender-neutral, translation results are more likely to contain male-oriented English words such as "he".
+
+This paper well introduces the background of machine bias on MT (machine translation), the methodology used for this paper is sounding, and what they found are interesting; however, I think this research paper is not ready to be published.
+The weakest point of this paper is insufficient literature survey and hence unclear contribution. This work does not introduce what kinds of previous efforts are paid to understand machine bias (which are well-known as algorithmic bias) and to further correct them. Missing connections to existing works make me difficult to find novelty of this work. Authors should cover existing works on machine bias or algorithmic bias more extensively. For example, authors are recommended to include the following works and to survey more recent studies citing them:
+- Hajian, Sara, Francesco Bonchi, and Carlos Castillo. "Algorithmic bias: From discrimination discovery to fairness-aware data mining." Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining. ACM, 2016.
+- Kirkpatrick, Keith. "Battling algorithmic bias: how do we ensure algorithms treat us fairly?." Communications of the ACM 59.10 (2016): 16-17.
+
+Moreover, this paper requires a significant amount of re-editing. I really like Abstract and Introduction, yet the remaining sections should be written more clearly and concisely. This manuscript also includes overclaiming sentences and typos.
+
+For the above reasons, I believe this paper should be extensively revised to be acceptable. I also put comments in more detail for future version of this work on Palgrave communication or other venues. I believe the potentials of this work, and thus hope to see improved version of this work.
+
+Detailed comments
+p3. perhaps even partially confirmed some of Chomsky's fears. --- I cannot see in what sense the results confirmed Chomsky's fears. Please describe it more specifically.
+p3. senteces --- typo.
+p4. Because these tools are trained with real world data they implicitly absorb the biases and stereotypes of our society, which must then be painstakingly removed. --- Overclaiming. Can we really say there exist stereotypes in our society by investigating results from a black-box algorithm run by a company? We do not know what kind of data is used for Google MT.
+p4. We shall assume and then show that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. --- I don't see why authors focus on such specific cases - translations on occupation. What kinds of other biases could be observed in MT and why does the specific problem (on occupation) matter?
+p4. "" - typo
+p5. Also, in order to solidify our results, we have decided to work with as many gender-neutral languages as possible, obtaining a list of these from the Wikipedia article on the URL. --- Citing a Wikipedia article is not a good practice for science. I also believe many of Wikipedia articles are trustworthy, yet there could be incorrect or debatable information in some cases. In addition, its content also varies across time. Citing more formal sources is strongly recommended.
+p7. Table 3 --- I wonder why some languages only contain in their templates.
+p9. (Table 4) The corresponding sex ratios (# Male / # Female) show just how much male defaults are prominent in male dominated fields such as computer science, with up to ≈ 18 occurrences of male pronouns for each of a female one. --- Measuring ratio with ignoring neutral cases cannot fully represent the truth. Alternatively, the fraction of male (or female) pronominal cases could be presented. In addition, how do you say one field is dominated by male or female in our society? Is there external statistics for reference?
+p10-11. Figure 4-7 - This manuscript does not describe the main observation of each figure. That is, what do authors want to say from each figure?
+p12. our findings probably generalize to most translations from gender neutral idioms --- Overclaiming. This study focuses on a specific case of gender bias on translating occupations, and hence cannot generalize machine biases on gender that can be observed in other MT tasks.
+p13. We think this work can shed further light on some of the technical and ethical difficulties that arise from statistical machine translation, and hope that it will lead to discussions about the role of AI engineers on minimizing potentially harmful effects of the pressing modern concerns of machine bias. --- The authors did not describe "technical and ethical difficulties that arise from statistical machine translation" in the manuscript. Please describe contributions of this work more specifically.
+
+Other comments
+What would it happen if one translates gender-neutral version of English sentences into other languages?
+For figures: Resolution should be improved.
+
+
+
+Reviewer #2 (Comments to the Author):
+
+This paper tests a hypothesis that Google Translate (GT) are biased against female computer scientists. The results of analysis support the author(s)'s surmise, and help the author(s) to raise the issue of gender inequality in the computer assisted algorithms which are supposed to be neutral.
+
+While the problematic sounds legit, this research is in need of a more clear theory, which should be epitomized in the null hypothesis. The author(s) seems to assume that GT should produce 50:50 gender pronouns in its translation. But there is little discussion about why and how it should be accepted positively as well as normatively.
+
+Let H0: When translating gender a neutral pronoun, the chance for GT to produce a female pronoun would be same as to produce a male pronoun.
+
+If it were the H0 the author(s) aims to build up, following theoretical and empirical issues should be addressed.
+
+No matter what gender ratio we get from GT, the solution for the observed gender bias is very simple. GT is mechanically keep 50:50 female/male odds when translating gender neutral pronouns (tertiary genders are not considered here). GT does not have to follow a logistic distribution with given contexts and factors. That seems why the author(s) starts with Chomsky's criticism of statistical reasoning. However, it is still an open question what is a good translation: Keep the norm of gender equality or represent the empirical reality?
+
+To clarify this issue, the author(s) should have explained what algorithm/logic is behind GT. If GT is designed to follow the distribution of the particular area, GT is exonerated from the critical assessment. Then, the real question becomes whether the "statistical discrimination" exists in GT, and H0 should be that the odds ratio of female/male in GT results to the female/male in the empirical area would be 1.
+
+With more of data analysis, the author(s) would be able to address these points of improvements.
