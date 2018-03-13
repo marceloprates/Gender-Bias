@@ -1,19 +1,14 @@
 
-
 Reviewer #1 (Comments to the Author):
 
 Firstly, I thank for authors to submit their work. This paper presents a quantitative analysis on Google Translation to discover whether gender bias exists when occupation words in other language is translated into English. What they found is interesting. Even though original language is gender-neutral, translation results are more likely to contain male-oriented English words such as "he".
-
-This paper well introduces the background of machine bias on MT (machine translation), the methodology used for this paper is sounding, and what they found are interesting; however, I think this research paper is not ready to be published.
-The weakest point of this paper is insufficient literature survey and hence unclear contribution. This work does not introduce what kinds of previous efforts are paid to understand machine bias (which are well-known as algorithmic bias) and to further correct them. Missing connections to existing works make me difficult to find novelty of this work. Authors should cover existing works on machine bias or algorithmic bias more extensively. For example, authors are recommended to include the following works and to survey more recent studies citing them:
-- Hajian, Sara, Francesco Bonchi, and Carlos Castillo. "Algorithmic bias: From discrimination discovery to fairness-aware data mining." Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining. ACM, 2016.
-- Kirkpatrick, Keith. "Battling algorithmic bias: how do we ensure algorithms treat us fairly?." Communications of the ACM 59.10 (2016): 16-17.
 
 Moreover, this paper requires a significant amount of re-editing. I really like Abstract and Introduction, yet the remaining sections should be written more clearly and concisely. This manuscript also includes overclaiming sentences and typos.
 
 For the above reasons, I believe this paper should be extensively revised to be acceptable. I also put comments in more detail for future version of this work on Palgrave communication or other venues. I believe the potentials of this work, and thus hope to see improved version of this work.
 
 Detailed comments
+
 p4. We shall assume and then show that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. --- I don't see why authors focus on such specific cases - translations on occupation. What kinds of other biases could be observed in MT and why does the specific problem (on occupation) matter?
 
 p5. Also, in order to solidify our results, we have decided to work with as many gender-neutral languages as possible, obtaining a list of these from the Wikipedia article on the URL. --- Citing a Wikipedia article is not a good practice for science. I also believe many of Wikipedia articles are trustworthy, yet there could be incorrect or debatable information in some cases. In addition, its content also varies across time. Citing more formal sources is strongly recommended.

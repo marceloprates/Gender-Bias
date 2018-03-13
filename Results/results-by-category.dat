@@ -1,0 +1,67 @@
+"Category","Gender","Count"
+"Education / Training / Library","Female",25.207
+"Education / Training / Library","Male",59.917
+"Education / Training / Library","Neutral",2.893
+"Business / Financial","Female",6.324
+"Business / Financial","Male",67.194
+"Business / Financial","Neutral",7.312
+"Office / Administrative","Female",10.031
+"Office / Administrative","Male",62.382
+"Office / Administrative","Neutral",7.732
+"Healthcare support","Female",29.545
+"Healthcare support","Male",51.705
+"Healthcare support","Neutral",7.955
+"Management","Female",9.486
+"Management","Male",68.182
+"Management","Neutral",3.953
+"Installation / Maintenance / Repair","Female",3.596
+"Installation / Maintenance / Repair","Male",68.332
+"Installation / Maintenance / Repair","Neutral",11.588
+"Healthcare practitioners / technical","Female",21.564
+"Healthcare practitioners / technical","Male",61.734
+"Healthcare practitioners / technical","Neutral",6.977
+"Community and social service","Female",15.584
+"Community and social service","Male",63.636
+"Community and social service","Neutral",4.545
+"Sales and related","Female",8.117
+"Sales and related","Male",69.156
+"Sales and related","Neutral",8.766
+"Production","Female",14.36
+"Production","Male",53.306
+"Production","Neutral",13.12
+"Architecture and engineering","Female",2.194
+"Architecture and engineering","Male",79.624
+"Architecture and engineering","Neutral",5.016
+"Life, physical, and social sciences","Female",3.743
+"Life, physical, and social sciences","Male",82.888
+"Life, physical, and social sciences","Neutral",3.743
+"Transportation / material moving","Female",7.532
+"Transportation / material moving","Male",66.234
+"Transportation / material moving","Neutral",11.688
+"Arts / Entertainment","Female",7.862
+"Arts / Entertainment","Male",71.007
+"Arts / Entertainment","Neutral",4.423
+"Legal","Female",11.688
+"Legal","Male",67.532
+"Legal","Neutral",5.195
+"Protective service","Female",6.818
+"Protective service","Male",75.0
+"Protective service","Neutral",5.844
+"Food prepaparation / serving","Female",16.578
+"Food prepaparation / serving","Male",59.893
+"Food prepaparation / serving","Neutral",10.16
+"Farming, fishing, and forestry","Female",10.49
+"Farming, fishing, and forestry","Male",62.238
+"Farming, fishing, and forestry","Neutral",8.392
+"Computer and mathematical","Female",2.841
+"Computer and mathematical","Male",76.136
+"Computer and mathematical","Neutral",4.545
+"Personal care and service","Female",20.937
+"Personal care and service","Male",55.096
+"Personal care and service","Neutral",9.091
+"Construction and extraction","Female",9.492
+"Construction and extraction","Male",61.631
+"Construction and extraction","Neutral",11.096
+"Cleaning / Maintenance","Female",11.818
+"Cleaning / Maintenance","Male",63.636
+"Cleaning / Maintenance","Neutral",8.182
