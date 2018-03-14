@@ -1,0 +1,12 @@
+
+1.
+	In the "Materials and Methods" section, the Hungarian character 'ő' is not rendered in the PDF in the following phrase:
+	
+		Specifically, we can translate sentences such as the Hungarian \say{ő ápolónő}, where \say{ápolónő} translates to \say{nurse} and \say{ő} is a gender-neutral pronoun
+
+	The same is true for Table 4 (label tab:templates).
+
+	This needs to be fixed.
+
+2.
+	

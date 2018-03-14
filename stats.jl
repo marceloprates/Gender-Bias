@@ -98,10 +98,12 @@ function barplot_adjectives()
         total           = sum([ count(x -> true,            aux[language]) for language in names(dat_adjectives)[1:end] ])
         ratio = male_count/female_count
         
-        push!(results_by_adjective, [ucfirst(adjective),"Female",   100*female_count/total,   ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Male",     100*male_count/total,     ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  100*neutral_count/total,  ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Female",   female_count    /1,   ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Male",     male_count      /1,     ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  neutral_count   /1,  ratio])
     end
+
+    CSV.write("Results/results-by-adjective.dat",results_by_adjective)
 
     sort!(results_by_adjective, cols = [order(:Ratio)])
 
@@ -124,6 +126,8 @@ function histograms_occupations()
 
         push!(results_by_occupation, [female_count,male_count,neutral_count,ucfirst(aux[1,:Category])])
     end
+
+    CSV.write("Results/results-by-occupation.dat",results_by_occupation)
 
     # Save histograms
     p = plot(results_by_occupation, x=:Female, color=:Category, Guide.xlabel("\# Female Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
@@ -150,9 +154,9 @@ function barplots_category()
         neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(aux) ])
         total           = sum([ count(x -> true,            aux[language]) for language in names(aux) ])
 
-        push!(results_by_category,[ucfirst(category),"Female",  100 * female_count    / total ])
-        push!(results_by_category,[ucfirst(category),"Male",    100 * male_count      / total ])
-        push!(results_by_category,[ucfirst(category),"Neutral", 100 * neutral_count   / total ])
+        push!(results_by_category,[ucfirst(category),"Female",  round(100 * female_count    / total,3) ])
+        push!(results_by_category,[ucfirst(category),"Male",    round(100 * male_count      / total,3) ])
+        push!(results_by_category,[ucfirst(category),"Neutral", round(100 * neutral_count   / total,3) ])
     end
 
     CSV.write("Results/results-by-category.dat",results_by_category)
@@ -185,7 +189,7 @@ function barplots_language()
     draw(PDF("Paper/pictures/gender-by-language.pdf", 5inch, 3.75inch),p)
 end
 
-#barplot_adjectives()
-#histograms_occupations()
-#barplots_category()
-#barplots_language()
+barplot_adjectives()
+histograms_occupations()
+barplots_category()
+barplots_language()
