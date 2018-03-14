@@ -92,15 +92,15 @@ function barplot_adjectives()
     for adjective in dat_adjectives[:Adjective]
         aux = dat_adjectives[ dat_adjectives[:,:Adjective] .== adjective, : ]
         
-        female_count    = sum([ count(x -> x=="Female",     aux[language]) for language in names(dat_adjectives)[1:end] ])
-        male_count      = sum([ count(x -> x=="Male",       aux[language]) for language in names(dat_adjectives)[1:end] ])
-        neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(dat_adjectives)[1:end] ])
-        total           = sum([ count(x -> true,            aux[language]) for language in names(dat_adjectives)[1:end] ])
+        female_count    = count(x -> x=="Female",   convert(Array,aux[:,3:end]))
+        male_count      = count(x -> x=="Male",     convert(Array,aux[:,3:end]))
+        neutral_count   = count(x -> x=="Neutral",  convert(Array,aux[:,3:end]))
+        total           = count(x -> true,          convert(Array,aux[:,3:end]))
         ratio = male_count/female_count
         
-        push!(results_by_adjective, [ucfirst(adjective),"Female",   female_count    /1,   ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Male",     male_count      /1,     ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  neutral_count   /1,  ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Female",   100 * female_count    / total,  ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Male",     100 * male_count      / total,  ratio])
+        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  100 * neutral_count   / total,  ratio])
     end
 
     CSV.write("Results/results-by-adjective.dat",results_by_adjective)
@@ -115,13 +115,13 @@ end
 function histograms_occupations()
     # Compute results table (grouped by occupation, averaged among languages)
     results_by_occupation = DataFrame(Female=[],Male=[],Neutral=[],Category=[])
-    for occupation in dat_jobs[:Occupation]
+    for occupation in unique(dat_jobs[:Occupation])
 
         aux = dat_jobs[ dat_jobs[:,:Occupation] .== occupation, : ]
-        
-        female_count    = sum([ count(x -> x=="Female",     aux[language]) for language in names(dat_jobs)[3:end] ])
-        male_count      = sum([ count(x -> x=="Male",       aux[language]) for language in names(dat_jobs)[3:end] ])
-        neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(dat_jobs)[3:end] ])
+
+        female_count    = count(x -> x=="Female",   convert(Array,aux[1,3:end]))
+        male_count      = count(x -> x=="Male",     convert(Array,aux[1,3:end]))
+        neutral_count   = count(x -> x=="Neutral",  convert(Array,aux[1,3:end]))
         ratio           = male_count/female_count
 
         push!(results_by_occupation, [female_count,male_count,neutral_count,ucfirst(aux[1,:Category])])
@@ -131,13 +131,13 @@ function histograms_occupations()
 
     # Save histograms
     p = plot(results_by_occupation, x=:Female, color=:Category, Guide.xlabel("\# Female Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-female.pdf", 5.0inch, 3.75inch),p)
+    draw(PDF("Paper/pictures/histogram-female-grouped.pdf", 5.0inch, 3.75inch),p)
 
     p = plot(results_by_occupation, x=:Male, color=:Category, Guide.xlabel("\# Male Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-male.pdf", 5.0inch, 3.75inch),p)
+    draw(PDF("Paper/pictures/histogram-male-grouped.pdf", 5.0inch, 3.75inch),p)
 
     p = plot(results_by_occupation, x=:Neutral, color=:Category, Guide.xlabel("\# Gender Neutral Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-neutral.pdf", 5.0inch, 3.75inch),p)
+    draw(PDF("Paper/pictures/histogram-neutral-grouped.pdf", 5.0inch, 3.75inch),p)
 end
 
 function barplots_category()
@@ -149,10 +149,10 @@ function barplots_category()
 
         aux = dat_jobs[dat_jobs[:,:Category] .== category, 3:end]
 
-        female_count    = sum([ count(x -> x=="Female",     aux[language]) for language in names(aux) ])
-        male_count      = sum([ count(x -> x=="Male",       aux[language]) for language in names(aux) ])
-        neutral_count   = sum([ count(x -> x=="Neutral",    aux[language]) for language in names(aux) ])
-        total           = sum([ count(x -> true,            aux[language]) for language in names(aux) ])
+        female_count    = count(x -> x=="Female",   convert(Array,aux[:,3:end]))
+        male_count      = count(x -> x=="Male",     convert(Array,aux[:,3:end]))
+        neutral_count   = count(x -> x=="Neutral",  convert(Array,aux[:,3:end]))
+        total           = count(x -> true,          convert(Array,aux[:,3:end]))
 
         push!(results_by_category,[ucfirst(category),"Female",  round(100 * female_count    / total,3) ])
         push!(results_by_category,[ucfirst(category),"Male",    round(100 * male_count      / total,3) ])
@@ -189,7 +189,35 @@ function barplots_language()
     draw(PDF("Paper/pictures/gender-by-language.pdf", 5inch, 3.75inch),p)
 end
 
-barplot_adjectives()
-histograms_occupations()
-barplots_category()
-barplots_language()
+function a()
+
+    # Read BLS data into a Julia DataFrame
+    dat_BLS = CSV.read("jobs/bureau_of_labor_statistics_profession_list_gender_filtered_expanded.tsv", delim='\t', nullable=false, types=Dict(2=>String, 6=>String))
+
+    dat_BLS = dat_BLS[dat_BLS[:,3] .!= "-",:]
+
+    # Update columns 2 and 6 (from string) to numerical format
+    dat_BLS[:,2] = map(x -> parse(Float64, replace(x,",","")), dat_BLS[:,2] )
+    dat_BLS[:,3] = map(x -> parse(Float64, x), dat_BLS[:,3] )
+
+    aux1 = copy(dat_BLS)
+    aux2 = copy(dat_BLS)
+
+    aux1[:,:Gender] = "Female"
+    aux2[:,:Gender] = "Male"
+
+    # Add new column "Women total", which is given by "total employed" x "women participation"
+    aux1[:,:Count]  = dat_BLS[:,2] .* (dat_BLS[:,3]/100)
+    aux2[:,:Count]  = dat_BLS[:,2] .* (1-dat_BLS[:,3]/100)
+
+    #append!(aux1,aux2)
+
+    p = plot(aux2, x=:Count, color=:Gender, Geom.histogram)
+    draw(PDF("test.pdf", 5.0inch, 3.75inch), p)
+end
+
+a()
+#barplot_adjectives()
+#histograms_occupations()
+#barplots_category()
+#barplots_language()
