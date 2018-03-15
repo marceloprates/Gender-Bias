@@ -7,10 +7,11 @@
 using DataFrames, CSV, Gadfly
 
 # Read compare data file
-cpm_GT_real = CSV.read("Results/translate-real-histogram-data.tsv",delim='\t',nullable=false)
+cpm_GT_real = CSV.read("Results/translate-real-histogram-data-raw.tsv",delim='\t',nullable=false)
 function histograms_compare()
     # Save histograms
-    p = plot(cpm_GT_real, x="Place", color="Type", Guide.xlabel("\# in bin"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
+    # "GT_F/A"	"GT_F/(M+F)"	"BLS_Data"
+    p = plot(cpm_GT_real, x="GT_F/A", Geom.histogram(bincount=12), Theme(key_max_columns=1, key_label_font_size=6pt))
     draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 5.0inch, 3.75inch),p)
 end
 histograms_compare()
