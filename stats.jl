@@ -1,17 +1,13 @@
-#Pkg.add("DataFrames")
-#Pkg.add("CSV")
-#Pkg.add("Gadfly")
-#Pkg.add("Cairo")
-#Pkg.add("Fontconfig")
 
 using DataFrames, CSV, Gadfly
 
 # Read compare data file
-cpm_GT_real = CSV.read("Results/translate-real-histogram-data-raw.tsv",delim='\t',nullable=false)
+cpm_GT_real = CSV.read("Results/translate-real-histogram-data.tsv",delim='\t',nullable=false)
 function histograms_compare()
     # Save histograms
     # "GT_F/A"	"GT_F/(M+F)"	"BLS_Data"
-    p = plot(cpm_GT_real, x="GT_F/A", Geom.histogram(bincount=12), Theme(key_max_columns=1, key_label_font_size=6pt))
+    cpm_GT_real[:,2] *= 100
+    p = plot(cpm_GT_real, x="12-quantile", y="Frequency (%)", color=:Data, Geom.bar(position=:dodge), Guide.xticks(ticks=[1:12;]), Theme(key_max_columns=1, key_label_font_size=6pt))
     draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 5.0inch, 3.75inch),p)
 end
 histograms_compare()
@@ -231,7 +227,6 @@ function a()
     p = plot(aux2, x=:Count, color=:Gender, Geom.histogram)
     draw(PDF("test.pdf", 5.0inch, 3.75inch), p)
 end
-
 
 #a()
 #barplot_adjectives()
