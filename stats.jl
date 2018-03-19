@@ -81,7 +81,7 @@ function group_categories(label)
     end
 end
 
-dat_jobs[:Category] = map(x -> rename_category(x), dat_jobs[:Category])
+dat_jobs[:Category] = map(x -> group_categories(x), dat_jobs[:Category])
 
 # Read adjective-genders.csv into a Julia DataFrame
 dat_adjectives = CSV.read("adjective-genders.csv",delim=';',nullable=false)
@@ -109,7 +109,7 @@ function barplot_adjectives()
 
     # Save bar plot
     p = plot(results_by_adjective, x=:Adjective, y=:Count, color=:Gender, Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
-    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 5inch, 3.75inch),p)
+    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 7.50inch, 5.625inch),p)
 end
 
 function histograms_occupations()
@@ -130,14 +130,14 @@ function histograms_occupations()
     CSV.write("Results/results-by-occupation.dat",results_by_occupation)
 
     # Save histograms
-    p = plot(results_by_occupation, x=:Female, color=:Category, Guide.xlabel("\# Female Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-female-grouped.pdf", 5.0inch, 3.75inch),p)
+    p = plot(results_by_occupation, x=:Female, color=:Category, Guide.xlabel("\# Female Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=8pt, plot_padding=[1cm,1cm,1cm,1cm]))
+    draw(PDF("Paper/pictures/histogram-female-grouped.pdf", 7.50inch, 5.625inch),p)
 
-    p = plot(results_by_occupation, x=:Male, color=:Category, Guide.xlabel("\# Male Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-male-grouped.pdf", 5.0inch, 3.75inch),p)
+    p = plot(results_by_occupation, x=:Male, color=:Category, Guide.xlabel("\# Male Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=8pt, plot_padding=[1cm,1cm,1cm,1cm]))
+    draw(PDF("Paper/pictures/histogram-male-grouped.pdf", 7.50inch, 5.625inch),p)
 
-    p = plot(results_by_occupation, x=:Neutral, color=:Category, Guide.xlabel("\# Gender Neutral Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-neutral-grouped.pdf", 5.0inch, 3.75inch),p)
+    p = plot(results_by_occupation, x=:Neutral, color=:Category, Guide.xlabel("\# Gender Neutral Pronouns"), Geom.histogram, Theme(key_max_columns=1, key_label_font_size=8pt, plot_padding=[1cm,1cm,1cm,1cm]))
+    draw(PDF("Paper/pictures/histogram-neutral-grouped.pdf", 7.50inch, 5.625inch),p)
 end
 
 function barplots_category()
@@ -162,8 +162,8 @@ function barplots_category()
     CSV.write("Results/results-by-category.dat",results_by_category)
 
     # Save bar plot
-    p = plot(results_by_category, x="Category", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
-    draw(PDF("Paper/pictures/gender-by-category.pdf", 5inch, 3.75inch),p)
+    p = plot(results_by_category, x="Category", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"), Guide.xticks(orientation=:vertical))
+    draw(PDF("Paper/pictures/gender-by-category.pdf", 7.50inch, 5.625inch),p)
 end
 
 function barplots_language()
@@ -185,8 +185,8 @@ function barplots_language()
     CSV.write("Results/results-by-language.dat",results_by_language)
 
     # Save bar plot
-    p = plot(results_by_language, x="Language", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"))
-    draw(PDF("Paper/pictures/gender-by-language.pdf", 5inch, 3.75inch),p)
+    p = plot(results_by_language, x="Language", y="Count", color="Gender", Coord.Cartesian(ymin=0,ymax=100), Geom.bar(position=:stack), Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black"), Guide.ylabel("\%"), Guide.xticks(orientation=:vertical))
+    draw(PDF("Paper/pictures/gender-by-language.pdf", 7.50inch, 5.625inch),p)
 end
 
 function a()
@@ -213,11 +213,11 @@ function a()
     #append!(aux1,aux2)
 
     p = plot(aux2, x=:Count, color=:Gender, Geom.histogram)
-    draw(PDF("test.pdf", 5.0inch, 3.75inch), p)
+    draw(PDF("test.pdf", 7.50inch, 5.625inch), p)
 end
 
-a()
+#a()
 #barplot_adjectives()
 #histograms_occupations()
-#barplots_category()
-#barplots_language()
+barplots_category()
+barplots_language()
