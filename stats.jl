@@ -1,6 +1,18 @@
 
 using DataFrames, CSV, Gadfly
 
+# Read compare data file
+cpm_GT_real = CSV.read("Results/translate-real-histogram-data.tsv",delim='\t',nullable=false)
+function histograms_compare()
+    # Save histograms
+    # "GT_F/A"	"GT_F/(M+F)"	"BLS_Data"
+    cpm_GT_real[:,2] *= 100
+    p = plot(cpm_GT_real, x="12-quantile", y="Frequency (%)", color=:Data, Geom.bar(position=:dodge), Guide.xticks(ticks=[1:12;]), Theme(key_max_columns=1, key_label_font_size=6pt))
+    draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 5.0inch, 3.75inch),p)
+end
+histograms_compare()
+exit()
+
 # Read job-genders.csv into a Julia DataFrame
 dat_jobs = CSV.read("Results/job-genders.tsv",delim='\t',nullable=false)
 
