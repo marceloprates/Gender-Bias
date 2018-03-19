@@ -8,7 +8,7 @@ function histograms_compare()
     # "GT_F/A"	"GT_F/(M+F)"	"BLS_Data"
     cpm_GT_real[:,2] *= 100
     p = plot(cpm_GT_real, x="12-quantile", y="Frequency (%)", color=:Data, Geom.bar(position=:dodge), Guide.xticks(ticks=[1:12;]), Theme(key_max_columns=1, key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 5.0inch, 3.75inch),p)
+    draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 7.50inch, 5.625inch),p)
 end
 histograms_compare()
 exit()
@@ -231,5 +231,5 @@ end
 #a()
 #barplot_adjectives()
 #histograms_occupations()
-barplots_category()
-barplots_language()
+#barplots_category()
+#barplots_language()
