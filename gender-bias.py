@@ -18,6 +18,9 @@ with open('languages.csv', 'r') as f:
     		languages.append(language)
 #end with
 
+# Define list of discarded languages
+discarded_languages = ['Tagalog','English','Maithili','Oriya','Korean','Cantonese','Pipil','Quechuan','Esperanto','Ido','Lingua Franca Nova','Interlingua']
+
 # Read job occupations list into table
 table = np.array(list(csv.reader(open('jobs/bureau_of_labor_statistics_profession_list_gender_filtered_expanded.tsv','r'), delimiter='\t')))
 
@@ -79,7 +82,7 @@ if False:
 translated_occupations = list(csv.reader(open('Results/jobs-translations.tsv','r'), delimiter='\t'))
 
 # Define function to obtain the translated gender of an occupation in a given language (through Google Translate)
-def get_gender(occupation,language):
+def get_gender(occupation,language,case=None):
 
 	translation = ''
 
@@ -90,11 +93,26 @@ def get_gender(occupation,language):
 	elif(language == 'Finnish'):
 		translation = translator.translate('hän on %s' % occupation, src=language, dest='en').text
 	elif(language == 'Hungarian'):
-		translation = translator.translate('ő %s' % occupation, src=language, dest='en').text
+		translation = translator.translate('ő egy %s' % occupation, src=language, dest='en').text
 	elif(language == 'Armenian'):
 		translation = translator.translate('նա %s է' % occupation, src=language, dest='en').text
+	
+	elif(language == 'Bengali'):
+		if(case == 'HF'):
+			translation = translator.translate('এ এ একজন %s' % occupation, src=language, dest='en').text
+		elif(case == 'HP'):
+			translation = translator.translate('যিনি যিনি একজন %s' % occupation, src=language, dest='en').text
+		elif(case == 'TF'):
+			translation = translator.translate('ও ও একজন %s' % occupation, src=language, dest='en').text
+		elif(case == 'TP'):
+			translation = translator.translate('উনি উনি একজন %s' % occupation, src=language, dest='en').text
+		elif(case == 'EF'):
+			translation = translator.translate('সে সে একজন %s' % occupation, src=language, dest='en').text
+		elif(case == 'EP'):
+			translation = translator.translate('তিনি তিনি একজন %s' % occupation, src=language, dest='en').text
+
 	elif(language == 'Japanese'):
-		translation = translator.translate('は %s です' % occupation, src=language, dest='en').text
+		translation = translator.translate('あの人は%sです' % occupation, src=language, dest='en').text
 	elif(language == 'Turkish'):
 		translation = translator.translate('o bir %s' % occupation, src=language, dest='en').text
 	elif(language == 'Yoruba'):
@@ -108,11 +126,11 @@ def get_gender(occupation,language):
 
 	translation = translation.lower()
 
-	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1):
+	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1 or translation[0:10].find("that woman") != -1):
 		return 'Female'
-	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1):
+	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1 or translation[0:8].find("that man") != -1):
 		return 'Male'
-	elif(translation[0:4].find("it") != -1 or translation[0:4].find("it's") != -1 or translation[0:4].find("its") != -1 or translation[0:7].find("they") != -1 or translation[0:7].find("they're") != -1 or translation[0:4].find("them") != -1):
+	elif(translation[0:4].find("it") != -1 or translation[0:4].find("it's") != -1 or translation[0:4].find("its") != -1 or translation[0:7].find("they") != -1 or translation[0:7].find("they're") != -1 or translation[0:4].find("them") != -1 or translation[0:3].find("who") != -1 or translation[0:4].find("this") != -1 or translation[0:4].find("that") != -1):
 		return 'Neutral'
 	else:
 		return '?'
@@ -121,7 +139,7 @@ def get_gender(occupation,language):
 """
 	Now create
 """
-discarded_languages = ['Bengali','Nepali','Korean']
+#discarded_languages = ['Bengali','Nepali','Korean']
 with open('Results/job-genders.tsv','w') as output:
 
 	# Write header
@@ -129,8 +147,11 @@ with open('Results/job-genders.tsv','w') as output:
 	output.write("\tOccupation")
 	for language in languages:
 		if language not in discarded_languages:
-			output.write('\t' + language)
-		#end if
+			if language=='Bengali':
+				for case in ['HF','HP','TF','TP','EF','EP']:
+					output.write('\t' + language + '-' + case)
+			else:
+				output.write('\t' + language)
 	#end for
 	output.write('\n')
 
@@ -146,14 +167,17 @@ with open('Results/job-genders.tsv','w') as output:
 		output.write('\t' + english_name)
 
 		for (language, foreign_name) in zip(languages, foreign_names):
-			if language not in discarded_languages:
-				try:
+			try:
+				if language == 'Bengali':
+					for case in ['HF','HP','TF','TP','EF','EP']:
+						gender = get_gender(foreign_name,language,case)
+						output.write('\t%s' % gender)
+				else:
 					gender = get_gender(foreign_name,language)
 					output.write('\t%s' % gender)
-				except ValueError:
-					output.write('\t?')
-				#end try
-			#end for
+			except ValueError:
+				output.write('\t?')
+			#end try
 		#end for
 
 		output.write('\n')

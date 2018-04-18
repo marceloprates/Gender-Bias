@@ -1,9 +1,14 @@
 
 1. The analysis is vulnerable to the selection of languages used for translations; Languages have different tendencies in gender-related pronouns but the author just counted the frequency of pronouns without a proper normalization. According to Simpson's paradox, the aggregated data may not represent the real trend that can be observed in each group.
 
+CHECKED
 2. Paper lacks a clear justification of why Bengali, Nepali and Korean were excluded from the set of tested languages.
+NOTES TO REBUTTAL LETTER:
+-
 
+ALMOST CHECKED
 3. Paper lacks a reference for the set of adjectives chosen for experimentation. Also it is not clear whether the template for adjectives is the same as the one used for occupations.
+NOTES TO REBUTTAL LETTER:
 
 4. Phrases were translated from varied languages, but gender frequencies were compared with women occupation data in the US. This is not satisfactorily justified.
 

@@ -104,48 +104,59 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 \begin{table}[H]
 \centering
 \begin{small}
-	\begin{tabular}{|c|m{2cm}|m{2cm}|c|c|}
+	\begin{tabular}{|c|m{1.5cm}|m{1.5cm}|m{2.2cm}|m{1.5cm}|}
 	\hline
-	Language Family 				& Language 				& Pronominal Gender System 	& Supported 	& Tested 		\\ \hline \hline
-	\multirow{2}{*}{Austronesian} 	& Malay 				& \xmark 					& \checkmark	& \checkmark	\\
-									& Tagalog 				& \xmark 					& \xmark		& \xmark		\\ \hline
-	\multirow{3}{*}{Finno-Ugric} 	& Estonian 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Finnish 				& \xmark 					& \checkmark	& \checkmark	\\
-									& Hungarian 			& \xmark 					& \checkmark 	& \checkmark	\\ \hline
-	\multirow{4}{*}{Indo-European} 	& Armenian 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Bengali 				& \xmark 					& \checkmark 	& \xmark		\\
-									& English 				& \checkmark 				& \checkmark 	& \xmark 		\\
-									& Persian 				& \checkmark 				& \checkmark 	& \xmark 		\\ \hline
-	\multirow{3}{*}{Indo-Aryan} 	& Maithili 				& \xmark 					& \xmark 		& \xmark 		\\
-									& Nepali 				& \xmark 					& \checkmark	& \xmark		\\
-									& Oriya 				& \xmark 					& \xmark 		& \xmark 		\\ \hline
-	\multirow{10}{*}{} 				& Japanese 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Korean 				& O 						& \checkmark 	& \xmark		\\
-									& Turkish 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Yoruba 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Basque 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Swahili 				& \xmark 					& \checkmark 	& \checkmark	\\
-									& Chinese 				& O 						& \checkmark 	& \checkmark	\\
-									& Cantonese 			& \xmark 					& \xmark		& \xmark		\\
-									& Pipil 				& \xmark 					& \xmark		& \xmark		\\
-									& Quechuan 				& \xmark 					& \xmark		& \xmark		\\ \hline
-	\multirow{4}{*}{Constructed} 	& Esperanto 			& \checkmark 				& \checkmark 	& \xmark		\\
-									& Ido 					& O 						& \xmark 		& \xmark 		\\ \cline{2-2}
-									& Lingua Franca Nova 	& \xmark 					& \xmark 		& \xmark 		\\ \cline{2-2}
-									& Interlingua 			& \xmark 					& \xmark 		& \xmark 		\\ \hline
+	Language Family 				& Language & Supported 	& Phrases have male/female markers & Tested \\ \hline \hline
+	\multirow{2}{*}{Austronesian} 	& Malay 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Tagalog 				& \xmark	 	& - 			& \xmark		\\ \hline
+	\multirow{3}{*}{Finno-Ugric} 	& Estonian 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Finnish 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Hungarian 			& \checkmark 	& \xmark 		& \checkmark	\\ \hline
+	\multirow{4}{*}{Indo-European} 	& Armenian 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Bengali				& \checkmark 	& O 			& \checkmark	\\
+									& English 				& \checkmark 	& \checkmark 	& \xmark 		\\
+									& {\color{red}Persian}	& \checkmark 	& \xmark 		& \checkmark	\\ \hline
+	\multirow{3}{*}{Indo-Aryan} 	& Maithili 				& \xmark 	 	& - 			& \xmark 		\\
+									& {\color{red}Nepali}	& \checkmark 	& O 	 		& \checkmark	\\
+									& Oriya 				& \xmark 	 	& - 			& \xmark 		\\ \hline
+	\multirow{10}{*}{} 				& Japanese 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& {\color{red}Korean}	& \checkmark 	& \checkmark	& \xmark		\\
+									& Turkish 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Yoruba 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Basque 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Swahili 				& \checkmark 	& \xmark 		& \checkmark	\\
+									& Chinese 				& \checkmark 	& O 			& \checkmark	\\
+									& Cantonese 			& \xmark	 	& - 			& \xmark		\\
+									& Pipil 				& \xmark	 	& - 			& \xmark		\\
+									& Quechuan 				& \xmark	 	& - 			& \xmark		\\ \hline
+	\multirow{4}{*}{Constructed} 	& Esperanto 			& \checkmark 	& \checkmark 	& \xmark		\\
+									& Ido 					& \xmark 	 	& - 			& \xmark 		\\ \cline{2-2}
+									& Lingua Franca Nova 	& \xmark 	 	& - 			& \xmark		\\ \cline{2-2}
+									& Interlingua 			& \xmark 	 	& - 			& \xmark		\\ \hline
 	\end{tabular}
     \end{small}
-	\caption{Selected gender neutral languages obtained from WALS and other sources.
-     Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system (\checkmark: yes, \xmark:~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such a system and, as such, Persian and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded.}
+	\caption{\changess{Selected gender neutral languages obtained from WALS and other sources. Languages are grouped according to language families and classified according to whether enforce any kind of mandatory gender (male/female) demarcation on simple phrases (\checkmark: yes, \xmark:~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such demarcation and as such Koran and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded. Languages colored in red have been omitted in other reasons. See Section} \ref{ssec:rationale_for_language_exceptions} \changess{for further explanation.}}
 	\label{tab:gender-neutral-languages}
 \end{table}
+
+\subsection{Rationale for language exceptions}
+\label{ssec:rationale_for_language_exceptions}
+
+\changess{
+While it is possible to construct gender neutral sentences in two of the languages omitted in our experiments (namely Korean and Nepali), we have chosen to omit them for the following reasons:}
+
+\begin{enumerate}
+\item \changess{We faced technical difficulties to form templates and automatically translate sentences with the right-to-left, top-to-bottom nature of the Persian script, and as such have decided not to include it in our experiments.}
+\item \changess{Due to Nepali having a rather complex grammar, with possible male/female gender demarcations on the phrases and due to none of the authors being fluent or able to reach someone fluent in the language, we were not confident enough in our ability to produce the required templates. Bengali was almost discarded under the same rationale, but we have decided to keep it because our sentence template for Bengali has a simple grammatical structure which does not require any kind of inflection.}
+\item \changess{While technically, one can construct gender neutral phrases in Korean by omitting the gender pronoun, in fact, this is default procedure. However, the expressiveness of this omission depends on the context of the sentence being clear, which is not possible in the way we frame phrases.}
+\end{enumerate}
 
 % PEDRO: TODO highlight table
 % List of occupation categories obtained from the U.S. Bureau of Labor Statistics, with nº of occupations per category and female participation (%) in each category
 \begin{table}[H]
 \begin{small}
 	\centering
-	\begin{tabular}{|m{3.5cm}|c|c|c|}
+	\begin{tabular}{|m{3.5cm}|m{2.0cm}|m{2.5cm}|m{2.5cm}|}
 	\hline	
 	Category 										& Group 						& \# Occupations 	& Female Participation	\\ \hline \hline
 	Education, training, and library 				& Education						& $22$ 				& $73.0\%$				\\ \hline
@@ -183,21 +194,27 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 \small{
 	\begin{tabular}{|c|c|}
 	\hline
-	Language 	& Sentence template 						\\ \hline \hline
-	Malay		& dia adalah $\langle occupation \rangle$ 	\\ \hline
-	Estonian	& ta on $\langle occupation \rangle$ 		\\ \hline
-	Finnish		& hän on $\langle occupation \rangle$ 		\\ \hline
-	Hungarian	& ő $\langle occupation \rangle$ 			\\ \hline
-	Armenian	& na $\langle occupation \rangle$ e 		\\ \hline
-	Japanese	& $\langle occupation \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}			\\ \hline
-	Turkish		& o bir $\langle occupation \rangle$ 		\\ \hline
-	Yoruba		& o jẹ $\langle occupation \rangle$ 		\\ \hline
-	Basque		& $\langle occupation \rangle$ da 			\\ \hline
-	Swahili		& yeye ni $\langle occupation \rangle$ 		\\ \hline
-	Chinese		& ta $\langle occupation \rangle$ 			\\ \hline
+	Language 	& Sentence template 													\\ \hline \hline
+	Malay		& dia adalah $\langle occupation \rangle$ 								\\ \hline
+	Estonian	& ta on $\langle occupation \rangle$ 									\\ \hline
+	Finnish		& hän on $\langle occupation \rangle$ 									\\ \hline
+	Hungarian	& ő egy $\langle occupation \rangle$ 									\\ \hline
+	Armenian	& na $\langle occupation \rangle$ e 									\\ \hline
+	\multirow{6}{*}{Bengali}	& Ē ē ēkajana $\langle occupation \rangle$				\\
+								& Yini yini ēkajana $\langle occupation \rangle$		\\
+								& Ō ō ēkajana $\langle occupation \rangle$				\\
+								& Uni uni ēkajana $\langle occupation \rangle$			\\
+								& Sē sē ēkajana $\langle occupation \rangle$			\\
+								& Tini tini ēkajana $\langle occupation \rangle$		\\ \hline
+	Japanese	& $\langle occupation \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
+	Turkish		& o bir $\langle occupation \rangle$ 									\\ \hline
+	Yoruba		& o jẹ $\langle occupation \rangle$ 									\\ \hline
+	Basque		& $\langle occupation \rangle$ da 										\\ \hline
+	Swahili		& yeye ni $\langle occupation \rangle$ 									\\ \hline
+	Chinese		& ta $\langle occupation \rangle$ 										\\ \hline
 	\end{tabular}
 	}
-    \caption{Templates used to infer gender biases in the translation to the English language.}
+	\caption{Templates used to infer gender biases in the translation to the English language.}
 	\label{tab:templates}
 \end{table}
 
@@ -230,13 +247,13 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 \small{
 	\begin{tabular}{|c|c|c|}
 	\hline
-	Happy 		& Sad 		& Right 	\\ \hline
-	Wrong 		& Afraid	& Brave 	\\ \hline
-	Smart		& Dumb		& Proud 	\\ \hline
-	Ashamed		& Kind		& Cruel 	\\ \hline
-	Envious		& Loving	& Hateful 	\\ \hline
-	Modest 		& Arrogant	& Guilty	\\ \hline
-	Innocent	& Helpless	& Shy		\\ \hline
+	Happy 		& Sad 		 & Right 	\\ \hline
+	Wrong 		& Afraid	 & Brave 	\\ \hline
+	Smart		& Dumb		 & Proud 	\\ \hline
+	STRONG		& POLITE	 & Cruel 	\\ \hline
+	DESIRABLE	& Loving	 & SYMPHATETIC 	\\ \hline
+	Modest 		& SUCCESSFUL & Guilty	\\ \hline
+	Innocent	& MATURE	 & Shy		\\ \hline
 	\end{tabular}
 	}
     \caption{Adjectives}
@@ -415,9 +432,43 @@ We have taken the care of experimenting with a fair amount of different gender n
 % PEDRO: TODO highlight section title
 \section{Distribution of translated gender pronouns for varied adjectives}
 
-Apart from occupations, which we have exhaustively examined by collecting labor data from the U.S. Bureau of Labor Statistics, we have also selected a small and for all purposes not representative subset of adjectives, in an attempt to provide preliminary evidence that the phenomenon of gender bias may extend beyond the professional context examined in this paper.
+We queried the 1000 most frequently used adjectives in English, as classified in the COCA corpus [https://corpus.byu.edu/coca/], but since not all of them were readily appliable to the sentence template we used, we filtered the N adjectives that would fit the templates and made sense for describing a human being. The list of adjectives extracted from the corpus will be present on the github repository after publishing along with the rationale for the exclusion of each word.
+
+\changess{Apart from occupations, which we have exhaustively examined by collecting labor data from the U.S. Bureau of Labor Statistics, we have also selected a small subset of adjectives from the Corpus of Contemporary American English (COCA)} \url{https://corpus.byu.edu/coca/}\changess{, in an attempt to provide preliminary evidence that the phenomenon of gender bias may extend beyond the professional context examined in this paper. Because a large number of adjectives are not appliable to human subjects, we manually curated a reasonable subset of such words. The template used for adjectives is identical to that used for occupations, but is provided again for reference in Table} \ref{tab:templates-adjectives}.
 
 Once again the data points towards male defaults, but some variation can be observed throughout different adjectives. Sentences containing the words \emph{Shy}, \emph{Attractive}, \emph{Happy}, \emph{Kind} and \emph{Ashamed} are predominantly female translated (\emph{Attractive} is translated as female and gender-neutral in equal parts), while \emph{Arrogant}, \emph{Cruel} and \emph{Guilty} are disproportionately translated with male pronouns (\emph{Guilty} is in fact never translated with female or neutral pronouns).
+
+% List of sentence templates for assessing gender bias in the translation from source language to English
+\begin{table}[H]
+\centering
+\small{
+	\begin{tabular}{|c|c|}
+	\hline
+	Language 	& Sentence template 													\\ \hline \hline
+	Malay		& dia adalah $\langle adjective \rangle$ 								\\ \hline
+	Estonian	& ta on $\langle adjective \rangle$ 									\\ \hline
+	Finnish		& hän on $\langle adjective \rangle$ 									\\ \hline
+	Hungarian	& ő egy $\langle adjective \rangle$ 									\\ \hline
+	Armenian	& na $\langle adjective \rangle$ e 									\\ \hline
+	\multirow{6}{*}{Bengali}	& Ē ē ēkajana $\langle adjective \rangle$				\\
+								& Yini yini ēkajana $\langle adjective \rangle$		\\
+								& Ō ō ēkajana $\langle adjective \rangle$				\\
+								& Uni uni ēkajana $\langle adjective \rangle$			\\
+								& Sē sē ēkajana $\langle adjective \rangle$			\\
+								& Tini tini ēkajana $\langle adjective \rangle$		\\ \hline
+	Japanese	& $\langle adjective \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
+	Turkish		& o bir $\langle adjective \rangle$ 									\\ \hline
+	Yoruba		& o jẹ $\langle adjective \rangle$ 									\\ \hline
+	Basque		& $\langle adjective \rangle$ da 										\\ \hline
+	Swahili		& yeye ni $\langle adjective \rangle$ 									\\ \hline
+	Chinese		& ta $\langle adjective \rangle$ 										\\ \hline
+	\end{tabular}
+	}
+	\caption{Templates used to infer gender biases in the translation to the English language.}
+	\label{tab:templates-adjectives}
+\end{table}
+
+
 
 % Table with our gender bias results for each adjective
 \begin{table}[H]
@@ -427,31 +478,31 @@ Once again the data points towards male defaults, but some variation can be obse
 	\hline
 	Adjective 	& Female 	& Male 	& Neutral 	& Total 	\\ \hline
 	\hline
-	Happy		& $4$		& $3$	& $2$		& $11$		\\ \hline
-	Wrong		& $0$		& $6$	& $4$		& $11$		\\ \hline
-	Smart		& $2$		& $4$	& $3$		& $11$		\\ \hline
-	Ashamed		& $3$		& $5$	& $1$		& $11$		\\ \hline
-	Envious		& $2$		& $5$	& $1$		& $11$		\\ \hline
-	Modest		& $1$		& $5$	& $3$		& $11$		\\ \hline
-	Innocent	& $1$		& $7$	& $1$		& $11$		\\ \hline
-	Sad			& $2$		& $5$	& $2$		& $11$		\\ \hline
-	Afraid		& $1$		& $5$	& $0$		& $11$		\\ \hline
-	Dumb		& $1$		& $5$	& $2$		& $11$		\\ \hline
-	Kind		& $3$		& $3$	& $1$		& $11$		\\ \hline
-	Loving		& $2$		& $5$	& $2$		& $11$		\\ \hline
-	Arrogant	& $0$		& $8$	& $1$		& $11$		\\ \hline
-	Helpless	& $2$		& $5$	& $2$		& $11$		\\ \hline
-	Right		& $0$		& $6$	& $3$		& $11$		\\ \hline
-	Brave		& $2$		& $6$	& $1$		& $11$		\\ \hline
-	Proud		& $1$		& $7$	& $1$		& $11$		\\ \hline
-	Cruel		& $1$		& $7$	& $2$		& $11$		\\ \hline
-	Hateful		& $1$		& $4$	& $3$		& $11$		\\ \hline
-	Guilty		& $0$		& $8$	& $0$		& $11$		\\ \hline
-	Shy			& $5$		& $2$	& $2$		& $11$		\\ \hline
-	Attractive	& $4$		& $1$	& $4$		& $11$		\\ \hline \hline
-	Total 		& $38$		& $112$	& $41$		& -			\\ \hline 
+	Happy			& $4$		& $3$	& $2$		& $11$		\\ \hline
+	Wrong			& $0$		& $6$	& $4$		& $11$		\\ \hline
+	Smart			& $2$		& $4$	& $3$		& $11$		\\ \hline
+	Modest			& $1$		& $5$	& $3$		& $11$		\\ \hline
+	Innocent		& $1$		& $7$	& $1$		& $11$		\\ \hline
+	Sad				& $2$		& $5$	& $2$		& $11$		\\ \hline
+	Afraid			& $1$		& $5$	& $0$		& $11$		\\ \hline
+	Dumb			& $1$		& $5$	& $2$		& $11$		\\ \hline
+	Loving			& $2$		& $5$	& $2$		& $11$		\\ \hline
+	Right			& $0$		& $6$	& $3$		& $11$		\\ \hline
+	Brave			& $2$		& $6$	& $1$		& $11$		\\ \hline
+	Proud			& $1$		& $7$	& $1$		& $11$		\\ \hline
+	Cruel			& $1$		& $7$	& $2$		& $11$		\\ \hline
+	Guilty			& $0$		& $8$	& $0$		& $11$		\\ \hline
+	Shy				& $5$		& $2$	& $2$		& $11$		\\ \hline
+	Attractive		& $4$		& $1$	& $4$		& $11$		\\ \hline
+	STRONG			&			&		&			&			\\ \hline
+	DESIRABLE		&			&		&			&			\\ \hline
+	SYMPHATETIC		&			&		&			&			\\ \hline
+	POLITE			&			&		&			&			\\ \hline
+	SUCCESSFUL		&			&		&			&			\\ \hline
+	MATURE			&			&		&			&			\\ \hline \hline
+	Total 			& $38$		& $112$	& $41$		& -			\\ \hline 
 	\end{tabular}
-	\caption{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective.}
+	\caption{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective. Adjectives marked with an asterisk did not make up to the top $1000$ most frequently used adjectives in the COCA corpus but we have decided to include them because }
 	\label{tab:gender-by-adjective}
 	}
 \end{table}
@@ -468,7 +519,7 @@ Once again the data points towards male defaults, but some variation can be obse
 
 A sensible objection to the conclusions we draw from our study is that the perceived gender bias in Google Translate results stems from the fact that (possibly) female participation in some job positions is itself low. We must account for the possibility that the statistics of gender pronouns in Google Translate outputs merely reflects the demographics of male-dominated fields (male-dominated fields can be considered those that have less than 25\% of women participation\citep{WB2014}, according to the U.S. Department of Labor Women's Bureau). In this context, the argument in favor of a critical revision of statistic translation algorithms weakens considerably, and possibly shifts the blame away from these tools.
 
-The U.S. Bureau of Labor Statistics data summarized in Table \ref{tab:occupations} contains statistics about the percentage of women participation in each occupation category. These data is also available for each individual occupation, which allows us to compute the frequency of women participation for each 12-quantile. We carried the same computation in the context of frequencies of translated female pronouns, and the resulting histograms are plotted side-by-side in Figure \ref{fig:histogram-compare-gt-real}. The data shows us that Google Translate outputs fail to follow the real-world distribution of female workers across a comprehensive set of job positions. The distribution of translated female pronouns is consistently inversely distributed, with female pronouns accumulating in the first 12-quantile. By contrast, BLS data shows that female participation peaks in the fourth 12-quantile and remains significant throughout the next ones.
+The U.S. Bureau of Labor Statistics data summarized in Table \ref{tab:occupations} contains statistics about the percentage of women participation in each occupation category. This data is also available for each individual occupation, which allows us to compute the frequency of women participation for each 12-quantile. We carried the same computation in the context of frequencies of translated female pronouns, and the resulting histograms are plotted side-by-side in Figure \ref{fig:histogram-compare-gt-real}. The data shows us that Google Translate outputs fail to follow the real-world distribution of female workers across a comprehensive set of job positions. The distribution of translated female pronouns is consistently inversely distributed, with female pronouns accumulating in the first 12-quantile. By contrast, BLS data shows that female participation peaks in the fourth 12-quantile and remains significant throughout the next ones.
 
 % Histogram with the distribution of male prononuns for each occupation category
 \begin{figure}[H]
