@@ -1,0 +1,12 @@
+
+1. The analysis is vulnerable to the selection of languages used for translations; Languages have different tendencies in gender-related pronouns but the author just counted the frequency of pronouns without a proper normalization. According to Simpson's paradox, the aggregated data may not represent the real trend that can be observed in each group.
+
+2. Paper lacks a clear justification of why Bengali, Nepali and Korean were excluded from the set of tested languages.
+
+3. Paper lacks a reference for the set of adjectives chosen for experimentation. Also it is not clear whether the template for adjectives is the same as the one used for occupations.
+
+4. Phrases were translated from varied languages, but gender frequencies were compared with women occupation data in the US. This is not satisfactorily justified.
+
+5. Rather than the fraction of female pronouns, the statistical confidence with regard on translating into female pronouns could be related to the female proportion for an occupation (but GTranslate does not return a statistical confidence of probability, which may impair this analysis).
+
+6. Figures 2-7 are confusing. They could be made better if presented with empirical CDFs on the selected categories. Figure 8 is required to have certain spaces between bars corresponding to each value along the x-axis. The figure also contains confusing labels corresponding to each color (i.e. GT F/A, GT F/(M+F), BLS data).

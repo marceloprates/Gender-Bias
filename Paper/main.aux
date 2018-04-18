@@ -1,0 +1,140 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\bibstyle{agsm}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{dascal1982universal}
+\citation{locke1955machine,weaver1955translation}
+\citation{gordin2015scientific}
+\citation{hutchins1986machine}
+\citation{koehn2009statistical,Moses2007}
+\citation{Bahdanau2014,carl2003recent,Firat2017}
+\citation{wu2016google}
+\citation{Chomsky2011,norvig2017chomsky}
+\citation{Chomsky2011}
+\citation{norvig2017chomsky}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}}
+\citation{norvig2017chomsky}
+\citation{schiebinger2014scientific}
+\citation{garcia2016racist}
+\citation{angwin2016machine}
+\citation{wang2017deep}
+\citation{womanunlockphone2017}
+\citation{racistsoapdispenser2017}
+\citation{kirkpatrick2016battling}
+\citation{WB2014}
+\citation{WB2014}
+\citation{Gtranslate200daily2017}
+\citation{TranslateCommunity}
+\citation{AlgorithmGtranslateSexist2018}
+\citation{bolukbasi2016man}
+\citation{hajian2016algorithmic}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Translating sentences from a gender neutral language such as Hungarian to English provides a glimpse into the phenomenon of gender bias in machine translation. This screenshot from Google Translate shows how occupations from traditionally male-dominated fields\citep  {WB2014} such as scholar, engineer and CEO are interpreted as male, while occupations such as nurse, baker and wedding organizer are interpreted as female.}}{4}{figure.1}}
+\newlabel{fig:screenshot-gtranslate-hungarian}{{1}{4}{Translating sentences from a gender neutral language such as Hungarian to English provides a glimpse into the phenomenon of gender bias in machine translation. This screenshot from Google Translate shows how occupations from traditionally male-dominated fields\citep {WB2014} such as scholar, engineer and CEO are interpreted as male, while occupations such as nurse, baker and wedding organizer are interpreted as female}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Motivation}{4}{section.2}}
+\citation{kay1984sapir}
+\citation{boroditsky2003sex}
+\citation{thompson2014linguistic}
+\citation{santacreu2013female}
+\citation{wals}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Assumptions and Preliminaries}{5}{section.3}}
+\citation{BLS2017}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Materials and Methods}{6}{section.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Selected gender neutral languages obtained from WALS and other sources. Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system (\text  {$\mathsurround \z@ \mathchar "458$}: yes, {\fontfamily  {pzd}\fontencoding  {U}\fontseries  {m}\fontshape  {n}\selectfont  \char 53}:\nobreakspace  {}no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such a system and, as such, Persian and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded.}}{7}{table.1}}
+\newlabel{tab:gender-neutral-languages}{{1}{7}{Selected gender neutral languages obtained from WALS and other sources. Languages are grouped according to language families and classified according to whether they exhibit pronominal gender system (\checkmark : yes, \xmark :~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such a system and, as such, Persian and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Selected occupations obtained from the U.S. Bureau of Labor Statistics \url  {https://www.bls.gov/cps/cpsaat11.htm}, grouped by category. We obtained a total of $1019$ occupations from $22$ distinct categories. We have further grouped them into broader groups (or \emph  {super-categories}) to ease analysis and visualization.}}{8}{table.2}}
+\newlabel{tab:occupations}{{2}{8}{Selected occupations obtained from the U.S. Bureau of Labor Statistics \url {https://www.bls.gov/cps/cpsaat11.htm}, grouped by category. We obtained a total of $1019$ occupations from $22$ distinct categories. We have further grouped them into broader groups (or \emph {super-categories}) to ease analysis and visualization}{table.2}{}}
+\citation{moss2015can}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Templates used to infer gender biases in the translation to the English language.}}{9}{table.3}}
+\newlabel{tab:templates}{{3}{9}{Templates used to infer gender biases in the translation to the English language}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces A randomly selected example subset of thirty occupations obtained from our dataset with a total of $1019$ different occupations.}}{9}{table.4}}
+\newlabel{tab:occupations-examples}{{4}{9}{A randomly selected example subset of thirty occupations obtained from our dataset with a total of $1019$ different occupations}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Adjectives}}{9}{table.5}}
+\newlabel{tab:adjectives}{{5}{9}{Adjectives}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Distribution of translated gender pronouns per occupation category}{9}{section.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Percentage of female, male and neutral gender pronouns obtained for each BLS occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref  {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}{10}{table.6}}
+\newlabel{tab:gender-by-category}{{6}{10}{Percentage of female, male and neutral gender pronouns obtained for each BLS occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Percentage of female, male and neutral gender pronouns obtained for each of the merged occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref  {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}{11}{table.7}}
+\newlabel{tab:gender-by-category-grouped}{{7}{11}{Percentage of female, male and neutral gender pronouns obtained for each of the merged occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun}{table.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The data for the total number $X$ of female pronouns per occupation category suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table \ref  {tab:gender-by-category}) extend to higher values.}}{12}{figure.2}}
+\newlabel{fig:histogram-female}{{2}{12}{The data for the total number $X$ of female pronouns per occupation category suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table \ref {tab:gender-by-category}) extend to higher values}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Coalescing the data from Table \ref  {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes even clearer that STEM fields concentrate at $X = 0$, as discussed in Figure \ref  {fig:histogram-female}.}}{13}{figure.3}}
+\newlabel{fig:histogram-female-grouped}{{3}{13}{Coalescing the data from Table \ref {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes even clearer that STEM fields concentrate at $X = 0$, as discussed in Figure \ref {fig:histogram-female}}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces In contrast to female pronouns, male pronouns are seemingly skew normally distributed, with a peak at $X = 6$. One can see that STEM fields concentrate mainly to the right ($X \geq 6$).}}{14}{figure.4}}
+\newlabel{fig:histogram-male}{{4}{14}{In contrast to female pronouns, male pronouns are seemingly skew normally distributed, with a peak at $X = 6$. One can see that STEM fields concentrate mainly to the right ($X \geq 6$)}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Coalescing the data from Table \ref  {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes clearer that STEM fields concentrate mainly to the right ($X \geq 6$), in contrast to what we observe for female pronouns (see Figure \ref  {fig:histogram-female-grouped}).}}{15}{figure.5}}
+\newlabel{fig:histogram-male-grouped}{{5}{15}{Coalescing the data from Table \ref {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes clearer that STEM fields concentrate mainly to the right ($X \geq 6$), in contrast to what we observe for female pronouns (see Figure \ref {fig:histogram-female-grouped})}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The scarcity of gender-neutral pronouns is manifest in their histogram, showing how they exceed the rarity even of female pronouns (see Figure \ref  {fig:histogram-female}). Once again, STEM fields are predominantly concentrated on $X = 0$.}}{16}{figure.6}}
+\newlabel{fig:histogram-neutral}{{6}{16}{The scarcity of gender-neutral pronouns is manifest in their histogram, showing how they exceed the rarity even of female pronouns (see Figure \ref {fig:histogram-female}). Once again, STEM fields are predominantly concentrated on $X = 0$}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Coalescing the data from Table \ref  {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. Once again, STEM fields are predominantly concentrated at $X = 0$.}}{17}{figure.7}}
+\newlabel{fig:histogram-neutral-grouped}{{7}{17}{Coalescing the data from Table \ref {tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. Once again, STEM fields are predominantly concentrated at $X = 0$}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table \ref  {tab:gender-by-category-grouped}) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}{18}{figure.8}}
+\newlabel{fig:gender-by-category}{{8}{18}{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table \ref {tab:gender-by-category-grouped}) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun}{figure.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Distribution of translated gender pronouns per language}{18}{section.6}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Percentage of female, male and neutral gender pronouns obtained for each language, averaged over all occupations detailed in Table \ref  {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}{19}{table.8}}
+\newlabel{tab:gender-by-language}{{8}{19}{Percentage of female, male and neutral gender pronouns obtained for each language, averaged over all occupations detailed in Table \ref {tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun}{table.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order.}}{19}{figure.9}}
+\newlabel{fig:gender-by-language}{{9}{19}{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Distribution of translated gender pronouns for varied adjectives}{20}{section.7}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective.}}{20}{table.9}}
+\newlabel{tab:gender-by-adjective}{{9}{20}{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective}{table.9}{}}
+\citation{WB2014}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The distribution of pronominal genders for each word in Table \ref  {tab:adjectives} shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph  {shy} and \emph  {attractive} are predominantly translated with female pronouns, while words like \emph  {guilty}, \emph  {innocent}, \emph  {wrong}, \emph  {right}, \emph  {arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph  {shy}, \emph  {happy}, \emph  {kind}, \emph  {ashamed}) amass at the other extreme of the sex ratio spectrum.}}{21}{figure.10}}
+\newlabel{fig:barplot-adjectives}{{10}{21}{The distribution of pronominal genders for each word in Table \ref {tab:adjectives} shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph {shy} and \emph {attractive} are predominantly translated with female pronouns, while words like \emph {guilty}, \emph {innocent}, \emph {wrong}, \emph {right}, \emph {arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph {shy}, \emph {happy}, \emph {kind}, \emph {ashamed}) amass at the other extreme of the sex ratio spectrum}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Comparison with women participation data across job positions}{21}{section.8}}
+\newlabel{sec:comparison-women-participation}{{8}{21}{Comparison with women participation data across job positions}{section.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Women participation ($\%$) data obtained from the U.S. Bureau of Labor Statistics allows us to assess whether the Google Translate bias towards male defaults is at least to some extent explained by small frequencies of female workers in some job positions. Our data does not make a very good case for that hypothesis: the total frequency of translated female pronouns (in blue) for each 12-quantile (which is consistently inversely distributed) does not seem to respond to the higher proportion of female workers (in red) in the last quantiles. To remove doubt we have also plotted in yellow the frequency of translated female pronouns among male and female pronouns (i.e., excluding eventual translation errors and gender-neutral pronouns).}}{22}{figure.11}}
+\newlabel{fig:histogram-compare-gt-real}{{11}{22}{Women participation ($\%$) data obtained from the U.S. Bureau of Labor Statistics allows us to assess whether the Google Translate bias towards male defaults is at least to some extent explained by small frequencies of female workers in some job positions. Our data does not make a very good case for that hypothesis: the total frequency of translated female pronouns (in blue) for each 12-quantile (which is consistently inversely distributed) does not seem to respond to the higher proportion of female workers (in red) in the last quantiles. To remove doubt we have also plotted in yellow the frequency of translated female pronouns among male and female pronouns (i.e., excluding eventual translation errors and gender-neutral pronouns)}{figure.11}{}}
+\citation{LanguageSupportNMT2018,boitet2010mt}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusions}{23}{section.9}}
+\bibcite{angwin2016machine}{{1}{2016}{{Angwin et~al.}}{{Angwin, Larson, Mattu \&\ Kirchner}}}
+\bibcite{Bahdanau2014}{{2}{2014}{{Bahdanau et~al.}}{{Bahdanau, Cho \&\ Bengio}}}
+\bibcite{boitet2010mt}{{3}{2010}{{Boitet et~al.}}{{Boitet, Blanchon, Seligman \&\ Bellynck}}}
+\bibcite{bolukbasi2016man}{{4}{2016}{{Bolukbasi et~al.}}{{Bolukbasi, Chang, Zou, Saligrama \&\ Kalai}}}
+\bibcite{boroditsky2003sex}{{5}{2003}{{Boroditsky et~al.}}{{Boroditsky, Schmidt \&\ Phillips}}}
+\bibcite{BLS2017}{{6}{2017}{{Bureau of Labor Statistics}}{{}}}
+\bibcite{carl2003recent}{{7}{2003}{{Carl \&\ Way}}{{}}}
+\bibcite{Chomsky2011}{{8}{2011}{{Chomsky}}{{}}}
+\bibcite{dascal1982universal}{{9}{1982}{{Dascal}}{{}}}
+\bibcite{wals}{{10}{2013}{{Dryer \&\ Haspelmath}}{{}}}
+\bibcite{Firat2017}{{11}{2017}{{Firat et~al.}}{{Firat, Cho, Sankaran, Yarman{-}Vural \&\ Bengio}}}
+\bibcite{garcia2016racist}{{12}{2016}{{Garcia}}{{}}}
+\bibcite{LanguageSupportNMT2018}{{13}{2018}{{Google}}{{}}}
+\bibcite{gordin2015scientific}{{14}{2015}{{Gordin}}{{}}}
+\bibcite{hajian2016algorithmic}{{15}{2016}{{Hajian et~al.}}{{Hajian, Bonchi \&\ Castillo}}}
+\bibcite{hutchins1986machine}{{16}{1986}{{Hutchins}}{{}}}
+\bibcite{wu2016google}{{17}{2017}{{Johnson et~al.}}{{Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat, Vi{\'{e}}gas, Wattenberg, Corrado, Hughes \&\ Dean}}}
+\bibcite{kay1984sapir}{{18}{1984}{{Kay \&\ Kempton}}{{}}}
+\bibcite{TranslateCommunity}{{19}{2014}{{Kelman}}{{}}}
+\bibcite{kirkpatrick2016battling}{{20}{2016}{{Kirkpatrick}}{{}}}
+\bibcite{koehn2009statistical}{{21}{2009}{{Koehn}}{{}}}
+\bibcite{Moses2007}{{22}{2007}{{Koehn et~al.}}{{Koehn, Hoang, Birch, Callison{-}Burch, Federico, Bertoldi, Cowan, Shen, Moran, Zens, Dyer, Bojar, Constantin \&\ Herbst}}}
+\bibcite{locke1955machine}{{23}{1955}{{Locke \&\ Booth}}{{}}}
+\bibcite{racistsoapdispenser2017}{{24}{2017}{{Mills}}{{}}}
+\bibcite{moss2015can}{{25}{2015}{{Moss-Racusin et~al.}}{{Moss-Racusin, Molenda \&\ Cramer}}}
+\bibcite{norvig2017chomsky}{{26}{2017}{{Norvig}}{{}}}
+\bibcite{AlgorithmGtranslateSexist2018}{{27}{2018}{{Olson}}{{}}}
+\bibcite{womanunlockphone2017}{{28}{2017}{{Papenfuss}}{{}}}
+\bibcite{santacreu2013female}{{29}{2013}{{Santacreu-Vasut et~al.}}{{Santacreu-Vasut, Shoham \&\ Gay}}}
+\bibcite{schiebinger2014scientific}{{30}{2014}{{Schiebinger}}{{}}}
+\bibcite{Gtranslate200daily2017}{{31}{2017}{{Shankland}}{{}}}
+\bibcite{thompson2014linguistic}{{32}{2014}{{Thompson}}{{}}}
+\bibcite{wang2017deep}{{33}{2017}{{Wang \&\ Kosinski}}{{}}}
+\bibcite{weaver1955translation}{{34}{1955}{{Weaver}}{{}}}
+\bibcite{WB2014}{{35}{2014}{{Women\IeC {\textquoteright }s Bureau}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Data Availability}{27}{section.10}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Competing interests}{27}{section.11}}
