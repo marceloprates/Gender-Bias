@@ -122,7 +122,7 @@ def get_gender(occupation,language,case=None):
 	elif(language == 'Swahili'):
 		translation = translator.translate('yeye ni %s' % occupation, src=language, dest='en').text
 	elif(language == 'Chinese'):
-		translation = translator.translate('ta %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
+		translation = translator.translate('ta shi %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
 
 	translation = translation.lower()
 
