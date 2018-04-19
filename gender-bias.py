@@ -126,7 +126,7 @@ def get_gender(occupation,language,case=None):
 
 	translation = translation.lower()
 
-	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1 or translation[0:10].find("that woman") != -1):
+	if(translation[0:3].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1 or translation[0:10].find("that woman") != -1):
 		return 'Female'
 	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1 or translation[0:8].find("that man") != -1):
 		return 'Male'
