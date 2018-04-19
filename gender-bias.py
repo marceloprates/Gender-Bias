@@ -125,13 +125,19 @@ def get_gender(occupation,language,case=None):
 		translation = translator.translate('ta shi %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
 
 	translation = translation.lower()
+	
+	female_markers = ["she", "she's", "her"]
+	male_markers = ["he", "he's", "his"]
+	neuter_markers = ["it","it's","its","they","they're","them","who","this","that"]
+	
+	has_any = lambda markers, translation: any( [ marker.lower() in translation.lower().split() for marker in markers ] )
 
-	if(translation[0:4].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1 or translation[0:10].find("that woman") != -1):
-		return 'Female'
-	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1 or translation[0:8].find("that man") != -1):
-		return 'Male'
-	elif(translation[0:4].find("it") != -1 or translation[0:4].find("it's") != -1 or translation[0:4].find("its") != -1 or translation[0:7].find("they") != -1 or translation[0:7].find("they're") != -1 or translation[0:4].find("them") != -1 or translation[0:3].find("who") != -1 or translation[0:4].find("this") != -1 or translation[0:4].find("that") != -1):
-		return 'Neutral'
+	if( has_any(female_markers, translation) or translation[0:10].find("that woman") != -1):
+		return 'Female' # Suggestion: (1,0,0)
+	elif( has_any(male_markers, translation) or translation[0:8].find("that man") != -1):
+		return 'Male' # Suggestion: (0,1,0)
+	elif( has_any(neuter_markers, translation) ):
+		return 'Neutral' # Suggestion: (0,0,1)
 	else:
 		return '?'
 #end def
