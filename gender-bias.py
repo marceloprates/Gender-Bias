@@ -130,9 +130,9 @@ def get_gender(language, occupation=None, adjective=None, case=None):
 		#end if
 	elif adjective is not None:
 		if language == 'Bengali':
-			phrase = occupation_dict['Bengali-%s' % case] % occupation
+			phrase = adjective_dict['Bengali-%s' % case] % adjective
 		else:
-			phrase = occupation_dict[language] % occupation
+			phrase = adjective_dict[language] % adjective
 		#end if
 	else:
 		raise Exception("Neither and occupation nor an adjective has been provided")
