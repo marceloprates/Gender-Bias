@@ -19,7 +19,7 @@ with open('languages.csv', 'r') as f:
 #end with
 
 # Define list of discarded languages
-discarded_languages = ['Tagalog','English','Maithili','Oriya','Korean','Cantonese','Pipil','Quechuan','Esperanto','Ido','Lingua Franca Nova','Interlingua']
+discarded_languages = ['Nepali','Tagalog','English','Maithili','Oriya','Korean','Cantonese','Pipil','Quechuan','Esperanto','Ido','Lingua Franca Nova','Interlingua']
 
 # Read job occupations list into table
 table = np.array(list(csv.reader(open('jobs/bureau_of_labor_statistics_profession_list_gender_filtered_expanded.tsv','r'), delimiter='\t')))
@@ -82,56 +82,79 @@ if False:
 translated_occupations = list(csv.reader(open('Results/jobs-translations.tsv','r'), delimiter='\t'))
 
 # Define function to obtain the translated gender of an occupation in a given language (through Google Translate)
-def get_gender(occupation,language,case=None):
+def get_gender(language, occupation=None, adjective=None, case=None):
 
-	translation = ''
+	occupation_dict = dict()
+	occupation_dict['Malay'] 		= 'dia adalah %s'
+	occupation_dict['Estonian'] 	= 'ta on %s'
+	occupation_dict['Finnish']		= 'hän on %s'
+	occupation_dict['Hungarian'] 	= 'ő egy %s'
+	occupation_dict['Armenian']		= 'նա %s է'
+	occupation_dict['Bengali-HF']	= 'এ একজন %s'
+	occupation_dict['Bengali-HP']	= 'যিনি একজন %s'
+	occupation_dict['Bengali-TF']	= 'ও একজন %s'
+	occupation_dict['Bengali-TP']	= 'উনি একজন %s'
+	occupation_dict['Bengali-EF']	= 'সে একজন %s'
+	occupation_dict['Bengali-EP']	= 'তিনি একজন %s'
+	occupation_dict['Japanese']		= 'あの人は%sです'
+	occupation_dict['Turkish']		= 'o bir %s'
+	occupation_dict['Yoruba']		= 'o jẹ %s'
+	occupation_dict['Basque']		= '%s bat da'
+	occupation_dict['Swahili']		= 'yeye ni %s'
+	occupation_dict['Chinese']		= 'ta shi %s'
 
-	if(language == 'Malay'):
-		translation = translator.translate('dia adalah %s' % occupation, src=language, dest='en').text
-	elif(language == 'Estonian'):
-		translation = translator.translate('ta on %s' % occupation, src=language, dest='en').text
-	elif(language == 'Finnish'):
-		translation = translator.translate('hän on %s' % occupation, src=language, dest='en').text
-	elif(language == 'Hungarian'):
-		translation = translator.translate('ő egy %s' % occupation, src=language, dest='en').text
-	elif(language == 'Armenian'):
-		translation = translator.translate('նա %s է' % occupation, src=language, dest='en').text
-	
-	elif(language == 'Bengali'):
-		if(case == 'HF'):
-			translation = translator.translate('এ একজন %s' % occupation, src=language, dest='en').text
-		elif(case == 'HP'):
-			translation = translator.translate('যিনি একজন %s' % occupation, src=language, dest='en').text
-		elif(case == 'TF'):
-			translation = translator.translate('ও একজন %s' % occupation, src=language, dest='en').text
-		elif(case == 'TP'):
-			translation = translator.translate('উনি একজন %s' % occupation, src=language, dest='en').text
-		elif(case == 'EF'):
-			translation = translator.translate('সে একজন %s' % occupation, src=language, dest='en').text
-		elif(case == 'EP'):
-			translation = translator.translate('তিনি একজন %s' % occupation, src=language, dest='en').text
+	adjective_dict = dict()
+	adjective_dict['Malay'] 		= 'dia %s'
+	adjective_dict['Estonian'] 		= 'ta on %s'
+	adjective_dict['Finnish']		= 'hän on %s'
+	adjective_dict['Hungarian'] 	= 'ő %s'
+	adjective_dict['Armenian']		= 'նա %s է'
+	adjective_dict['Bengali-HF']	= 'এ %s'
+	adjective_dict['Bengali-HP']	= 'যিনি %s'
+	adjective_dict['Bengali-TF']	= 'ও %s'
+	adjective_dict['Bengali-TP']	= 'উনি %s'
+	adjective_dict['Bengali-EF']	= 'সে %s'
+	adjective_dict['Bengali-EP']	= 'তিনি %s'
+	adjective_dict['Japanese']		= 'あの人は%sです'
+	adjective_dict['Turkish']		= 'o %s'
+	adjective_dict['Yoruba']		= 'o jẹ %s'
+	adjective_dict['Basque']		= '%s da'
+	adjective_dict['Swahili']		= 'yeye ni %s'
+	adjective_dict['Chinese']		= 'ta hen %s'
 
-	elif(language == 'Japanese'):
-		translation = translator.translate('あの人は%sです' % occupation, src=language, dest='en').text
-	elif(language == 'Turkish'):
-		translation = translator.translate('o bir %s' % occupation, src=language, dest='en').text
-	elif(language == 'Yoruba'):
-		translation = translator.translate('o jẹ %s' % occupation, src=language, dest='en').text
-	elif(language == 'Basque'):
-		translation = translator.translate('%s bat da' % occupation, src=language, dest='en').text
-	elif(language == 'Swahili'):
-		translation = translator.translate('yeye ni %s' % occupation, src=language, dest='en').text
-	elif(language == 'Chinese'):
-		translation = translator.translate('ta shi %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
+	if occupation is not None:
+		if language == 'Bengali':
+			phrase = occupation_dict['Bengali-%s' % case] % occupation
+		else:
+			phrase = occupation_dict[language] % occupation
+		#end if
+	elif adjective is not None:
+		if language == 'Bengali':
+			phrase = occupation_dict['Bengali-%s' % case] % occupation
+		else:
+			phrase = occupation_dict[language] % occupation
+		#end if
+	else:
+		raise Exception("Neither and occupation nor an adjective has been provided")
+	#end if
 
+	translation = translator.translate(phrase, src=language, dest='en').text
 	translation = translation.lower()
 
-	if(translation[0:3].find("she") != -1 or translation[0:4].find("she's") != -1 or translation[0:4].find("her") != -1 or translation[0:10].find("that woman") != -1):
-		return 'Female'
-	elif(translation[0:4].find("he") != -1 or translation[0:4].find("he's") != -1 or translation[0:4].find("his") != -1 or translation[0:8].find("that man") != -1):
-		return 'Male'
-	elif(translation[0:4].find("it") != -1 or translation[0:4].find("it's") != -1 or translation[0:4].find("its") != -1 or translation[0:7].find("they") != -1 or translation[0:7].find("they're") != -1 or translation[0:4].find("them") != -1 or translation[0:3].find("who") != -1 or translation[0:4].find("this") != -1 or translation[0:4].find("that") != -1):
-		return 'Neutral'
+	print("Language: {} | Phrase: {} | Translation: {}".format(language, phrase, translation))
+	
+	female_markers = ["she", "she's", "her"]
+	male_markers = ["he", "he's", "his"]
+	neuter_markers = ["it","it's","its","they","they're","them","who","this","that"]
+	
+	has_any = lambda markers, translation: any( [ marker.lower() in translation.lower().split() for marker in markers ] )
+
+	if( has_any(female_markers, translation) or translation[0:10].find("that woman") != -1):
+		return 'Female' # Suggestion: (1,0,0)
+	elif( has_any(male_markers, translation) or translation[0:8].find("that man") != -1):
+		return 'Male' # Suggestion: (0,1,0)
+	elif( has_any(neuter_markers, translation) ):
+		return 'Neutral' # Suggestion: (0,0,1)
 	else:
 		return '?'
 #end def
@@ -139,7 +162,7 @@ def get_gender(occupation,language,case=None):
 """
 	Now create
 """
-#discarded_languages = ['Bengali','Nepali','Korean']
+
 with open('Results/job-genders.tsv','w') as output:
 
 	# Write header
@@ -167,67 +190,22 @@ with open('Results/job-genders.tsv','w') as output:
 		output.write('\t' + english_name)
 
 		for (language, foreign_name) in zip(languages, foreign_names):
-			try:
-				if language == 'Bengali':
-					for case in ['HF','HP','TF','TP','EF','EP']:
-						gender = get_gender(foreign_name,language,case)
+			if language not in discarded_languages:
+				try:
+					if language == 'Bengali':
+						for case in ['HF','HP','TF','TP','EF','EP']:
+							gender = get_gender(language, occupation=foreign_name, case=case)
+							output.write('\t%s' % gender)
+					else:
+						gender = get_gender(language, occupation=foreign_name)
 						output.write('\t%s' % gender)
-				else:
-					gender = get_gender(foreign_name,language)
-					output.write('\t%s' % gender)
-			except ValueError:
-				output.write('\t?')
-			#end try
+				except ValueError:
+					output.write('\t?')
+				#end try
+			#end if
 		#end for
 
 		output.write('\n')
 		output.flush()
 	#end for
-
 #end with
-
-
-
-"""
-For adjectives use the following templates:
-
-	if(language == 'Malay'):
-		translation = translator.translate('dia %s' % occupation, src=language, dest='en').text
-	elif(language == 'Estonian'):
-		translation = translator.translate('ta on %s' % occupation, src=language, dest='en').text
-	elif(language == 'Finnish'):
-		translation = translator.translate('hän on %s' % occupation, src=language, dest='en').text
-	elif(language == 'Hungarian'):
-		translation = translator.translate('ő %s' % occupation, src=language, dest='en').text
-	elif(language == 'Armenian'):
-		translation = translator.translate('նա %s է' % occupation, src=language, dest='en').text
-	
-	elif(language == 'Bengali'):
-		if(case == 'HF'):
-			translation = translator.translate('এ %s' % occupation, src=language, dest='en').text
-		elif(case == 'HP'):
-			translation = translator.translate('যিনি %s' % occupation, src=language, dest='en').text
-		elif(case == 'TF'):
-			translation = translator.translate('ও %s' % occupation, src=language, dest='en').text
-		elif(case == 'TP'):
-			translation = translator.translate('উনি %s' % occupation, src=language, dest='en').text
-		elif(case == 'EF'):
-			translation = translator.translate('সে %s' % occupation, src=language, dest='en').text
-		elif(case == 'EP'):
-			translation = translator.translate('তিনি %s' % occupation, src=language, dest='en').text
-
-	elif(language == 'Japanese'):
-		translation = translator.translate('あの人は%sです' % occupation, src=language, dest='en').text
-		translation = translator.translate('あの人は%s' % occupation, src=language, dest='en').text
-	elif(language == 'Turkish'):
-		translation = translator.translate('o %s' % occupation, src=language, dest='en').text
-	elif(language == 'Yoruba'):
-		translation = translator.translate('o jẹ %s' % occupation, src=language, dest='en').text
-	elif(language == 'Basque'):
-		translation = translator.translate('%s da' % occupation, src=language, dest='en').text
-	elif(language == 'Swahili'):
-		translation = translator.translate('yeye ni %s' % occupation, src=language, dest='en').text
-		translation = translator.translate('yeye %s' % occupation, src=language, dest='en').text
-	elif(language == 'Chinese'):
-		translation = translator.translate('ta hen %s' % p.get_pinyin(occupation,''), src='zh-cn', dest='en').text
-"""
