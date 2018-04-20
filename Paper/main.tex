@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{pifont}
+\usepackage[caption=false]{subfig}
 
 \usepackage{natbib}
 \bibliographystyle{agsm}
@@ -95,10 +96,10 @@ We will thus assume throughout this paper that although the distribution of tran
 
 \section{Materials and Methods}
 
-We shall assume and then show that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. Specifically, we can translate sentences such as the Hungarian ``ő ápolónő'', where ``ápolónő'' translates to ``nurse'' and ``ő'' is a gender-neutral pronoun meaning either he, she or it, to English, yielding in this example the result ``she's a nurse'' on Google Translate. As Figure \ref{fig:screenshot-gtranslate-hungarian} clearly shows, the same template yields a male pronoun when ``nurse'' is replaced by ``engineer''. The same basic template can be ported to all other gender neutral languages, as depicted in Table \ref{tab:templates}. Given the success of Google Translate, which amounts to 200 million users daily, we have chosen to exploit its API to obtain the desired thermometer of gender bias. Also, in order to solidify our results, we have decided to work with a fair amount of gender neutral languages, forming a list of these with help from the World Atlas of Language Structures (WALS) \citep{wals} and other sources. Table \ref{tab:gender-neutral-languages} compiles all languages we chose to use, with additional columns informing whether they
+We shall assume and then show that the phenomenon of gender bias in machine translation can be assessed by mapping sentences constructed in gender neutral languages to English by the means of an automated translation tool. Specifically, we can translate sentences such as the Hungarian ``ő ápolónő'', where ``ápolónő'' translates to ``nurse'' and ``ő'' is a gender-neutral pronoun meaning either he, she or it, to English, yielding in this example the result ``she's a nurse'' on Google Translate. As Figure \ref{fig:screenshot-gtranslate-hungarian} clearly shows, the same template yields a male pronoun when ``nurse'' is replaced by ``engineer''. The same basic template can be ported to all other gender neutral languages, as depicted in Table \ref{tab:templates-occupations}. Given the success of Google Translate, which amounts to 200 million users daily, we have chosen to exploit its API to obtain the desired thermometer of gender bias. Also, in order to solidify our results, we have decided to work with a fair amount of gender neutral languages, forming a list of these with help from the World Atlas of Language Structures (WALS) \citep{wals} and other sources. Table \ref{tab:gender-neutral-languages} compiles all languages we chose to use, with additional columns informing whether they
 (1) exhibit a pronominal gender system and (2) are supported by Google Translate. Because pronominal gender systems defy the purposes of our technique, such languages have been discarded.
 
-There is a prohibitively large class of nouns and adjectives that could in principle be substituted in the templates of Table \ref{tab:templates}. To simplify our dataset, we have decided to obtain a comprehensive list of professional occupations, which, we believe, are an interesting window into the nature of gender bias. Here, we resorted to using the Bureau of Labor Statistics' detailed occupations table \citep{BLS2017}, from the United States Department of Labor, for providing such a list. The values inside, however, had to be expanded since each line contained multiple occupations and sometimes very specific ones. Fortunately this table also provided a percentage of women participation in the jobs shown, for those that had more than 50 thousand workers. We filtered some of these because they were too generic ( ``Computer occupations, all other'', and others) or because they had gender specific words for the profession (``host/hostess'', ``waiter/waitress''). We then separated the curated jobs into broader categories (Artistic, Corporate, Theatre, etc.) as shown in Table \ref{tab:occupations}. Finally, Table \ref{tab:occupations-examples} shows thirty examples of randomly selected occupations from our dataset. For the occupations that had less than 50 thousand workers, and thus no data about the participation of women, we assumed that its women participation was that of its upper category. Finally, we have selected a small list of 21 adjectives, presented in Table \ref{tab:adjectives}. All code and data used to generate and compile the results presented in the following sections will be made publicly available in a Github repository upon the Editors request. They are not linked to external sites to avoid authors identification. 
+\changess{There is a prohibitively large class of nouns and adjectives that could in principle be substituted into our templates. To simplify our dataset, we have decided to focus our work on job positions -- which, we believe, are an interesting window into the nature of gender bias --, and were able to obtain a comprehensive list of professional occupations from the Bureau of Labor Statistics' detailed occupations table} \citep{BLS2017}\changess{, from the United States Department of Labor.} The values inside, however, had to be expanded since each line contained multiple occupations and sometimes very specific ones. Fortunately this table also provided a percentage of women participation in the jobs shown, for those that had more than 50 thousand workers. We filtered some of these because they were too generic ( ``Computer occupations, all other'', and others) or because they had gender specific words for the profession (``host/hostess'', ``waiter/waitress''). We then separated the curated jobs into broader categories (Artistic, Corporate, Theatre, etc.) as shown in Table \ref{tab:occupations}. Finally, Table \ref{tab:occupations-examples} shows thirty examples of randomly selected occupations from our dataset. For the occupations that had less than 50 thousand workers, and thus no data about the participation of women, we assumed that its women participation was that of its upper category. \changess{Finally, as complementary evidence we have decided to include a small subset of 21 adjectives in our study. All adjectives were obtained from the top one thousand most frequent words in this category as featured in the Corpus of Contemporary American English (COCA)} \url{https://corpus.byu.edu/coca/}\changess{, but it was necessary to manually curate them because a substantial fraction of these adjectives cannot be applied to human subjects. Also because the sentiment associated with each adjective is not as easily accessible as for example the occupation category of each job position, we performed a manual selection of a subset of such words which we believe to be meaningful to this study. These words are presented in Table} \ref{tab:adjectives}. All code and data used to generate and{} compile the results presented in the following sections will be made publicly available in a Github repository upon the Editors request. They are not linked to external sites to avoid authors identification. 
 
 % Table containing a list of gender neutral languages with information about pronominal gender systems and GTranslate support
 \begin{table}[H]
@@ -135,7 +136,7 @@ There is a prohibitively large class of nouns and adjectives that could in princ
 									& Interlingua 			& \xmark 	 	& - 			& \xmark		\\ \hline
 	\end{tabular}
     \end{small}
-	\caption{\changess{Selected gender neutral languages obtained from WALS and other sources. Languages are grouped according to language families and classified according to whether enforce any kind of mandatory gender (male/female) demarcation on simple phrases (\checkmark: yes, \xmark:~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such demarcation and as such Koran and Esperanto have been discarded. Languages lacking support from Google Translate have been discarded. Languages colored in red have been omitted in other reasons. See Section} \ref{ssec:rationale_for_language_exceptions} \changess{for further explanation.}}
+	\caption{\changess{Selected gender neutral languages obtained from WALS and other sources. Languages are grouped according to language families and classified according to whether enforce any kind of mandatory gender (male/female) demarcation on simple phrases (\checkmark: yes, \xmark:~no, O: it is optional). For the purposes of this work, we have decided to work only with languages lacking such demarcation such as Esperanto have been discarded. Languages lacking support from Google Translate have been discarded. Languages colored in red have been omitted in other reasons. See Section} \ref{ssec:rationale_for_language_exceptions} \changess{for further explanation.}}
 	\label{tab:gender-neutral-languages}
 \end{table}
 
@@ -200,22 +201,51 @@ While it is possible to construct gender neutral sentences in two of the languag
 	Finnish		& hän on $\langle occupation \rangle$ 									\\ \hline
 	Hungarian	& ő egy $\langle occupation \rangle$ 									\\ \hline
 	Armenian	& na $\langle occupation \rangle$ e 									\\ \hline
-	\multirow{6}{*}{Bengali}	& Ē ē ēkajana $\langle occupation \rangle$				\\
-								& Yini yini ēkajana $\langle occupation \rangle$		\\
-								& Ō ō ēkajana $\langle occupation \rangle$				\\
-								& Uni uni ēkajana $\langle occupation \rangle$			\\
-								& Sē sē ēkajana $\langle occupation \rangle$			\\
-								& Tini tini ēkajana $\langle occupation \rangle$		\\ \hline
-	Japanese	& $\langle occupation \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
+	\multirow{6}{*}{Bengali}	& Ē ēkajana $\langle occupation \rangle$				\\
+								& Yini ēkajana $\langle occupation \rangle$		\\
+								& Ō ēkajana $\langle occupation \rangle$				\\
+								& Uni ēkajana $\langle occupation \rangle$			\\
+								& Sē ēkajana $\langle occupation \rangle$			\\
+								& Tini ēkajana $\langle occupation \rangle$		\\ \hline
+	Japanese	& \begin{CJK*}{UTF8}{min}あの人は\end{CJK*} $\langle occupation \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
 	Turkish		& o bir $\langle occupation \rangle$ 									\\ \hline
 	Yoruba		& o jẹ $\langle occupation \rangle$ 									\\ \hline
-	Basque		& $\langle occupation \rangle$ da 										\\ \hline
+	Basque		& $\langle occupation \rangle$ bat da 										\\ \hline
 	Swahili		& yeye ni $\langle occupation \rangle$ 									\\ \hline
-	Chinese		& ta $\langle occupation \rangle$ 										\\ \hline
+	Chinese		& ta shi $\langle occupation \rangle$ 										\\ \hline
 	\end{tabular}
 	}
-	\caption{Templates used to infer gender biases in the translation to the English language.}
-	\label{tab:templates}
+	\caption{\changess{Templates used to infer gender biases in the translation of job occupations to the English language.}}
+	\label{tab:templates-occupations}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small{
+	\begin{tabular}{|c|c|}
+	\hline
+	Language 	& Sentence template 													\\ \hline \hline
+	Malay		& dia $\langle adjective \rangle$ 								\\ \hline
+	Estonian	& ta on $\langle adjective \rangle$ 									\\ \hline
+	Finnish		& hän on $\langle adjective \rangle$ 									\\ \hline
+	Hungarian	& ő $\langle adjective \rangle$ 									\\ \hline
+	Armenian	& na $\langle adjective \rangle$ e 									\\ \hline
+	\multirow{6}{*}{Bengali}	& Ē $\langle adjective \rangle$				\\
+								& Yini $\langle adjective \rangle$		\\
+								& Ō $\langle adjective \rangle$				\\
+								& Uni $\langle adjective \rangle$			\\
+								& Sē $\langle adjective \rangle$			\\
+								& Tini $\langle adjective \rangle$		\\ \hline
+	Japanese	& \begin{CJK*}{UTF8}{min}あの人は\end{CJK*} $\langle adjective \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
+	Turkish		& o $\langle adjective \rangle$ 									\\ \hline
+	Yoruba		& o jẹ $\langle adjective \rangle$ 									\\ \hline
+	Basque		& $\langle adjective \rangle$ da 										\\ \hline
+	Swahili		& yeye ni $\langle adjective \rangle$ 									\\ \hline
+	Chinese		& ta hen $\langle adjective \rangle$ 										\\ \hline
+	\end{tabular}
+	}
+	\caption{\changess{Templates used to infer gender biases in the translation of adjectives to the English language.}}
+	\label{tab:templates-adjectives}
 \end{table}
 
 % PEDRO: TODO highlight table
@@ -247,16 +277,16 @@ While it is possible to construct gender neutral sentences in two of the languag
 \small{
 	\begin{tabular}{|c|c|c|}
 	\hline
-	Happy 		& Sad 		 & Right 	\\ \hline
-	Wrong 		& Afraid	 & Brave 	\\ \hline
-	Smart		& Dumb		 & Proud 	\\ \hline
-	STRONG		& POLITE	 & Cruel 	\\ \hline
-	DESIRABLE	& Loving	 & SYMPHATETIC 	\\ \hline
-	Modest 		& SUCCESSFUL & Guilty	\\ \hline
-	Innocent	& MATURE	 & Shy		\\ \hline
+	Happy 		& Sad 		 & Right 		\\ \hline
+	Wrong 		& Afraid	 & Brave 		\\ \hline
+	Smart		& Dumb		 & Proud 		\\ \hline
+	Strong		& Polite	 & Cruel 		\\ \hline
+	Desirable	& Loving	 & Sympathetic 	\\ \hline
+	Modest 		& Successful & Guilty		\\ \hline
+	Innocent	& Mature	 & Shy			\\ \hline
 	\end{tabular}
 	}
-    \caption{Adjectives}
+    \caption{\changess{Curated list of 21 adjectives obtained from the top one thousand most frequent words in this category in the Corpus of Contemporary American English (COCA)} \url{https://corpus.byu.edu/coca/}.}
 	\label{tab:adjectives}
 \end{table}
 
@@ -272,35 +302,35 @@ A sensible way to group translation data is to coalesce occupations in the same 
 \small{
 	\begin{tabular}{|c|c|c|c|}
 	\hline
-	Category 								& Female ($\%$)	& Male ($\%$)	& Neutral ($\%$) \\ \hline
-	\hline		
-	Education / Training / Library 			& $23.737$ 		& $58.081$		& $3.535$		\\ \hline
-	Business / Financial 					& $6.039$		& $62.319$		& $8.937$		\\ \hline
-	Office / Administrative					& $9.962$		& $56.322$		& $9.451$		\\ \hline
-	Healthcare support						& $27.083$		& $50.000$		& $9.722$		\\ \hline
-	Management								& $11.594$		& $61.111$		& $4.831$		\\ \hline
-	Installation / Maintenance / Repair		& $3.297$		& $62.393$		& $14.164$		\\ \hline
-	Healthcare practitioners / technical	& $18.088$		& $61.499$		& $8.527$		\\ \hline
-	Community and social service			& $14.286$ 		& $60.317$		& $5.556$		\\ \hline
-	Sales and related						& $7.540$		& $64.683$		& $10.714$		\\ \hline
-	Production								& $15.32$		& $45.370$		& $15.825$		\\ \hline
-	Architecture and engineering			& $1.916$		& $75.862$		& $6.130$		\\ \hline
-	Life, physical, and social sciences		& $3.595$		& $80.065$		& $4.575$		\\ \hline
-	Transportation / material moving		& $7.778$		& $60.159$		& $14.286$		\\ \hline
-	Arts / Entertainment					& $7.808$		& $66.366$		& $5.405$		\\ \hline
-	Legal									& $9.524$ 		& $65.079$		& $6.349$		\\ \hline
-	Protective service						& $6.746$		& $71.032$		& $7.143$		\\ \hline
-	Food preparation / serving			& $14.379$ 		& $56.863$		& $12.418$		\\ \hline
-	Farming, fishing, and forestry			& $12.821$ 		& $53.846$		& $10.256$		\\ \hline
-	Computer and mathematical				& $3.472$		& $70.833$		& $5.556$		\\ \hline
-	Personal care and service				& $17.845$ 		& $52.862$		& $11.111$		\\ \hline
-	Construction and extraction				& $9.967$		& $54.739$		& $13.562$		\\ \hline
-	Cleaning / Maintenance					& $12.222$		& $57.778$		& $10.000$		\\ \hline
+	Category & Female ($\%$)	& Male ($\%$)	& Neutral ($\%$) \\ \hline
 	\hline
-	Total           						& $11.078$ 		& $57.398$ 		& $11.286$ 		\\ \hline
+	Office and administrative support & 11.015 & 58.812 & 16.954 \\ \hline
+	Architecture and engineering & 2.299 & 72.701 & 10.92 \\ \hline
+	Farming, fishing, and forestry & 12.179 & 62.179 & 14.744 \\ \hline
+	Management & 11.232 & 66.667 & 12.681 \\ \hline
+	Community and social service & 20.238 & 62.5 & 10.119 \\ \hline
+	Healthcare support & 25.0 & 43.75 & 17.188 \\ \hline
+	Sales and related & 8.929 & 62.202 & 16.964 \\ \hline
+	Installation, maintenance, and repair & 5.22 & 58.333 & 17.125 \\ \hline
+	Transportation and material moving & 8.81 & 62.976 & 17.5 \\ \hline
+	Legal & 11.905 & 72.619 & 10.714 \\ \hline
+	Business and financial operations & 7.065 & 67.935 & 15.58 \\ \hline
+	Life, physical, and social science & 5.882 & 73.284 & 10.049 \\ \hline
+	Arts, design, entertainment, sports, and media & 10.36 & 67.342 & 11.486 \\ \hline
+	Education, training, and library & 23.485 & 53.03 & 9.091 \\ \hline
+	Building and grounds cleaning and maintenance & 12.5 & 68.333 & 11.667 \\ \hline
+	Personal care and service & 18.939 & 49.747 & 18.434 \\ \hline
+	Healthcare practitioners and technical & 22.674 & 51.744 & 15.116 \\ \hline
+	Production & 14.331 & 51.199 & 18.245 \\ \hline
+	Computer and mathematical & 4.167 & 66.146 & 14.062 \\ \hline
+	Construction and extraction & 8.578 & 61.887 & 17.525 \\ \hline
+	Protective service & 8.631 & 65.179 & 12.5 \\ \hline
+	Food preparation and serving related & 21.078 & 58.333 & 17.647 \\ \hline \hline
+	Total & 11.76 & 58.93 & 15.939 \\ \hline
+
 	\end{tabular}
 	}
-    \caption{Percentage of female, male and neutral gender pronouns obtained for each BLS occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref{tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}
+    \caption{\changess{Percentage of female, male and neutral gender pronouns obtained for each BLS occupation category, averaged over all occupations in said category and tested languages detailed in Table} \ref{tab:gender-neutral-languages}\changess{. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
 	\label{tab:gender-by-category}
 \end{table}
 
@@ -312,21 +342,21 @@ A sensible way to group translation data is to coalesce occupations in the same 
 	\hline
 	Category 								& Female ($\%$)			& Male ($\%$)			& Neutral ($\%$)	\\ \hline
 	\hline
-	Education								& $23.737$				& $58.081$				& $3.535$			\\ \hline
-	Corporate								& $8.519$				& $62.407$				& $7.778$			\\ \hline
-	Service									& $8.730$				& $59.746$				& $11.619$			\\ \hline
-	Healthcare								& $20.527$				& $58.380$				& $8.851$			\\ \hline
-	Production								& $15.32$				& $45.370$				& $15.825$			\\ \hline
-	STEM									& $2.954$				& $76.653$				& $5.345$			\\ \hline
-	Arts / Entertainment					& $7.808$				& $66.366$				& $5.405$			\\ \hline
-	Legal									& $9.524$				& $65.079$				& $6.349$			\\ \hline
-	Farming / Fishing / Forestry			& $12.821$				& $53.846$				& $10.256$			\\ \hline
-	Construction / Extraction				& $9.967$				& $54.739$				& $13.562$			\\ \hline
-	\hline
-	Total           						& $11.078$ 				& $57.398$ 				& $11.286$ 			\\ \hline
+	Service & 10.5 & 59.548 & 16.476 \\ \hline
+	STEM & 4.219 & 71.624 & 11.181 \\ \hline
+	Farming / Fishing / Forestry & 12.179 & 62.179 & 14.744 \\ \hline
+	Corporate & 9.167 & 66.042 & 14.861 \\ \hline
+	Healthcare & 23.305 & 49.576 & 15.537 \\ \hline
+	Legal & 11.905 & 72.619 & 10.714 \\ \hline
+	Arts / Entertainment & 10.36 & 67.342 & 11.486 \\ \hline
+	Education & 23.485 & 53.03 & 9.091 \\ \hline
+	Production & 14.331 & 51.199 & 18.245 \\ \hline
+	Construction / Extraction & 8.578 & 61.887 & 17.525 \\ \hline \hline
+	Total & 11.76 & 58.93 & 15.939 \\ \hline
+
 	\end{tabular}
 	}
-    \caption{Percentage of female, male and neutral gender pronouns obtained for each of the merged occupation category, averaged over all occupations in said category and tested languages detailed in Table \ref{tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}
+    \caption{\changess{Percentage of female, male and neutral gender pronouns obtained for each of the merged occupation category, averaged over all occupations in said category and tested languages detailed in Table} \ref{tab:gender-neutral-languages}\changess{. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
 	\label{tab:gender-by-category-grouped}
 \end{table}
 
@@ -337,58 +367,99 @@ These values contrast with LBS' report of gender participation, which will be di
 % Histogram with the distribution of female pronouns for each occupation category
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-female}
-	\caption{The data for the total number $X$ of female pronouns per occupation category suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table \ref{tab:gender-by-category}) extend to higher values.}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Female}
+	\caption{\changess{The data for the total number $X$ of female pronouns per occupation category suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table} \ref{tab:gender-by-category}\changess{) extend to higher values.}}
 	\label{fig:histogram-female}
 \end{figure}
 
 % Histogram with the distribution of female pronouns for each occupation category (but categories are grouped into 'super-categories')
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-female-grouped}
-	\caption{Coalescing the data from Table \ref{tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes even clearer that STEM fields concentrate at $X = 0$, as discussed in Figure \ref{fig:histogram-female}.}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Female-grouped}
+	\caption{\changess{Coalescing the data from Table} \ref{tab:gender-by-category} \changess{by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes even clearer that STEM fields concentrate at $X = 0$, as discussed in Figure} \ref{fig:histogram-female}.}
 	\label{fig:histogram-female-grouped}
 \end{figure}
 
 % Histogram with the distribution of male pronouns for each occupation category
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-male}
-	\caption{In contrast to female pronouns, male pronouns are seemingly skew normally distributed, with a peak at $X = 6$. One can see that STEM fields concentrate mainly to the right ($X \geq 6$).}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Male}
+	\caption{\changess{In contrast to female pronouns, male pronouns are seemingly skew normally distributed, with a peak at $X = 6$. One can see that STEM fields concentrate mainly to the right ($X \geq 6$).}}
 	\label{fig:histogram-male}
 \end{figure}
 
 % Histogram with the distribution of male pronouns for each occupation category (but categories are grouped into 'super-categories')
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-male-grouped}
-	\caption{Coalescing the data from Table \ref{tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes clearer that STEM fields concentrate mainly to the right ($X \geq 6$), in contrast to what we observe for female pronouns (see Figure \ref{fig:histogram-female-grouped}).}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Male-grouped}
+	\caption{\changess{Coalescing the data from Table} \ref{tab:gender-by-category} \changess{by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. In this context it becomes clearer that STEM fields concentrate mainly to the right ($X \geq 6$), in contrast to what we observe for female pronouns (see Figure} \ref{fig:histogram-female-grouped}).}
 	\label{fig:histogram-male-grouped}
 \end{figure}
 
 % Histogram with the distribution of neutral pronouns for each occupation category
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-neutral}
-	\caption{The scarcity of gender-neutral pronouns is manifest in their histogram, showing how they exceed the rarity even of female pronouns (see Figure \ref{fig:histogram-female}). Once again, STEM fields are predominantly concentrated on $X = 0$.}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Neutral}
+	\caption{\changess{The scarcity of gender-neutral pronouns is manifest in their histogram, showing how they exceed the rarity even of female pronouns (see Figure} \ref{fig:histogram-female}\changess{). Once again, STEM fields are predominantly concentrated on $X = 0$.}}
 	\label{fig:histogram-neutral}
 \end{figure}
 
 % Histogram with the distribution of neutral pronouns for each occupation category (but categories are grouped into 'super-categories')
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/histogram-neutral-grouped}
-	\caption{Coalescing the data from Table \ref{tab:gender-by-category} by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. Once again, STEM fields are predominantly concentrated at $X = 0$.}
+	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Neutral-grouped}
+	\caption{\changess{Coalescing the data from Table} \ref{tab:gender-by-category} \changess{by grouping categories into broader groups helps us see how translated gender pronouns are distributed for some fields of interest such as STEM, Education, Arts / Entertainment, etc. Once again, STEM fields are predominantly concentrated at $X = 0$.}}
 	\label{fig:histogram-neutral-grouped}
 \end{figure}
+
+AAAAAAAA
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/histograms/categories/gender-dodged-STEM}
+	\caption{TODO STEM}
+	\label{fig:histogram-dodged-STEM}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/histograms/categories/gender-dodged-Healthcare}
+	\caption{TODO Healthcare}
+	\label{fig:histogram-dodged-Healthcare}
+\end{figure}
+
+BBBBBVBBV
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Female}
+	\caption{TODO heatmap female}
+	\label{fig:heatmap-female}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Male}
+	\caption{TODO heatmap male}
+	\label{fig:heatmap-male}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Neutral}
+	\caption{TODO heatmap neutral}
+	\label{fig:heatmap-neutral}
+\end{figure}
+
+
 
 The bar plots in Figure \ref{fig:gender-by-category} help us visualize how much of the distribution of each occupation category is composed of female, male and gender-neutral pronouns. In this context, STEM fields, which show a predominance of male defaults, are contrasted with healthcare and educations, which show a larger proportion of female pronouns.
 
 % Barplot with % of female, male and neutral translated pronouns for each occupation category
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/gender-by-category-grouped}
-	\caption{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table \ref{tab:gender-by-category-grouped}) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}
+	\includegraphics[width=10cm]{pictures/barplot-gender-by-category-grouped}
+	\caption{\changess{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table} \ref{tab:gender-by-category-grouped}\changess{) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
 	\label{fig:gender-by-category}
 \end{figure}
 
@@ -404,19 +475,20 @@ We have taken the care of experimenting with a fair amount of different gender n
 	\hline
 	Language 	& Female ($\%$) 	& Male ($\%$)		& Neutral ($\%$)	\\ \hline
 	\hline
-	Malay     	& $4.122$ 			& $95.780$  		& $0.000$			\\ \hline
-	Estonian  	& $18.351$			& $80.962$  		& $0.491$			\\ \hline
-	Finnish   	& $33.562$			& $66.143$  		& $0.000$			\\ \hline
-	Hungarian 	& $36.016$			& $63.297$  		& $0.393$			\\ \hline
-	Armenian  	& $9.814$			& $81.256$  		& $0.589$			\\ \hline
-	Japanese  	& $0.196$			& $26.791$  		& $1.079$			\\ \hline
-	Turkish   	& $2.355$			& $63.199$  		& $18.449$			\\ \hline
-	Yoruba    	& $1.178$			& $48.577$  		& $36.997$			\\ \hline
-	Basque    	& $0.393$			& $12.365$  		& $34.838$			\\ \hline
-	Swahili   	& $14.328$ 			& $85.574$  		& $0.000$			\\ \hline
-	Chinese   	& $1.865$ 			& $69.382$  		& $9.225$			\\ \hline
+	Malay & 3.827 & 88.420 & 0.000 \\ \hline
+	Estonian & 17.370 & 72.228 & 0.491 \\ \hline
+	Finnish & 34.446 & 56.624 & 0.000 \\ \hline
+	Hungarian & 34.347 & 58.292 & 0.000 \\ \hline
+	Armenian & 10.010 & 82.041 & 0.687 \\ \hline
+	Bengali & 16.765 & 37.782 & 25.63 \\ \hline
+	Japanese & 0.000 & 66.928 & 24.436 \\ \hline
+	Turkish & 2.748 & 62.807 & 18.744 \\ \hline
+	Yoruba & 1.178 & 48.184 & 38.371 \\ \hline
+	Basque & 0.393 & 5.496 & 58.587 \\ \hline
+	Swahili & 14.033 & 76.644 & 0.000 \\ \hline
+	Chinese & 5.986 & 51.717 & 24.338 \\ \hline
 	\end{tabular}
-	\caption{Percentage of female, male and neutral gender pronouns obtained for each language, averaged over all occupations detailed in Table \ref{tab:gender-neutral-languages}. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}
+	\caption{\changess{Percentage of female, male and neutral gender pronouns obtained for each language, averaged over all occupations detailed in Table} \ref{tab:gender-neutral-languages}\changess{. Note that columns do not in general add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
 	\label{tab:gender-by-language}
 	}
 \end{table}
@@ -425,7 +497,7 @@ We have taken the care of experimenting with a fair amount of different gender n
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/gender-by-language}
-	\caption{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order.}
+	\caption{\changess{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order.}}
 	\label{fig:gender-by-language}
 \end{figure}
 
@@ -434,39 +506,9 @@ We have taken the care of experimenting with a fair amount of different gender n
 
 We queried the 1000 most frequently used adjectives in English, as classified in the COCA corpus [https://corpus.byu.edu/coca/], but since not all of them were readily appliable to the sentence template we used, we filtered the N adjectives that would fit the templates and made sense for describing a human being. The list of adjectives extracted from the corpus will be present on the github repository after publishing along with the rationale for the exclusion of each word.
 
-\changess{Apart from occupations, which we have exhaustively examined by collecting labor data from the U.S. Bureau of Labor Statistics, we have also selected a small subset of adjectives from the Corpus of Contemporary American English (COCA)} \url{https://corpus.byu.edu/coca/}\changess{, in an attempt to provide preliminary evidence that the phenomenon of gender bias may extend beyond the professional context examined in this paper. Because a large number of adjectives are not appliable to human subjects, we manually curated a reasonable subset of such words. The template used for adjectives is identical to that used for occupations, but is provided again for reference in Table} \ref{tab:templates-adjectives}.
+\changess{Apart from occupations, which we have exhaustively examined by collecting labor data from the U.S. Bureau of Labor Statistics, we have also selected a small subset of adjectives from the Corpus of Contemporary American English (COCA)} \url{https://corpus.byu.edu/coca/}\changess{, in an attempt to provide preliminary evidence that the phenomenon of gender bias may extend beyond the professional context examined in this paper. Because a large number of adjectives are not appliable to human subjects, we manually curated a reasonable subset of such words. The template used for adjectives is similar to that used for occupations, and is provided again for reference in Table} \ref{tab:templates-adjectives}.
 
 Once again the data points towards male defaults, but some variation can be observed throughout different adjectives. Sentences containing the words \emph{Shy}, \emph{Attractive}, \emph{Happy}, \emph{Kind} and \emph{Ashamed} are predominantly female translated (\emph{Attractive} is translated as female and gender-neutral in equal parts), while \emph{Arrogant}, \emph{Cruel} and \emph{Guilty} are disproportionately translated with male pronouns (\emph{Guilty} is in fact never translated with female or neutral pronouns).
-
-% List of sentence templates for assessing gender bias in the translation from source language to English
-\begin{table}[H]
-\centering
-\small{
-	\begin{tabular}{|c|c|}
-	\hline
-	Language 	& Sentence template 													\\ \hline \hline
-	Malay		& dia adalah $\langle adjective \rangle$ 								\\ \hline
-	Estonian	& ta on $\langle adjective \rangle$ 									\\ \hline
-	Finnish		& hän on $\langle adjective \rangle$ 									\\ \hline
-	Hungarian	& ő egy $\langle adjective \rangle$ 									\\ \hline
-	Armenian	& na $\langle adjective \rangle$ e 										\\ \hline
-	\multirow{6}{*}{Bengali}	& Ē ē ēkajana $\langle adjective \rangle$				\\
-								& Yini yini ēkajana $\langle adjective \rangle$			\\
-								& Ō ō ēkajana $\langle adjective \rangle$				\\
-								& Uni uni ēkajana $\langle adjective \rangle$			\\
-								& Sē sē ēkajana $\langle adjective \rangle$				\\
-								& Tini tini ēkajana $\langle adjective \rangle$			\\ \hline
-	Japanese	& $\langle adjective \rangle$ \begin{CJK*}{UTF8}{min}です\end{CJK*}		\\ \hline
-	Turkish		& o bir $\langle adjective \rangle$ 									\\ \hline
-	Yoruba		& o jẹ $\langle adjective \rangle$ 										\\ \hline
-	Basque		& $\langle adjective \rangle$ da 										\\ \hline
-	Swahili		& yeye ni $\langle adjective \rangle$ 									\\ \hline
-	Chinese		& ta $\langle adjective \rangle$ 										\\ \hline
-	\end{tabular}
-	}
-	\caption{Templates used to infer gender biases in the translation to the English language.}
-	\label{tab:templates-adjectives}
-\end{table}
 
 
 
@@ -474,35 +516,34 @@ Once again the data points towards male defaults, but some variation can be obse
 \begin{table}[H]
 \small{
 	\centering
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|}
 	\hline
-	Adjective 	& Female 	& Male 	& Neutral 	& Total 	\\ \hline
-	\hline
-	Happy			& $4$		& $3$	& $2$		& $11$		\\ \hline
-	Wrong			& $0$		& $6$	& $4$		& $11$		\\ \hline
-	Smart			& $2$		& $4$	& $3$		& $11$		\\ \hline
-	Modest			& $1$		& $5$	& $3$		& $11$		\\ \hline
-	Innocent		& $1$		& $7$	& $1$		& $11$		\\ \hline
-	Sad				& $2$		& $5$	& $2$		& $11$		\\ \hline
-	Afraid			& $1$		& $5$	& $0$		& $11$		\\ \hline
-	Dumb			& $1$		& $5$	& $2$		& $11$		\\ \hline
-	Loving			& $2$		& $5$	& $2$		& $11$		\\ \hline
-	Right			& $0$		& $6$	& $3$		& $11$		\\ \hline
-	Brave			& $2$		& $6$	& $1$		& $11$		\\ \hline
-	Proud			& $1$		& $7$	& $1$		& $11$		\\ \hline
-	Cruel			& $1$		& $7$	& $2$		& $11$		\\ \hline
-	Guilty			& $0$		& $8$	& $0$		& $11$		\\ \hline
-	Shy				& $5$		& $2$	& $2$		& $11$		\\ \hline
-	Attractive		& $4$		& $1$	& $4$		& $11$		\\ \hline
-	STRONG			&			&		&			&			\\ \hline
-	DESIRABLE		&			&		&			&			\\ \hline
-	SYMPHATETIC		&			&		&			&			\\ \hline
-	POLITE			&			&		&			&			\\ \hline
-	SUCCESSFUL		&			&		&			&			\\ \hline
-	MATURE			&			&		&			&			\\ \hline \hline
-	Total 			& $38$		& $112$	& $41$		& -			\\ \hline 
+	Adjective & Female & Male & Neutral \\ \hline \hline
+	Happy & 36.364 & 27.273 & 18.182 \\ \hline
+	Sad & 18.182 & 36.364 & 18.182 \\ \hline
+	Right & 0.000 & 63.636 & 27.273 \\ \hline
+	Wrong & 0.000 & 54.545 & 36.364 \\ \hline
+	Afraid & 9.091 & 54.545 & 0.000 \\ \hline
+	Brave & 9.091 & 63.636 & 18.182 \\ \hline
+	Smart & 18.182 & 45.455 & 18.182 \\ \hline
+	Dumb & 18.182 & 36.364 & 18.182 \\ \hline
+	Proud & 9.091 & 72.727 & 9.091 \\ \hline
+	Strong & 9.091 & 54.545 & 18.182 \\ \hline
+	Polite & 18.182 & 45.455 & 18.182 \\ \hline
+	Cruel & 9.091 & 63.636 & 18.182 \\ \hline
+	Desirable & 9.091 & 36.364 & 45.455 \\ \hline
+	Loving & 18.182 & 45.455 & 27.273 \\ \hline
+	Sympathetic & 18.182 & 45.455 & 18.182 \\ \hline
+	Modest & 18.182 & 45.455 & 27.273 \\ \hline
+	Successful & 9.091 & 54.545 & 27.273 \\ \hline
+	Guilty & 0.000 & 72.727 & 0.000 \\ \hline
+	Innocent & 9.091 & 54.545 & 9.091 \\ \hline
+	Mature & 36.364 & 36.364 & 9.091 \\ \hline
+	Shy & 36.364 & 27.273 & 27.273 \\ \hline \hline
+	Total & 0.303 & 0.981 & 0.417 \\ \hline
+
 	\end{tabular}
-	\caption{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective. Adjectives marked with an asterisk did not make up to the top $1000$ most frequently used adjectives in the COCA corpus but we have decided to include them because }
+	\caption{\changess{Number of female, male and neutral pronominal genders in the translated sentences for each selected adjective.}}
 	\label{tab:gender-by-adjective}
 	}
 \end{table}
@@ -511,7 +552,7 @@ Once again the data points towards male defaults, but some variation can be obse
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/barplot-adjectives}
-	\caption{The distribution of pronominal genders for each word in Table \ref{tab:adjectives} shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph{shy} and \emph{attractive} are predominantly translated with female pronouns, while words like \emph{guilty}, \emph{innocent}, \emph{wrong}, \emph{right}, \emph{arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph{shy}, \emph{happy}, \emph{kind}, \emph{ashamed}) amass at the other extreme of the sex ratio spectrum.}
+	\caption{\changess{The distribution of pronominal genders for each word in Table} \ref{tab:adjectives} \changess{shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph{shy} and \emph{attractive} are predominantly translated with female pronouns, while words like \emph{guilty}, \emph{innocent}, \emph{wrong}, \emph{right}, \emph{arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph{shy}, \emph{happy}, \emph{kind}, \emph{ashamed}) amass at the other extreme of the sex ratio spectrum.}}
 	\label{fig:barplot-adjectives}
 \end{figure}
 
@@ -525,7 +566,7 @@ The U.S. Bureau of Labor Statistics data summarized in Table \ref{tab:occupation
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/histogram-compare-gt-real}
-	\caption{Women participation ($\%$) data obtained from the U.S. Bureau of Labor Statistics allows us to assess whether the Google Translate bias towards male defaults is at least to some extent explained by small frequencies of female workers in some job positions. Our data does not make a very good case for that hypothesis: the total frequency of translated female pronouns (in blue) for each 12-quantile (which is consistently inversely distributed) does not seem to respond to the higher proportion of female workers (in red) in the last quantiles. To remove doubt we have also plotted in yellow the frequency of translated female pronouns among male and female pronouns (i.e., excluding eventual translation errors and gender-neutral pronouns).}
+	\caption{\changess{Women participation ($\%$) data obtained from the U.S. Bureau of Labor Statistics allows us to assess whether the Google Translate bias towards male defaults is at least to some extent explained by small frequencies of female workers in some job positions. Our data does not make a very good case for that hypothesis: the total frequency of translated female pronouns (in blue) for each 12-quantile does not seem to respond to the higher proportion of female workers (in yellow) in the last quantiles.}}
 	\label{fig:histogram-compare-gt-real}
 \end{figure}
 

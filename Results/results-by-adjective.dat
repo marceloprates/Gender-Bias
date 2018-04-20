@@ -1,67 +1,23 @@
-"Adjective","Gender","Count","Ratio"
-"Happy","Female",40.0,0.75
-"Happy","Male",30.0,0.75
-"Happy","Neutral",20.0,0.75
-"Wrong","Female",0.0,Inf
-"Wrong","Male",60.0,Inf
-"Wrong","Neutral",40.0,Inf
-"Smart","Female",20.0,2.0
-"Smart","Male",40.0,2.0
-"Smart","Neutral",30.0,2.0
-"Ashamed","Female",30.0,1.6666666666666667
-"Ashamed","Male",50.0,1.6666666666666667
-"Ashamed","Neutral",10.0,1.6666666666666667
-"Envious","Female",20.0,2.5
-"Envious","Male",50.0,2.5
-"Envious","Neutral",10.0,2.5
-"Modest","Female",10.0,5.0
-"Modest","Male",50.0,5.0
-"Modest","Neutral",30.0,5.0
-"Innocent","Female",10.0,7.0
-"Innocent","Male",70.0,7.0
-"Innocent","Neutral",10.0,7.0
-"Sad","Female",20.0,2.5
-"Sad","Male",50.0,2.5
-"Sad","Neutral",20.0,2.5
-"Afraid","Female",10.0,5.0
-"Afraid","Male",50.0,5.0
-"Afraid","Neutral",0.0,5.0
-"Dumb","Female",10.0,5.0
-"Dumb","Male",50.0,5.0
-"Dumb","Neutral",20.0,5.0
-"Kind","Female",30.0,1.0
-"Kind","Male",30.0,1.0
-"Kind","Neutral",10.0,1.0
-"Loving","Female",20.0,2.5
-"Loving","Male",50.0,2.5
-"Loving","Neutral",20.0,2.5
-"Arrogant","Female",0.0,Inf
-"Arrogant","Male",80.0,Inf
-"Arrogant","Neutral",10.0,Inf
-"Helpless","Female",20.0,2.5
-"Helpless","Male",50.0,2.5
-"Helpless","Neutral",20.0,2.5
-"Right","Female",0.0,Inf
-"Right","Male",60.0,Inf
-"Right","Neutral",30.0,Inf
-"Brave","Female",20.0,3.0
-"Brave","Male",60.0,3.0
-"Brave","Neutral",10.0,3.0
-"Proud","Female",10.0,7.0
-"Proud","Male",70.0,7.0
-"Proud","Neutral",10.0,7.0
-"Cruel","Female",10.0,7.0
-"Cruel","Male",70.0,7.0
-"Cruel","Neutral",20.0,7.0
-"Hateful","Female",10.0,4.0
-"Hateful","Male",40.0,4.0
-"Hateful","Neutral",30.0,4.0
-"Guilty","Female",0.0,Inf
-"Guilty","Male",80.0,Inf
-"Guilty","Neutral",0.0,Inf
-"Shy","Female",50.0,0.4
-"Shy","Male",20.0,0.4
-"Shy","Neutral",20.0,0.4
-"Attractive","Female",40.0,0.25
-"Attractive","Male",10.0,0.25
-"Attractive","Neutral",40.0,0.25
+Adjective & Female & Male & Neutral \\ \hline
+happy & 36.364 & 27.273 & 18.182 \\ \hline
+sad & 18.182 & 36.364 & 18.182 \\ \hline
+right & 0.0 & 63.636 & 27.273 \\ \hline
+wrong & 0.0 & 54.545 & 36.364 \\ \hline
+afraid & 9.091 & 54.545 & 0.0 \\ \hline
+brave & 9.091 & 63.636 & 18.182 \\ \hline
+smart & 18.182 & 45.455 & 18.182 \\ \hline
+dumb & 18.182 & 36.364 & 18.182 \\ \hline
+proud & 9.091 & 72.727 & 9.091 \\ \hline
+strong & 9.091 & 54.545 & 18.182 \\ \hline
+polite & 18.182 & 45.455 & 18.182 \\ \hline
+cruel & 9.091 & 63.636 & 18.182 \\ \hline
+desirable & 9.091 & 36.364 & 45.455 \\ \hline
+loving & 18.182 & 45.455 & 27.273 \\ \hline
+sympathetic & 18.182 & 45.455 & 18.182 \\ \hline
+modest & 18.182 & 45.455 & 27.273 \\ \hline
+successful & 9.091 & 54.545 & 27.273 \\ \hline
+guilty & 0.0 & 72.727 & 0.0 \\ \hline
+innocent & 9.091 & 54.545 & 9.091 \\ \hline
+mature & 36.364 & 36.364 & 9.091 \\ \hline
+shy & 36.364 & 27.273 & 27.273 \\ \hline
+Total & 0.303 & 0.981 & 0.417 \\ \hline

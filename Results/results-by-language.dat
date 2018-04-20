@@ -1,34 +1,13 @@
-"Language","Gender","Count"
-Malay,"Female",4.121687929342492
-Malay,"Male",95.7801766437684
-Malay,"Neutral",0.0
-Estonian,"Female",18.351324828263003
-Estonian,"Male",80.96172718351325
-Estonian,"Neutral",0.49067713444553485
-Finnish,"Female",33.56231599607458
-Finnish,"Male",66.1432777232581
-Finnish,"Neutral",0.0
-Hungarian,"Female",36.015701668302256
-Hungarian,"Male",63.297350343473994
-Hungarian,"Neutral",0.39254170755642787
-Armenian,"Female",9.813542688910697
-Armenian,"Male",81.25613346418056
-Armenian,"Neutral",0.5888125613346418
-Japanese,"Female",0.19627085377821393
-Japanese,"Male",26.7909715407262
-Japanese,"Neutral",1.0794896957801767
-Turkish,"Female",2.355250245338567
-Turkish,"Male",63.199214916584886
-Turkish,"Neutral",18.44946025515211
-Yoruba,"Female",1.1776251226692835
-Yoruba,"Male",48.57703631010795
-Yoruba,"Neutral",36.99705593719332
-Basque,"Female",0.39254170755642787
-Basque,"Male",12.365063788027477
-Basque,"Neutral",34.83807654563297
-Swahili,"Female",14.327772325809617
-Swahili,"Male",85.57409224730128
-Swahili,"Neutral",0.0
-Chinese,"Female",1.8645731108930323
-Chinese,"Male",69.38174681059863
-Chinese,"Neutral",9.224730127576056
+Language & Female & Male & Neutral \\ \hline
+Malay & 3.827 & 88.42 & 0.0 \\ \hline
+Estonian & 17.37 & 72.228 & 0.491 \\ \hline
+Finnish & 34.446 & 56.624 & 0.0 \\ \hline
+Hungarian & 34.347 & 58.292 & 0.0 \\ \hline
+Armenian & 10.01 & 82.041 & 0.687 \\ \hline
+Bengali & 16.765 & 37.782 & 25.63 \\ \hline
+Japanese & 0.0 & 66.928 & 24.436 \\ \hline
+Turkish & 2.748 & 62.807 & 18.744 \\ \hline
+Yoruba & 1.178 & 48.184 & 38.371 \\ \hline
+Basque & 0.393 & 5.496 & 58.587 \\ \hline
+Swahili & 14.033 & 76.644 & 0.0 \\ \hline
+Chinese & 5.986 & 51.717 & 24.338 \\ \hline
