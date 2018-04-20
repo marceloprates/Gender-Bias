@@ -1,4 +1,4 @@
-
+import sys
 from googletrans import Translator
 from googletrans import LANGUAGES
 from xpinyin import Pinyin
@@ -7,6 +7,10 @@ import numpy as np
 
 translator = Translator()
 p = Pinyin()
+
+do_occ = "occ" in sys.argv
+do_adj = "adj" in sys.argv
+
 
 # Get language list
 languages = []
@@ -21,23 +25,27 @@ with open('languages.csv', 'r') as f:
 # Define list of discarded languages
 discarded_languages = ['Nepali','Tagalog','English','Maithili','Oriya','Korean','Cantonese','Pipil','Quechuan','Esperanto','Ido','Lingua Franca Nova','Interlingua']
 
-# Read job occupations list into table
-table = np.array(list(csv.reader(open('jobs/bureau_of_labor_statistics_profession_list_gender_filtered_expanded.tsv','r'), delimiter='\t')))
+if do_occ:
+	# Read job occupations list into table
+	occupation_table = np.array(list(csv.reader(open('jobs/bureau_of_labor_statistics_profession_list_gender_filtered_expanded.tsv','r'), delimiter='\t')))
+	# Compute list of categories
+	categories = list(set(occupation_table[1:,-3]))
+	# Get dictionary of category -> jobs (jobs per category)
+	categories_dict = dict([ (category, occupation_table[occupation_table[:,-3] == category,0]) for category in categories ])
+#end if
 
-# Compute list of categories
-categories = list(set(table[1:,-3]))
-
-# Get dictionary of category -> jobs (jobs per category)
-categories_dict = dict([ (category, table[table[:,-3] == category,0]) for category in categories ])
+if do_adj:
+	adjectives = np.array( [ "happy", "sad", "right", "wrong", "afraid", "brave", "smart", "dumb", "proud", "strong", "polite", "cruel", "desirable", "loving", "sympathetic", "modest", "successful", "guilty", "innocent", "mature", "shy" ] ) # Could've read from file, but since the file is so small pasted it directly here.
+#end if
 
 """
-	Create a table with the translated version (provided by Google Translate) of each job,
+	Create a occupation_table with the translated version (provided by Google Translate) of each job,
 	in the following structure:
 		1. Each line corresponds to a single occupation
 		2. The first column is the occupation category ("Computer and mathematical occupations", "Healthcare practitioners and technical occupations", etc.)
 		3. The following N columns give a translated version of that occupation for each language (of N) in our list
 """
-if False:
+if do_occ:
 	with open("Results/jobs-translations.tsv","w") as output:
 	
 		# Write header
@@ -77,9 +85,39 @@ if False:
 		#end for
 	#end with
 #end if
-
-# Get table with one occupation for row, translated to every language (one per column)
-translated_occupations = list(csv.reader(open('Results/jobs-translations.tsv','r'), delimiter='\t'))
+if do_adj:
+	with open("Results/adjectives-translations.tsv","w") as output:
+	
+		# Write header
+		# One column per language with English being first
+		output.write("English")
+		for language in languages:
+			output.write('\t' + language)
+		#end for
+		output.write('\n')
+	
+		# Not iterate over all adjectives
+		for adjective in adjectives:
+			print("\tTranslating adjective \"{}\" ...".format(adjective))
+			output.write(adjective)
+			# For each language L in our list, translate 'adjective' from English to L
+			for language in languages:
+				try:
+					if language == 'Chinese':
+						translated_adjective = (translator.translate(adjective.rstrip().lower(),src='en',dest='zh-cn').text).lower()
+					else:
+						translated_adjective = (translator.translate(adjective.rstrip().lower(),src='en',dest=language).text).lower()
+					#end if
+				except Exception:
+					print("\tCould not translate adjective %s to language %s" % (adjective.rstrip(),language))
+					translated_adjective = "?"
+				#end try
+				output.write('\t' + translated_adjective)
+			#end for
+			output.write('\n')
+		#end for
+	#end with
+#end if
 
 # Define function to obtain the translated gender of an occupation in a given language (through Google Translate)
 def get_gender(language, occupation=None, adjective=None, case=None):
@@ -163,49 +201,98 @@ def get_gender(language, occupation=None, adjective=None, case=None):
 	Now create
 """
 
-with open('Results/job-genders.tsv','w') as output:
-
-	# Write header
-	output.write("Category")
-	output.write("\tOccupation")
-	for language in languages:
-		if language not in discarded_languages:
-			if language=='Bengali':
-				for case in ['HF','HP','TF','TP','EF','EP']:
-					output.write('\t' + language + '-' + case)
-			else:
-				output.write('\t' + language)
-	#end for
-	output.write('\n')
-
-	for entry in translated_occupations[1:]:
-		
-		category 		= entry[0]
-		english_name 	= entry[1]
-		foreign_names 	= entry[2:]
-
-		print("Translating occupation \"{}\" ...".format(english_name))
-
-		output.write(category)
-		output.write('\t' + english_name)
-
-		for (language, foreign_name) in zip(languages, foreign_names):
+if do_occ:
+	# Get table with one occupation for row, translated to every language (one per column)
+	translated_occupations = list(csv.reader(open('Results/jobs-translations.tsv','r'), delimiter='\t'))
+	with open('Results/job-genders.tsv','w') as output:
+		# Write header
+		output.write("Category")
+		output.write("\tOccupation")
+		for language in languages:
 			if language not in discarded_languages:
-				try:
-					if language == 'Bengali':
-						for case in ['HF','HP','TF','TP','EF','EP']:
-							gender = get_gender(language, occupation=foreign_name, case=case)
-							output.write('\t%s' % gender)
-					else:
-						gender = get_gender(language, occupation=foreign_name)
-						output.write('\t%s' % gender)
-				except ValueError:
-					output.write('\t?')
-				#end try
-			#end if
+				if language=='Bengali':
+					for case in ['HF','HP','TF','TP','EF','EP']:
+						output.write('\t' + language + '-' + case)
+				else:
+					output.write('\t' + language)
 		#end for
-
 		output.write('\n')
-		output.flush()
-	#end for
-#end with
+
+		for entry in translated_occupations[1:]:
+		
+			category 		= entry[0]
+			english_name 	= entry[1]
+			foreign_names 	= entry[2:]
+
+			print("Translating occupation \"{}\" ...".format(english_name))
+
+			output.write(category)
+			output.write('\t' + english_name)
+
+			for (language, foreign_name) in zip(languages, foreign_names):
+				if language not in discarded_languages:
+					try:
+						if language == 'Bengali':
+							for case in ['HF','HP','TF','TP','EF','EP']:
+								gender = get_gender(language, occupation=foreign_name, case=case)
+								output.write('\t%s' % gender)
+						else:
+							gender = get_gender(language, occupation=foreign_name)
+							output.write('\t%s' % gender)
+					except ValueError:
+						output.write('\t?')
+					#end try
+				#end if
+			#end for
+
+			output.write('\n')
+			output.flush()
+		#end for
+	#end with
+#end if
+if do_adj:
+	# Get table with one adjective for row, translated to every language (one per column)
+	translated_adjectives = list(csv.reader(open('Results/adjectives-translations.tsv','r'), delimiter='\t'))
+	with open('Results/adj-genders.tsv','w') as output:
+		# Write header
+		output.write("Adjective")
+		for language in languages:
+			if language not in discarded_languages:
+				if language=='Bengali':
+					for case in ['HF','HP','TF','TP','EF','EP']:
+						output.write('\t' + language + '-' + case)
+				else:
+					output.write('\t' + language)
+		#end for
+		output.write('\n')
+
+		for entry in translated_adjectives[1:]:
+
+			english_adj 	= entry[0]
+			foreign_adj 	= entry[1:]
+
+			print("Translating adjective \"{}\" ...".format(english_adj))
+
+			output.write(english_adj)
+
+			for (language, foreign_adj) in zip(languages, foreign_adj):
+				if language not in discarded_languages:
+					try:
+						if language == 'Bengali':
+							for case in ['HF','HP','TF','TP','EF','EP']:
+								gender = get_gender(language, adjective=foreign_adj, case=case)
+								output.write('\t%s' % gender)
+						else:
+							gender = get_gender(language, adjective=foreign_adj)
+							output.write('\t%s' % gender)
+					except ValueError:
+						output.write('\t?')
+					#end try
+				#end if
+			#end for
+
+			output.write('\n')
+			output.flush()
+		#end for
+	#end with
+#end if
