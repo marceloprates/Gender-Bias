@@ -1,5 +1,5 @@
 
-using DataFrames, CSV, Gadfly, Colors
+using DataFrames, CSV, Gadfly, Colors, HypothesisTests
 
 # Function to count the # of occurences of a gender (among languages) within a table
 function count_gender(gender, table)
@@ -532,6 +532,142 @@ function heatmap_languages_categories()
     end
 end
 
+function statistical_tests()
+
+    # Get a list of languages
+    languages = vcat( names(dat_jobs)[3:7], Symbol("Bengali"), names(dat_jobs)[14:end] )
+
+    # Get list of occupation categories
+    categories = unique(dat_jobs[:Category])
+
+    pvalues = DataFrame(Language=[], Category=[], MF=[], MN=[], NF=[])
+
+    for language in languages
+        for category in categories
+
+            if language == :Bengali
+                filtered = convert(Array{String,2}, dat_jobs[ dat_jobs[:,:Category] .== category ,8:13] )
+                filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
+            else
+                filtered = convert(Array{String,1}, dat_jobs[ dat_jobs[:,:Category] .== category ,language])
+            end
+
+            male    = map(x -> convert(Int64,x=="Male"), filtered)
+            female  = map(x -> convert(Int64,x=="Female"), filtered)
+            neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
+
+            p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
+            p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
+            p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
+
+            push!(pvalues,[language,category,p_MF,p_MN,p_NF])
+        end
+
+        if language == :Bengali
+            filtered = convert(Array{String,2}, dat_jobs[:,8:13] )
+            filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
+        else
+            filtered = convert(Array{String,1}, dat_jobs[:,language])
+        end
+
+        male    = map(x -> convert(Int64,x=="Male"), filtered)
+        female  = map(x -> convert(Int64,x=="Female"), filtered)
+        neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
+
+        p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
+        p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
+        p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
+
+        push!(pvalues,[language,"Total",p_MF,p_MN,p_NF])
+    end
+
+    for category in categories
+
+        filtered = convert(Array{String,2}, dat_jobs[ dat_jobs[:,:Category] .== category , 3:end])
+        filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
+
+        male    = map(x -> convert(Int64,x=="Male"), filtered)
+        female  = map(x -> convert(Int64,x=="Female"), filtered)
+        neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
+
+        p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
+        p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
+        p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
+
+        push!(pvalues,["Total",category,p_MF,p_MN,p_NF])
+    end
+
+    alpha = 0.005
+
+    for category in vcat(categories, ["Total"])
+        print("$(category)")
+        for language in vcat(languages, ["Total"])
+
+            if category == "Total" && language == "Total"
+                print("\t\& -")
+            else
+                MF = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :MF][1])
+                MN = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :MN][1])
+                NF = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :NF][1])
+                
+                if NF < alpha
+                    print("\t\&\t\$<\\alpha\$")
+                else
+                    print("\t\&\t\$$(round(NF,3))\$")
+                end
+            end
+        end
+        print("\t \\\\ \\hline \n")
+    end
+end
+
+function draw_ECDFs()
+  
+    results_by_occupation = DataFrame(Female=[],Male=[],Neutral=[],Category=[])
+    results_by_occupation_dodged = DataFrame(Category=[],Gender=[],Count=[])
+    for occupation in unique(dat_jobs[:Occupation])
+        
+        # Query the table row relative to this occupation
+        occupation_filtered = dat_jobs[dat_jobs[:,:Occupation] .== occupation, :]
+
+        # Get the category of this occupation
+        category = ucfirst(occupation_filtered[1,:Category])
+
+        female_count    = count_gender("Female",    occupation_filtered)
+        male_count      = count_gender("Male",      occupation_filtered)
+        neutral_count   = count_gender("Neutral",   occupation_filtered)
+
+        push!(results_by_occupation, [female_count,male_count,neutral_count,category])
+
+        push!(results_by_occupation_dodged, [category,"Female",  female_count])
+        push!(results_by_occupation_dodged, [category,"Male",    male_count])
+        push!(results_by_occupation_dodged, [category,"Neutral", neutral_count])
+    end
+
+    # Get the top 10 most frequent categories
+    all_categories = convert(Array{String,1},unique(dat_jobs[:,:Category]))
+    top_categories = sort!( all_categories, by = x -> size(dat_jobs[dat_jobs[:,:Category] .== x, :])[1] )
+
+    colors = linspace(convert(LCHuv, colorant"orange"), convert(LCHuv, colorant"sky blue"), 10)
+
+    p = plot(ecdf( convert(Array{Float64,1},results_by_occupation[:,:Female]) ), 0, 12)
+    for (category,color) in zip(top_categories,colors)
+
+        category_filtered = results_by_occupation[ results_by_occupation[:,:Category] .== category, : ]
+
+        push!(p.layers, 
+            layer(
+                ecdf(convert(Array{Float64,1},category_filtered[:,:Female])),
+                0, 12,
+                Theme(default_color=color)
+                )[1])
+
+    end
+
+    draw(PDF("Paper/pictures/ecdf-Female.pdf", 7.50inch, 5.625inch),p)
+
+end
+
 grouped_categories = true
 
 # Read job-genders.csv into a Julia DataFrame
@@ -550,9 +686,10 @@ dat_adjectives = CSV.read("Results/adj-genders.tsv",delim='\t',nullable=false)
 
 #draw_histograms_occupations()
 #heatmap_languages_categories()
-#
 #get_tables()
 #barplots_category()
 #barplots_language()
 #barplots_adjectives()
-histograms_compare()
+#histograms_compare()
+#statistical_tests()
+draw_ECDFs()

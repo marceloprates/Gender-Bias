@@ -14,6 +14,7 @@
 \usepackage{amssymb}
 \usepackage{pifont}
 \usepackage[caption=false]{subfig}
+\usepackage[table]{xcolor}
 
 \usepackage{natbib}
 \bibliographystyle{agsm}
@@ -293,9 +294,8 @@ While it is possible to construct gender neutral sentences in two of the languag
 % PEDRO: TODO highlight section
 \section{Distribution of translated gender pronouns per occupation category}
 
-A sensible way to group translation data is to coalesce occupations in the same category and collect statistics about how prominent male defaults are in each field. What we have found is that Google Translate does indeed translate sentences with male pronouns with greater probability than it does either female or gender-neutral pronouns. Furthermore, this bias is seemingly aggravated for fields suggested to be troubled by male stereotypes, such as life and physical sciences, architecture, engineering, computer science and mathematics \citep{moss2015can}. Table \ref{tab:gender-by-category} summarizes these data, and Table \ref{tab:gender-by-category-grouped} summarizes it even further by coalescing occupation categories into broader groups to ease interpretation. For instance, STEM (Science, Technology, Engineering and Mathematics) fields are grouped into a single category, which helps us compare the large asymmetry between gender pronouns in these fields ($80.322\%$ of male defaults) to that of more evenly distributed fields such as healthcare ($59.014\%$).
+A sensible way to group translation data is to coalesce occupations in the same category and collect statistics \changess{among languages} about how prominent male defaults are in each field. What we have found is that \changess{Google Translate does indeed translate sentences with male pronouns with greater probability than it does either female or gender-neutral pronouns, in general}. Furthermore, this bias is seemingly aggravated for fields suggested to be troubled by male stereotypes, such as life and physical sciences, architecture, engineering, computer science and mathematics \citep{moss2015can}. Table \ref{tab:gender-by-category} summarizes these data, and Table \ref{tab:gender-by-category-grouped} summarizes it even further by coalescing occupation categories into broader groups to ease interpretation. For instance, STEM (Science, Technology, Engineering and Mathematics) fields are grouped into a single category, which helps us compare the large asymmetry between gender pronouns in these fields (\changess{$72\%$} of male defaults) to that of more evenly distributed fields such as healthcare (\changess{$50\%$}).
 
-% PEDRO: TODO highlight table
 % Table with our gender bias results grouped by category
 \begin{table}[H]
 \centering
@@ -368,7 +368,7 @@ These values contrast with LBS' report of gender participation, which will be di
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/histograms/all-categories-stacked-Female}
-	\caption{\changess{The data for the total number $X$ of female pronouns per occupation category suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table} \ref{tab:gender-by-category}\changess{) extend to higher values.}}
+	\caption{\changess{The data for the number of translated female pronouns per occupation category totaled among languages suggests an inverse distribution. STEM fields such as life, social, computer and physical sciences, architecture, engineering and mathematics are nearly exclusively concentrated at $X=0$, while more evenly distributed fields such as production and healthcare (see Table} \ref{tab:gender-by-category}\changess{) extend to higher values.}}
 	\label{fig:histogram-female}
 \end{figure}
 
@@ -412,48 +412,24 @@ These values contrast with LBS' report of gender participation, which will be di
 	\label{fig:histogram-neutral-grouped}
 \end{figure}
 
-AAAAAAAA
+\changess{We can also visualize male, female, and gender neutral histograms side by side, in which context is useful to compare the dissimilar distributions of translated STEM and Healthcare occupations (Figures }\ref{fig:histogram-dodged-STEM} \changess{and} \ref{fig:histogram-dodged-Healthcare} \changess{respectively). The number of translated female pronouns among languages is not normally distributed for any of the individual categories in Table} \ref{tab:occupations}\changess{, but Healthcare is in many ways the most balanced category, which can be seen in comparison with STEM -- in which male defaults are most prominent.}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/histograms/categories/gender-dodged-STEM}
-	\caption{TODO STEM}
+	\caption{\changess{Histograms for the distribution of the number of translated female, male and gender neutral pronouns totaled among languages are plotted side by side for job occupations in the STEM (Science, Technology, Engineering and Mathematics) field, in which male defaults are most prominent.}}
 	\label{fig:histogram-dodged-STEM}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/histograms/categories/gender-dodged-Healthcare}
-	\caption{TODO Healthcare}
+	\caption{\changess{Histograms for the distribution of the number of translated female, male and gender neutral pronouns totaled among languages are plotted side by side for job occupations in the Healthcare field, in which male defaults are least prominent.}}
 	\label{fig:histogram-dodged-Healthcare}
 \end{figure}
 
-BBBBBVBBV
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Female}
-	\caption{TODO heatmap female}
-	\label{fig:heatmap-female}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Male}
-	\caption{TODO heatmap male}
-	\label{fig:heatmap-male}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Neutral}
-	\caption{TODO heatmap neutral}
-	\label{fig:heatmap-neutral}
-\end{figure}
-
-
-
-The bar plots in Figure \ref{fig:gender-by-category} help us visualize how much of the distribution of each occupation category is composed of female, male and gender-neutral pronouns. In this context, STEM fields, which show a predominance of male defaults, are contrasted with healthcare and educations, which show a larger proportion of female pronouns.
+The bar plots in Figure \ref{fig:gender-by-category} help us visualize how much of the distribution of each occupation category is composed of female, male and gender-neutral pronouns. In this context, STEM fields, which show a predominance of male defaults, are contrasted with Healthcare and educations, which show a larger proportion of female pronouns.
 
 % Barplot with % of female, male and neutral translated pronouns for each occupation category
 \begin{figure}[H]
@@ -462,6 +438,102 @@ The bar plots in Figure \ref{fig:gender-by-category} help us visualize how much 
 	\caption{\changess{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table} \ref{tab:gender-by-category-grouped}\changess{) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
 	\label{fig:gender-by-category}
 \end{figure}
+
+\changess{Although computing our statistics over the set of all languages has practical value, this may erase subtleties characteristic to each individual idiom. In this context, it is also important to visualize how each language translates job occupations in each category. The heatmaps in Figures } \ref{fig:heatmap-female}, \ref{fig:heatmap-male} \changess{and} \ref{fig:heatmap-neutral} \changess{ show the translation probabilities into female, male and neutral pronouns, respectively, for each pair of language and category (blue is $0\%$ and red is $100\%$). Both axes are sorted in these Figures, which helps us visualize both languages and categories in an spectrum of increasing male / female / neutral translation tendencies. Agreeing with suggested stereotypes,} \citep{moss2015can} \changess{ STEM fields are consistently translated with more male defaults than any other category. They are followed by Legal, Arts \& Entertainment and Corporate, in this order, while Healthcare, Production and Education lie on the opposite end of the spectrum.}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Female}
+	\caption{Heatmap for the translation probability into female pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\label{fig:heatmap-female}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Male}
+	\caption{Heatmap for the translation probability into male pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\label{fig:heatmap-male}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Neutral}
+	\caption{Heatmap for the translation probability into gender neutral pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\label{fig:heatmap-neutral}
+\end{figure}
+
+\changess{Our analysis is not truly complete without tests for statistical significant differences in the translation tendencies among female, male and gender neutral pronouns. We want to know for which languages and categories does Google Translate translate sentences with significantly more male than female, or male than neutral, or neutral than female, pronouns. We ran one-sided t-tests to assess this question for each pair of language and category and also totaled among either languages or categories. The corresponding p-values are presented in Tables} \ref{tab:pvalues-MF}, \ref{tab:pvalues-MN}, \ref{tab:pvalues-NF} \changess{respectively. Language-Category pairs for which the null hypothesis was not rejected for a confidence level of $\alpha = .005$ are highlighted in blue. Although there is a decent level of variation among languages and categories, the null hypothesis that male pronouns are not significantly more frequent than female ones was consistently rejected for all languages and all categories examined. The same is true for the null hypothesis that male pronouns are not significantly more frequent than gender neutral pronouns, with the one exception of the Basque language (which exhibits a rather strong tendency towards neutral pronouns). The null hypothesis that neutral pronouns are not significantly more frequent than female ones is accepted with much more frequency, namely for the languages Malay, Estonian, Finnish, Hungarian, Armenian and for the categories Farming \& Fishing \& Forestry, Healthcare, Legal, Arts \& Entertainment, Education.}
+
+\begin{table}[H]
+\small
+\begin{tabular}{|m{1.75cm}|cccccccccccc|c|}
+\hline
+& Mal. & Est. & Fin. & Hun. & Arm. & Ben. & Jap. & Tur. & Yor. & Bas. & Swa. & Chi. & Total \\ \hline
+Service & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1}
+STEM & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Farming, Fishing, Forestry & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.603$ & \cellcolor{blue!25}$.786$ & $<\alpha$ & \cellcolor{blue!25}$.019$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $*$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Corporate & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.024$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.012$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Healthcare & $<\alpha$ & \cellcolor{blue!25}$.938$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.999$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.012$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Legal & $<\alpha$ & \cellcolor{blue!25}$.368$ & \cellcolor{blue!25}$.632$ & \cellcolor{blue!25}$.368$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.086$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Arts, Entertainment & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.08$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Education & $<\alpha$ & \cellcolor{blue!25}$.808$ & \cellcolor{blue!25}$.333$ & \cellcolor{blue!25}$.263$ & \cellcolor{blue!25}$.588$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.417$ & $<\alpha$ & \cellcolor{blue!25}$.052$ & \cellcolor{blue!25}$.023$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Production & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.01$ & \cellcolor{blue!25}$.5$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.159$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Construction, Extraction & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.16$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} \hline
+Total & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & -  \\ \hline  
+\end{tabular}
+\caption{\changess{Computed p-values relative to the null hypothesis that the number of translated male pronouns is greater than that of female pronouns, organized for each language and each occupation category. A significance level of $\alpha =.005$ was adopted. Asterisks indicate cases in which all pronouns are translated with gender neutral pronouns. Cells corresponding to the acceptance of the null hypothesis are marked in} \colorbox{blue!25}{blue}.}
+\label{tab:pvalues-MF}
+\end{table}
+
+\begin{table}[H]
+\small
+\begin{tabular}{|m{1.75cm}|cccccccccccc|c|}
+\hline
+& Mal. & Est. & Fin. & Hun. & Arm. & Ben. & Jap. & Tur. & Yor. & Bas. & Swa. & Chi. & Total \\ \hline
+Service & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.01$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+STEM & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.984$ & $<\alpha$ & \cellcolor{blue!25}$.07$ & $<\alpha$  \\ \cline{1-1} 
+Farming 
+ Fishing 
+ Forestry & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.009$ & $<\alpha$ & \cellcolor{blue!25}$.135$ & $<\alpha$ & \cellcolor{blue!25}$.014$ & \cellcolor{blue!25}$.068$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & \cellcolor{blue!25}$.027$ & $<\alpha$  \\ \cline{1-1} 
+Corporate & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Healthcare & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.39$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & \cellcolor{blue!25}$.088$ & $<\alpha$  \\ \cline{1-1} 
+Legal & $<\alpha$ & \cellcolor{blue!25}$.015$ & \cellcolor{blue!25}$.039$ & \cellcolor{blue!25}$.015$ & $<\alpha$ & \cellcolor{blue!25}$.007$ & \cellcolor{blue!25}$.145$ & $<\alpha$ & \cellcolor{blue!25}$.023$ & \cellcolor{blue!25}$.771$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Arts 
+ Entertainment & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.07$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Education & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.017$ & \cellcolor{blue!25}$.093$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.5$ & $<\alpha$ & \cellcolor{blue!25}$.068$ & $<\alpha$  \\ \cline{1-1} 
+Production & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.412$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Construction 
+ Extraction & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.92$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} \hline
+Total & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & -  \\ \hline
+\end{tabular}
+\caption{\changess{Computed p-values relative to the null hypothesis that the number of translated male pronouns is greater than that of neutral pronouns, organized for each language and each occupation category. A significance level of $\alpha =.005$ was adopted. Asterisks indicate cases in which all pronouns are translated with female pronouns. Cells corresponding to the acceptance of the null hypothesis are marked in} \colorbox{blue!25}{blue}.}
+\label{tab:pvalues-MN}
+\end{table}
+
+\begin{table}[H]
+\small
+\begin{tabular}{|m{1.75cm}|cccccccccccc|c|}
+\hline
+& Mal. & Est. & Fin. & Hun. & Arm. & Ben. & Jap. & Tur. & Yor. & Bas. & Swa. & Chi. & Total \\ \hline
+Service & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.981$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+STEM & \cellcolor{blue!25}$.84$ & \cellcolor{blue!25}$.978$ & \cellcolor{blue!25}$.998$ & \cellcolor{blue!25}$.993$ & \cellcolor{blue!25}$.84$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.079$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.84$ & \cellcolor{blue!25}$.009$ & $<\alpha$  \\ \cline{1-1} 
+Farming 
+ Fishing 
+ Forestry & $*$ & $*$ & \cellcolor{blue!25}$.999$ & \cellcolor{blue!25}$1.0$ & $*$ & \cellcolor{blue!25}$.167$ & \cellcolor{blue!25}$.169$ & \cellcolor{blue!25}$.292$ & \cellcolor{blue!25}$.041$ & $<\alpha$ & $*$ & \cellcolor{blue!25}$.083$ & \cellcolor{blue!25}$.147$  \\ \cline{1-1} 
+Corporate & $*$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.996$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$.977$ & \cellcolor{blue!25}$.005$ & $<\alpha$  \\ \cline{1-1} 
+Healthcare & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.086$ & $<\alpha$ & \cellcolor{blue!25}$.87$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & \cellcolor{blue!25}$.977$  \\ \cline{1-1} 
+Legal & $*$ & \cellcolor{blue!25}$.961$ & \cellcolor{blue!25}$.985$ & \cellcolor{blue!25}$.961$ & $*$ & $<\alpha$ & \cellcolor{blue!25}$.086$ & $*$ & \cellcolor{blue!25}$.178$ & \cellcolor{blue!25}$.015$ & $*$ & $*$ & \cellcolor{blue!25}$.072$  \\ \cline{1-1} 
+Arts 
+ Entertainment & \cellcolor{blue!25}$.92$ & \cellcolor{blue!25}$.994$ & \cellcolor{blue!25}$.999$ & \cellcolor{blue!25}$.998$ & \cellcolor{blue!25}$.998$ & \cellcolor{blue!25}$.067$ & \cellcolor{blue!25}$.006$ & \cellcolor{blue!25}$.042$ & \cellcolor{blue!25}$.042$ & $<\alpha$ & \cellcolor{blue!25}$.92$ & \cellcolor{blue!25}$.162$ & \cellcolor{blue!25}$.097$  \\ \cline{1-1} 
+Education & $*$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.999$ & \cellcolor{blue!25}$.999$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.058$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.164$ & \cellcolor{blue!25}$.052$ & \cellcolor{blue!25}$.995$ & \cellcolor{blue!25}$.052$ & \cellcolor{blue!25}$.992$  \\ \cline{1-1} 
+Production & \cellcolor{blue!25}$.996$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$.113$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} 
+Construction 
+ Extraction & \cellcolor{blue!25}$.84$ & \cellcolor{blue!25}$.996$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & $*$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$  \\ \cline{1-1} \hline
+Total & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & $<\alpha$ & \cellcolor{blue!25}$1.0$ & $<\alpha$ & -  \\ \hline
+\end{tabular}
+\caption{\changess{Computed p-values relative to the null hypothesis that the number of translated gender neutral pronouns is greater than that of female pronouns, organized for each language and each occupation category. A significance level of $\alpha =.005$ was adopted. Asterisks indicate cases in which all pronouns are translated with male pronouns. Cells corresponding to the acceptance of the null hypothesis are marked in} \colorbox{blue!25}{blue}.}
+\label{tab:pvalues-NF}
+\end{table}
 
 \section{Distribution of translated gender pronouns per language}
 
