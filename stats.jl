@@ -299,38 +299,6 @@ function group_categories(label)
     end
 end
 
-function barplots_adjectives()
-    results_by_adjective = DataFrame(Adjective=[],Gender=[],Count=[],Ratio=[])
-
-    for adjective in dat_adjectives[:Adjective]
-        aux = dat_adjectives[ dat_adjectives[:,:Adjective] .== adjective, : ]
-        
-        female_count    = count_gender("Female",    aux)
-        male_count      = count_gender("Male",      aux)
-        neutral_count   = count_gender("Neutral",   aux)
-        total           = count_total(aux)
-        ratio = male_count/female_count
-        
-        push!(results_by_adjective, [ucfirst(adjective),"Female",   100 * female_count    / total,  ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Male",     100 * male_count      / total,  ratio])
-        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  100 * neutral_count   / total,  ratio])
-    end
-
-    CSV.write("Results/results-by-adjective.dat",results_by_adjective)
-
-    sort!(results_by_adjective, cols = [order(:Ratio)])
-
-    # Save bar plot
-    p = plot(
-        results_by_adjective,
-        x=:Adjective, y=:Count, color=:Gender,
-        Coord.Cartesian(ymin=0,ymax=100),
-        Geom.bar(position=:stack),
-        Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black",bar_spacing=1mm),
-        Guide.ylabel("\%"))
-    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 7.50inch, 5.625inch),p)
-end
-
 function histograms_occupations_per_category()
 
     # Get the top 10 most frequent categories
@@ -376,20 +344,26 @@ function barplots_category()
     # Compute results table (grouped by category)
     # Get list of occupation categories
     categories = unique(dat_jobs[:Category])
-    results_by_category = DataFrame(Category=[],Gender=[],Count=[])
+    results_by_category = DataFrame(Category=[],Gender=[],Count=[],Male=[],Female=[],Neutral=[])
     for category in categories
 
         aux = dat_jobs[dat_jobs[:,:Category] .== category, 3:end]
 
-        female_count    = count(x -> x=="Female",   convert(Array,aux[:,3:end]))
-        male_count      = count(x -> x=="Male",     convert(Array,aux[:,3:end]))
-        neutral_count   = count(x -> x=="Neutral",  convert(Array,aux[:,3:end]))
-        total           = count(x -> true,          convert(Array,aux[:,3:end]))
+        female_count    = count_gender("Female",aux)
+        male_count      = count_gender("Male",aux)
+        neutral_count   = count_gender("Neutral",aux)
+        total           = count_total(aux)
 
-        push!(results_by_category,[ucfirst(category),"Female",  round(100 * female_count    / total,3) ])
-        push!(results_by_category,[ucfirst(category),"Male",    round(100 * male_count      / total,3) ])
-        push!(results_by_category,[ucfirst(category),"Neutral", round(100 * neutral_count   / total,3) ])
+        female_prob     = 100 * female_count / total
+        male_prob       = 100 * male_count / total
+        neutral_prob    = 100 * neutral_count / total
+
+        push!(results_by_category,[ucfirst(category),"Neutral", neutral_prob, male_prob, female_prob, neutral_prob ])
+        push!(results_by_category,[ucfirst(category),"Female",  female_prob, male_prob, female_prob, neutral_prob ])
+        push!(results_by_category,[ucfirst(category),"Male",    male_prob, male_prob, female_prob, neutral_prob ])
     end
+
+    sort!(results_by_category, cols=(:Male, :Female, :Neutral))
 
     # Save bar plot
     p = plot(
@@ -407,7 +381,7 @@ function barplots_language()
     # Get a list of languages
     languages = vcat( names(dat_jobs)[3:7], "Bengali", names(dat_jobs)[14:end] )
     
-    results_by_language = DataFrame(Language=[],Gender=[],Count=[])
+    results_by_language = DataFrame(Language=[],Gender=[],Count=[],Male=[],Female=[],Neutral=[])
     
     for language in languages
         if language == "Bengali"
@@ -422,20 +396,30 @@ function barplots_language()
                 total           += count(x -> true,          dat_jobs[:,Symbol("Bengali-$(case)")])
             end
 
-            push!(results_by_language,[language,"Female",   100 * female_count    / total  ])
-            push!(results_by_language,[language,"Male",     100 * male_count      / total  ])
-            push!(results_by_language,[language,"Neutral",  100 * neutral_count   / total  ])
+            female_prob     = 100 * female_count / total
+            male_prob       = 100 * male_count / total
+            neutral_prob    = 100 * neutral_count / total
+
+            push!(results_by_language,[language,"Neutral",  neutral_prob, male_prob, female_prob, neutral_prob ])
+            push!(results_by_language,[language,"Female",   female_prob, male_prob, female_prob, neutral_prob ])
+            push!(results_by_language,[language,"Male",     male_prob, male_prob, female_prob, neutral_prob ])
         else
             female_count    = count(x -> x=="Female",   dat_jobs[:,language])
             male_count      = count(x -> x=="Male",     dat_jobs[:,language])
             neutral_count   = count(x -> x=="Neutral",  dat_jobs[:,language])
             total           = count(x -> true,          dat_jobs[:,language])
 
-            push!(results_by_language,[language,"Female",   100 * female_count    / total  ])
-            push!(results_by_language,[language,"Male",     100 * male_count      / total  ])
-            push!(results_by_language,[language,"Neutral",  100 * neutral_count   / total  ])
+            female_prob     = 100 * female_count / total
+            male_prob       = 100 * male_count / total
+            neutral_prob    = 100 * neutral_count / total
+
+            push!(results_by_language,[language,"Neutral",  neutral_prob, male_prob, female_prob, neutral_prob ])
+            push!(results_by_language,[language,"Female",   female_prob, male_prob, female_prob, neutral_prob ])
+            push!(results_by_language,[language,"Male",     male_prob, male_prob, female_prob, neutral_prob ])
         end
     end
+
+    sort!(results_by_language, cols=(:Male, :Female, :Neutral))
 
     # Save bar plot
     p = plot(
@@ -446,7 +430,43 @@ function barplots_language()
         Theme(background_color="white",bar_highlight=colorant"black",bar_spacing=1mm),
         Guide.ylabel("\%"),
         Guide.xticks(orientation=:vertical))
-    draw(PDF("Paper/pictures/gender-by-language.pdf", 7.50inch, 5.625inch),p)
+    draw(PDF("Paper/pictures/barplot-gender-by-language.pdf", 7.50inch, 5.625inch),p)
+end
+
+function barplots_adjectives()
+    results_by_adjective = DataFrame(Adjective=[],Gender=[],Count=[],Male=[],Female=[],Neutral=[])
+
+    for adjective in dat_adjectives[:Adjective]
+        aux = dat_adjectives[ dat_adjectives[:,:Adjective] .== adjective, : ]
+        
+        female_count    = count_gender("Female",    aux)
+        male_count      = count_gender("Male",      aux)
+        neutral_count   = count_gender("Neutral",   aux)
+        total           = count_total(aux)
+        ratio = male_count/female_count
+
+        female_prob     = 100 * female_count / total
+        male_prob       = 100 * male_count / total
+        neutral_prob    = 100 * neutral_count / total
+        
+        push!(results_by_adjective, [ucfirst(adjective),"Neutral",  neutral_prob, male_prob, female_prob, neutral_prob ])
+        push!(results_by_adjective, [ucfirst(adjective),"Female",   female_prob, male_prob, female_prob, neutral_prob ])
+        push!(results_by_adjective, [ucfirst(adjective),"Male",     male_prob, male_prob, female_prob, neutral_prob ])
+    end
+
+    CSV.write("Results/results-by-adjective.dat",results_by_adjective)
+
+    sort!(results_by_adjective, cols = (:Male, :Female, :Neutral))
+
+    # Save bar plot
+    p = plot(
+        results_by_adjective,
+        x=:Adjective, y=:Count, color=:Gender,
+        Coord.Cartesian(ymin=0,ymax=100),
+        Geom.bar(position=:stack),
+        Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black",bar_spacing=1mm),
+        Guide.ylabel("\%"))
+    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 7.50inch, 5.625inch),p)
 end
 
 function BLS_comparison()
@@ -483,8 +503,10 @@ function heatmap_languages_categories()
 
     for gender in ["Female","Male","Neutral"]
         
-        #heatmap = zeros(size(languages)[1], size(categories)[1])
         heatmap = Array{Tuple{Float64,String,String},2}(size(languages)[1], size(categories)[1])
+
+        categories_order = Dict([ (category,count_gender(gender,dat_jobs[dat_jobs[:,:Category].==category,:])/count_total(dat_jobs[dat_jobs[:,:Category].==category,:])) for category in categories ])
+        languages_order = Dict()
 
         for i = 1:size(languages)[1]
             for j = 1:size(categories)[1]
@@ -492,25 +514,43 @@ function heatmap_languages_categories()
                 if languages[i] == :Bengali
                     total = 0
                     for case in ["HF","HP","TF","TP","EF","EP"] 
-                        h += count(x -> x==gender, dat_jobs[ dat_jobs[:,:Category] .== categories[j], Symbol("Bengali-$(case)") ])
-                        total += count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[ dat_jobs[:,:Category] .== categories[j], Symbol("Bengali-$(case)") ] )
+                        h       += count(x -> x==gender, dat_jobs[ dat_jobs[:,:Category] .== categories[j], Symbol("Bengali-$(case)") ])
+                        total   += count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[ dat_jobs[:,:Category] .== categories[j], Symbol("Bengali-$(case)") ] )
                     end
                     h /= total
                 else
-                    h = count(x -> x==gender, dat_jobs[dat_jobs[:,:Category] .== categories[j], languages[i]])
-                    total = count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[ dat_jobs[:,:Category] .== categories[j], languages[i]])
+                    h       = count(x -> x==gender, dat_jobs[dat_jobs[:,:Category] .== categories[j], languages[i]])
+                    total   = count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[ dat_jobs[:,:Category] .== categories[j], languages[i]])
                     h /= total
                 end
 
                 heatmap[i,j] = (h,string(languages[i]),string(categories[j]))
             end
+
+            if languages[i] == :Bengali
+                total = 0
+                for case in ["HF","HP","TF","TP","EF","EP"] 
+                    h       += count(x -> x==gender, dat_jobs[:,Symbol("Bengali-$(case)") ])
+                    total   += count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[:,Symbol("Bengali-$(case)") ] )
+                end
+                h /= total
+            else
+                h       = count(x -> x==gender, dat_jobs[:,languages[i]])
+                total   = count(x -> x=="Female" || x=="Male" || x=="Neutral", dat_jobs[:,languages[i]])
+                h /= total
+            end
+
+            languages_order[string(languages[i])] = h
         end
 
-        heatmap = sortrows(heatmap, by = x -> sum(map(y -> y[1], x)))
-        heatmap = permutedims(heatmap, (2,1))
-        heatmap = sortrows(heatmap, by = x -> sum(map(y -> y[1], x)))
-        heatmap = permutedims(heatmap, (2,1))
+        # Sort heatmap rows (corresponding to languages)
+        heatmap = sortrows(heatmap, by = x -> languages_order[x[1][2]] )
 
+        # Now sort heatmap columns (corresponding to categories)
+        heatmap = permutedims(heatmap, (2,1))
+        heatmap = sortrows(heatmap, by = x -> categories_order[x[1][3]] )
+        heatmap = permutedims(heatmap, (2,1))
+        
         matrix = zeros(size(languages)[1], size(categories)[1])
         for i = 1:size(languages)[1]
             for j = 1:size(categories)[1]
@@ -685,11 +725,11 @@ end
 dat_adjectives = CSV.read("Results/adj-genders.tsv",delim='\t',nullable=false)
 
 #draw_histograms_occupations()
-#heatmap_languages_categories()
+heatmap_languages_categories()
 #get_tables()
 #barplots_category()
 #barplots_language()
 #barplots_adjectives()
 #histograms_compare()
 #statistical_tests()
-draw_ECDFs()
+#draw_ECDFs()

@@ -141,19 +141,6 @@ We shall assume and then show that the phenomenon of gender bias in machine tran
 	\label{tab:gender-neutral-languages}
 \end{table}
 
-\subsection{Rationale for language exceptions}
-\label{ssec:rationale_for_language_exceptions}
-
-\changess{
-While it is possible to construct gender neutral sentences in two of the languages omitted in our experiments (namely Korean and Nepali), we have chosen to omit them for the following reasons:}
-
-\begin{enumerate}
-\item \changess{We faced technical difficulties to form templates and automatically translate sentences with the right-to-left, top-to-bottom nature of the Persian script, and as such have decided not to include it in our experiments.}
-\item \changess{Due to Nepali having a rather complex grammar, with possible male/female gender demarcations on the phrases and due to none of the authors being fluent or able to reach someone fluent in the language, we were not confident enough in our ability to produce the required templates. Bengali was almost discarded under the same rationale, but we have decided to keep it because our sentence template for Bengali has a simple grammatical structure which does not require any kind of inflection.}
-\item \changess{While technically, one can construct gender neutral phrases in Korean by omitting the gender pronoun, in fact, this is default procedure. However, the expressiveness of this omission depends on the context of the sentence being clear, which is not possible in the way we frame phrases.}
-\end{enumerate}
-
-% PEDRO: TODO highlight table
 % List of occupation categories obtained from the U.S. Bureau of Labor Statistics, with nº of occupations per category and female participation (%) in each category
 \begin{table}[H]
 \begin{small}
@@ -291,7 +278,18 @@ While it is possible to construct gender neutral sentences in two of the languag
 	\label{tab:adjectives}
 \end{table}
 
-% PEDRO: TODO highlight section
+\subsection{Rationale for language exceptions}
+\label{ssec:rationale_for_language_exceptions}
+
+\changess{
+While it is possible to construct gender neutral sentences in two of the languages omitted in our experiments (namely Korean and Nepali), we have chosen to omit them for the following reasons:}
+
+\begin{enumerate}
+\item \changess{We faced technical difficulties to form templates and automatically translate sentences with the right-to-left, top-to-bottom nature of the Persian script, and as such have decided not to include it in our experiments.}
+\item \changess{Due to Nepali having a rather complex grammar, with possible male/female gender demarcations on the phrases and due to none of the authors being fluent or able to reach someone fluent in the language, we were not confident enough in our ability to produce the required templates. Bengali was almost discarded under the same rationale, but we have decided to keep it because our sentence template for Bengali has a simple grammatical structure which does not require any kind of inflection.}
+\item \changess{One can construct gender neutral phrases in Korean by omitting the gender pronoun, in fact, this is default procedure. However, the expressiveness of this omission depends on the context of the sentence being clear, which is not possible in the way we frame phrases.}
+\end{enumerate}
+
 \section{Distribution of translated gender pronouns per occupation category}
 
 A sensible way to group translation data is to coalesce occupations in the same category and collect statistics \changess{among languages} about how prominent male defaults are in each field. What we have found is that \changess{Google Translate does indeed translate sentences with male pronouns with greater probability than it does either female or gender-neutral pronouns, in general}. Furthermore, this bias is seemingly aggravated for fields suggested to be troubled by male stereotypes, such as life and physical sciences, architecture, engineering, computer science and mathematics \citep{moss2015can}. Table \ref{tab:gender-by-category} summarizes these data, and Table \ref{tab:gender-by-category-grouped} summarizes it even further by coalescing occupation categories into broader groups to ease interpretation. For instance, STEM (Science, Technology, Engineering and Mathematics) fields are grouped into a single category, which helps us compare the large asymmetry between gender pronouns in these fields (\changess{$72\%$} of male defaults) to that of more evenly distributed fields such as healthcare (\changess{$50\%$}).
@@ -417,7 +415,7 @@ These values contrast with LBS' report of gender participation, which will be di
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/histograms/categories/gender-dodged-STEM}
-	\caption{\changess{Histograms for the distribution of the number of translated female, male and gender neutral pronouns totaled among languages are plotted side by side for job occupations in the STEM (Science, Technology, Engineering and Mathematics) field, in which male defaults are most prominent.}}
+	\caption{\changess{Histograms for the distribution of the number of translated female, male and gender neutral pronouns totaled among languages are plotted side by side for job occupations in the STEM (Science, Technology, Engineering and Mathematics) field, in which male defaults are the second-to-most prominent (after Legal).}}
 	\label{fig:histogram-dodged-STEM}
 \end{figure}
 
@@ -434,31 +432,31 @@ The bar plots in Figure \ref{fig:gender-by-category} help us visualize how much 
 % Barplot with % of female, male and neutral translated pronouns for each occupation category
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/barplot-gender-by-category-grouped}
-	\caption{\changess{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table} \ref{tab:gender-by-category-grouped}\changess{) is composed of female, male and neutral terms. STEM fields exhibit a predominance of male defaults and contrast with healthcare and education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun.}}
+	\includegraphics[width=10cm]{pictures/barplot-gender-by-category}
+	\caption{\changess{Bar plots show how much of the distribution of translated gender pronouns for each occupation category (grouped as in Table} \ref{tab:gender-by-category-grouped}\changess{) is composed of female, male and neutral terms. Legal and STEM fields exhibit a predominance of male defaults and contrast with Healthcare and Education, with a larger proportion of female and neutral pronouns. Note that in general the bars do not add up to $100\%$, as there is a fair amount of translated sentences for which we cannot obtain a gender pronoun. Categories are sorted with respect to the proportions of male, female and neutral translated pronouns respectively.}}
 	\label{fig:gender-by-category}
 \end{figure}
 
-\changess{Although computing our statistics over the set of all languages has practical value, this may erase subtleties characteristic to each individual idiom. In this context, it is also important to visualize how each language translates job occupations in each category. The heatmaps in Figures } \ref{fig:heatmap-female}, \ref{fig:heatmap-male} \changess{and} \ref{fig:heatmap-neutral} \changess{ show the translation probabilities into female, male and neutral pronouns, respectively, for each pair of language and category (blue is $0\%$ and red is $100\%$). Both axes are sorted in these Figures, which helps us visualize both languages and categories in an spectrum of increasing male / female / neutral translation tendencies. Agreeing with suggested stereotypes,} \citep{moss2015can} \changess{ STEM fields are consistently translated with more male defaults than any other category. They are followed by Legal, Arts \& Entertainment and Corporate, in this order, while Healthcare, Production and Education lie on the opposite end of the spectrum.}
+\changess{Although computing our statistics over the set of all languages has practical value, this may erase subtleties characteristic to each individual idiom. In this context, it is also important to visualize how each language translates job occupations in each category. The heatmaps in Figures } \ref{fig:heatmap-female}, \ref{fig:heatmap-male} \changess{and} \ref{fig:heatmap-neutral} \changess{ show the translation probabilities into female, male and neutral pronouns, respectively, for each pair of language and category (blue is $0\%$ and red is $100\%$). Both axes are sorted in these Figures, which helps us visualize both languages and categories in an spectrum of increasing male / female / neutral translation tendencies. Agreeing with suggested stereotypes,} \citep{moss2015can} \changess{ STEM fields are second only to Legal ones in the prominence of male defaults. These two are followed by Arts \& Entertainment and Corporate, in this order, while Healthcare, Production and Education lie on the opposite end of the spectrum.}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Female}
-	\caption{Heatmap for the translation probability into female pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\caption{Heatmap for the translation probability into female pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom right corner.}
 	\label{fig:heatmap-female}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Male}
-	\caption{Heatmap for the translation probability into male pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\caption{Heatmap for the translation probability into male pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom right corner.}
 	\label{fig:heatmap-male}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/heatmap-languages-categories-Neutral}
-	\caption{Heatmap for the translation probability into gender neutral pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom left corner.}
+	\caption{Heatmap for the translation probability into gender neutral pronouns for each pair of language and occupation category. Probabilities range from $0\%$ (blue) to $100\%$ (red), and both axes are sorted in such a way that higher probabilities concentrate on the bottom right corner.}
 	\label{fig:heatmap-neutral}
 \end{figure}
 
@@ -568,8 +566,8 @@ We have taken the care of experimenting with a fair amount of different gender n
 % Barplot with % of female, male and neutral translated pronouns for each language
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{pictures/gender-by-language}
-	\caption{\changess{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order.}}
+	\includegraphics[width=10cm]{pictures/barplot-gender-by-language}
+	\caption{\changess{The distribution of pronominal genders per language also suggests a tendency towards male defaults, with female pronouns reaching as low as $0.196\%$ and $1.865\%$ for Japanese and Chinese respectively. Once again not all bars add up to $100\%$ as Google Translate occasionally fails to translate sentences, particularly in Japanese and Basque. Among all tested languages, Basque was the only one to yield more gender neutral than male pronouns, with Yoruba and Turkish following after in this order. Languages are sorted with respect to the proportions of male, female and neutral translated pronouns respectively.}}
 	\label{fig:gender-by-language}
 \end{figure}
 
@@ -624,13 +622,13 @@ Once again the data points towards male defaults, but some variation can be obse
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{pictures/barplot-adjectives}
-	\caption{\changess{The distribution of pronominal genders for each word in Table} \ref{tab:adjectives} \changess{shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph{shy} and \emph{attractive} are predominantly translated with female pronouns, while words like \emph{guilty}, \emph{innocent}, \emph{wrong}, \emph{right}, \emph{arrogant} are almost exclusively translated with male pronouns. Objective statements have a tendency towards male defaults, while statements concerning emotional states (\emph{shy}, \emph{happy}, \emph{kind}, \emph{ashamed}) amass at the other extreme of the sex ratio spectrum.}}
+	\caption{\changess{The distribution of pronominal genders for each word in Table} \ref{tab:adjectives} \changess{shows how stereotypical gender roles can play a part on the automatic translation of simple adjectives. One can see that adjectives such as \emph{Shy} and \emph{Desirable}, \emph{Sad} and \emph{Dumb} amass at the female side of the spectrum, contrasting with \emph{Proud}, \emph{Guilty}, \emph{Cruel} and \emph{Brave} which are almost exclusively translated with male pronouns. }}
 	\label{fig:barplot-adjectives}
 \end{figure}
 
 \section{Comparison with women participation data across job positions}\label{sec:comparison-women-participation}
 
-A sensible objection to the conclusions we draw from our study is that the perceived gender bias in Google Translate results stems from the fact that (possibly) female participation in some job positions is itself low. We must account for the possibility that the statistics of gender pronouns in Google Translate outputs merely reflects the demographics of male-dominated fields (male-dominated fields can be considered those that have less than 25\% of women participation\citep{WB2014}, according to the U.S. Department of Labor Women's Bureau). In this context, the argument in favor of a critical revision of statistic translation algorithms weakens considerably, and possibly shifts the blame away from these tools.
+A sensible objection to the conclusions we draw from our study is that the perceived gender bias in Google Translate results stems from the fact that possibly female participation in some job positions is itself low. We must account for the possibility that the statistics of gender pronouns in Google Translate outputs merely reflects the demographics of male-dominated fields (male-dominated fields can be considered those that have less than 25\% of women participation\citep{WB2014}, according to the U.S. Department of Labor Women's Bureau). In this context, the argument in favor of a critical revision of statistic translation algorithms weakens considerably, and possibly shifts the blame away from these tools.
 
 The U.S. Bureau of Labor Statistics data summarized in Table \ref{tab:occupations} contains statistics about the percentage of women participation in each occupation category. This data is also available for each individual occupation, which allows us to compute the frequency of women participation for each 12-quantile. We carried the same computation in the context of frequencies of translated female pronouns, and the resulting histograms are plotted side-by-side in Figure \ref{fig:histogram-compare-gt-real}. The data shows us that Google Translate outputs fail to follow the real-world distribution of female workers across a comprehensive set of job positions. The distribution of translated female pronouns is consistently inversely distributed, with female pronouns accumulating in the first 12-quantile. By contrast, BLS data shows that female participation peaks in the fourth 12-quantile and remains significant throughout the next ones.
 
