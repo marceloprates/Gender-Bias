@@ -580,16 +580,27 @@ function statistical_tests()
     # Get list of occupation categories
     categories = unique(dat_jobs[:Category])
 
-    pvalues = DataFrame(Language=[], Category=[], MF=[], MN=[], NF=[])
+    pvalues = DataFrame(Language=[], Category=[], MF=[], FM=[], MN=[], NM=[], NF=[], FN=[])
 
-    for language in languages
-        for category in categories
+    for language in vcat(languages, [Symbol("Total")])
+        for category in vcat(categories, [Symbol("Total")])
 
-            if language == :Bengali
-                filtered = convert(Array{String,2}, dat_jobs[ dat_jobs[:,:Category] .== category ,8:13] )
+            # Filter by category (or not, if total)
+            if category == :Total
+                filtered = dat_jobs[:,:]
+            else
+                filtered = dat_jobs[dat_jobs[:,:Category].==category,:]
+            end
+
+            # Filter by language (or not, if total)
+            if language == :Total
+                filtered = convert(Array{String,2}, filtered[:,:])
+                filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
+            elseif language == :Bengali
+                filtered = convert(Array{String,2}, filtered[:,8:13])
                 filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
             else
-                filtered = convert(Array{String,1}, dat_jobs[ dat_jobs[:,:Category] .== category ,language])
+                filtered = convert(Array{String,1}, filtered[:,language])
             end
 
             male    = map(x -> convert(Int64,x=="Male"), filtered)
@@ -597,68 +608,47 @@ function statistical_tests()
             neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
 
             p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
+            p_FM = pvalue(OneSampleTTest(male,female,0),tail=:left)
             p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
+            p_NM = pvalue(OneSampleTTest(male,neutral,0),tail=:left)
             p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
+            p_FN = pvalue(OneSampleTTest(neutral,female,0),tail=:left)
 
-            push!(pvalues,[language,category,p_MF,p_MN,p_NF])
+            push!(pvalues,[language,category,p_MF,p_FM,p_MN,p_NM,p_NF,p_FN])
         end
-
-        if language == :Bengali
-            filtered = convert(Array{String,2}, dat_jobs[:,8:13] )
-            filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
-        else
-            filtered = convert(Array{String,1}, dat_jobs[:,language])
-        end
-
-        male    = map(x -> convert(Int64,x=="Male"), filtered)
-        female  = map(x -> convert(Int64,x=="Female"), filtered)
-        neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
-
-        p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
-        p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
-        p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
-
-        push!(pvalues,[language,"Total",p_MF,p_MN,p_NF])
-    end
-
-    for category in categories
-
-        filtered = convert(Array{String,2}, dat_jobs[ dat_jobs[:,:Category] .== category , 3:end])
-        filtered = reshape(filtered, size(filtered)[1]*size(filtered)[2])
-
-        male    = map(x -> convert(Int64,x=="Male"), filtered)
-        female  = map(x -> convert(Int64,x=="Female"), filtered)
-        neutral = map(x -> convert(Int64,x=="Neutral"), filtered)
-
-        p_MF = pvalue(OneSampleTTest(male,female,0),tail=:right)
-        p_MN = pvalue(OneSampleTTest(male,neutral,0),tail=:right)
-        p_NF = pvalue(OneSampleTTest(neutral,female,0),tail=:right)
-
-        push!(pvalues,["Total",category,p_MF,p_MN,p_NF])
     end
 
     alpha = 0.005
 
-    for category in vcat(categories, ["Total"])
-        print("$(category)")
-        for language in vcat(languages, ["Total"])
+    output = open("latex-pvalues-table.txt","w")
+    for category in vcat(categories, [Symbol("Total")])
+        print(output,"$(category)")
+        for language in vcat(languages, [Symbol("Total")])
 
             if category == "Total" && language == "Total"
                 print("\t\& -")
             else
                 MF = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :MF][1])
+                FM = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :FM][1])
+                
                 MN = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :MN][1])
+                NM = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :NM][1])
+                
                 NF = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :NF][1])
+                FN = convert(Float64,pvalues[ (pvalues[:,:Language] .== language) & (pvalues[:,:Category] .== category), :FN][1])
                 
                 if NF < alpha
-                    print("\t\&\t\$<\\alpha\$")
+                    print(output,"\t\&\t\$<\\alpha\$")
+                elseif FN < alpha
+                    print(output,"\t\&\t\\cellcolor{blue!45}\$$(round(NF,3))\$")
                 else
-                    print("\t\&\t\$$(round(NF,3))\$")
+                    print(output,"\t\&\t\\cellcolor{blue!25}\$$(round(NF,3))\$")
                 end
             end
         end
-        print("\t \\\\ \\hline \n")
+        print(output,"\t \\\\ \\hline \n")
     end
+    close(output)
 end
 
 function draw_ECDFs()
@@ -725,11 +715,11 @@ end
 dat_adjectives = CSV.read("Results/adj-genders.tsv",delim='\t',nullable=false)
 
 #draw_histograms_occupations()
-heatmap_languages_categories()
+#heatmap_languages_categories()
 #get_tables()
 #barplots_category()
 #barplots_language()
 #barplots_adjectives()
-#histograms_compare()
+histograms_compare()
 #statistical_tests()
 #draw_ECDFs()
