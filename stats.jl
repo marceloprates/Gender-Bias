@@ -220,9 +220,8 @@ function histograms_compare()
         color=:Data,
         Geom.bar(position=:dodge),
         Guide.xticks(ticks=[1:12;]),
-        
-        Theme(key_max_columns=1,key_label_font_size=6pt))
-    draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 7.50inch, 5.625inch),p)
+        Theme(key_max_columns=1,key_label_font_size=6pt, key_position = :top, key_title_font_size=12pt, key_label_font_size=8pt))
+    draw(PDF("Paper/pictures/histogram-compare-gt-real.pdf", 5.625inch, 5.625inch),p)
 end
 
 function rename_category(label)
@@ -371,10 +370,20 @@ function barplots_category()
         x="Category", y="Count", color="Gender",
         Coord.Cartesian(ymin=0,ymax=100),
         Geom.bar(position=:stack),
-        Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black",bar_spacing=1mm),
+        
+        Theme(
+            background_color="white",
+            grid_color="gray",
+            bar_highlight=colorant"black",
+            bar_spacing=1mm,
+            key_position = :right,
+            key_title_font_size=12pt,
+            key_label_font_size=8pt,
+            plot_padding=[0pt,5mm,5mm,0pt]),
+        
         Guide.ylabel("\%"),
         Guide.xticks(orientation=:vertical))
-    draw(PDF("Paper/pictures/barplot-gender-by-category.pdf", 7.50inch, 5.625inch),p)
+    draw(PDF("Paper/pictures/barplot-gender-by-category.pdf", 5.625inch, 5.625inch),p)
 end
 
 function barplots_language()
@@ -427,10 +436,18 @@ function barplots_language()
         x="Language", y="Count", color="Gender",
         Coord.Cartesian(ymin=0,ymax=100),
         Geom.bar(position=:stack),
-        Theme(background_color="white",bar_highlight=colorant"black",bar_spacing=1mm),
+        Theme(
+            background_color="white",
+            grid_color="gray",
+            bar_highlight=colorant"black",
+            bar_spacing=1mm,
+            key_position = :right,
+            key_title_font_size=12pt,
+            key_label_font_size=8pt,
+            plot_padding=[0pt,5mm,5mm,0pt]),
         Guide.ylabel("\%"),
         Guide.xticks(orientation=:vertical))
-    draw(PDF("Paper/pictures/barplot-gender-by-language.pdf", 7.50inch, 5.625inch),p)
+    draw(PDF("Paper/pictures/barplot-gender-by-language.pdf", 5.625inch, 5.625inch),p)
 end
 
 function barplots_adjectives()
@@ -464,9 +481,17 @@ function barplots_adjectives()
         x=:Adjective, y=:Count, color=:Gender,
         Coord.Cartesian(ymin=0,ymax=100),
         Geom.bar(position=:stack),
-        Theme(background_color="white",grid_color="gray",bar_highlight=colorant"black",bar_spacing=1mm),
+        Theme(
+            background_color="white",
+            grid_color="gray",
+            bar_highlight=colorant"black",
+            bar_spacing=1mm,
+            key_position = :right,
+            key_title_font_size=12pt,
+            key_label_font_size=8pt,
+            plot_padding=[0pt,5mm,5mm,0pt]),
         Guide.ylabel("\%"))
-    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 7.50inch, 5.625inch),p)
+    draw(PDF("Paper/pictures/barplot-adjectives.pdf", 5.625inch, 5.625inch),p)
 end
 
 function BLS_comparison()
@@ -718,8 +743,8 @@ dat_adjectives = CSV.read("Results/adj-genders.tsv",delim='\t',nullable=false)
 #heatmap_languages_categories()
 #get_tables()
 #barplots_category()
-#barplots_language()
-#barplots_adjectives()
-histograms_compare()
+barplots_language()
+barplots_adjectives()
+#histograms_compare()
 #statistical_tests()
 #draw_ECDFs()
